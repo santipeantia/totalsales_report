@@ -576,5 +576,146 @@ namespace totalsale_report.xreporting
             Context.Response.ContentType = "application/json";
             conn.CloseConn();
         }
+
+        [WebMethod]
+        public void GetReport1017(string sdate, string edate)
+        {
+            List<cGetReport1017> datas = new List<cGetReport1017>();
+            SqlCommand comm = new SqlCommand("spRpt1017_TotalScrew", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReport1017 data = new cGetReport1017();
+                data.id = rdr["id"].ToString();
+                data.No = rdr["No"].ToString();
+                data.emp_id = rdr["emp_id"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.TeamGroup = rdr["TeamGroup"].ToString();
+                data.TeamName = rdr["TeamName"].ToString();
+                data.ferrexScrew = rdr["ferrexScrew"].ToString();
+                data.arrexScrew = rdr["arrexScrew"].ToString();
+                data.GrandTotal = rdr["GrandTotal"].ToString();
+                data.Traget = rdr["Traget"].ToString();
+                data.Diff = rdr["Diff"].ToString();
+                data.perCent = rdr["perCent"].ToString();
+                data.sDate = rdr["sDate"].ToString();
+                data.eDate = rdr["eDate"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetReport1040(string sdate, string edate)
+        {
+            List<cGetReport1040> datas = new List<cGetReport1040>();
+            SqlCommand comm = new SqlCommand("spRpt1040_TotalScrew", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReport1040 data = new cGetReport1040();
+                data.id = rdr["id"].ToString();
+                data.No = rdr["No"].ToString();
+                data.emp_id = rdr["emp_id"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.TeamGroup = rdr["TeamGroup"].ToString();
+                data.TeamName = rdr["TeamName"].ToString();
+                data.ferrexScrew = rdr["ferrexScrew"].ToString();
+                data.arrexScrew = rdr["arrexScrew"].ToString();
+                data.GrandTotal = rdr["GrandTotal"].ToString();
+                data.Traget = rdr["Traget"].ToString();
+                data.Diff = rdr["Diff"].ToString();
+                data.Percent = rdr["Percent"].ToString();
+                data.sDate = rdr["sDate"].ToString();
+                data.eDate = rdr["eDate"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetReport1041(string sdate, string edate)
+        {
+            List<cGetReport1041> datas = new List<cGetReport1041>();
+            SqlCommand comm = new SqlCommand("spRpt1041_TotalScrew", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReport1041 data = new cGetReport1041();
+                data.id = rdr["id"].ToString();
+                data.No = rdr["No"].ToString();
+                data.emp_id = rdr["emp_id"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.TeamGroup = rdr["TeamGroup"].ToString();
+                data.TeamName = rdr["TeamName"].ToString();
+                data.ferrexScrew = rdr["ferrexScrew"].ToString();
+                data.arrexScrew = rdr["arrexScrew"].ToString();
+                data.GrandTotal = rdr["GrandTotal"].ToString();
+                data.Traget = rdr["Traget"].ToString();
+                data.Diff = rdr["Diff"].ToString();
+                data.Percent = rdr["Percent"].ToString();
+                data.sDate = rdr["sDate"].ToString();
+                data.eDate = rdr["eDate"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetReport1018(string sdate, string edate)
+        {
+            List<cGetReport1018> datas = new List<cGetReport1018>();
+            SqlCommand comm = new SqlCommand("spRpt1018_ScrewTeam", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReport1018 data = new cGetReport1018();
+                data.No = rdr["No"].ToString();
+                data.emp_id = rdr["emp_id"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.ferrexScrew = rdr["ferrexScrew"].ToString();
+                data.arrexScrew = rdr["arrexScrew"].ToString();
+                data.GrandTotal = rdr["GrandTotal"].ToString();
+                data.Traget = rdr["Traget"].ToString();
+                data.Diff = rdr["Diff"].ToString();
+                data.Percent = rdr["Percent"].ToString();
+                data.sdate = rdr["sdate"].ToString();
+                data.edate = rdr["edate"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
     }
 }
