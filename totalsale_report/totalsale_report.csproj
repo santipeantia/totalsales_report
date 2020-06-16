@@ -13701,6 +13701,8 @@
     <Content Include="total_sale.master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reports\cGetReport1019.cs" />
+    <Compile Include="Reports\cGetReport1020.cs" />
     <Compile Include="Reports\cGetReport1018.cs" />
     <Compile Include="Reports\cGetReport1017.cs" />
     <Compile Include="Reports\cGetReport1040.cs" />
