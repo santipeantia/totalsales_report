@@ -1,0 +1,1 @@
+﻿server=SANTI-IT;database=DB_TotalSalesReport;uid=sa;pwd=AmpelitE88;
