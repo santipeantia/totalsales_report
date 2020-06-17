@@ -914,6 +914,54 @@
                         }
                     ]
                 })
+
+                $('#tblReprot1021').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': false,
+                    'columnDefs': [
+                        {
+                            targets: [1],
+                            className: "hide_column"
+                        }
+                    ]
+                })
+
+                 $('#tblReprot1042').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': false,
+                    'columnDefs': [
+                        {
+                            targets: [1],
+                            className: "hide_column"
+                        }
+                    ]
+                })
+
+                 $('#tblReprot1022').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': false,
+                    'columnDefs': [
+                        {
+                            targets: [1],
+                            className: "hide_column"
+                        }
+                    ]
+                })
                 
               
 			})
