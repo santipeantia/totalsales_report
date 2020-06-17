@@ -93,22 +93,6 @@
             </div>
 
             <div class="col-md-12">
-                <div class="">
-                    <div class="box box-solid">
-                        <div class="box-header with-border">
-                            <i class="fa fa-flag-checkered text-green"></i>
-                            <span class="btn-group pull-right">
-                                <button type="button" id="btnPdf1021" class="btn btn-default btn-sm" data-toggle="tooltip" title="PDF"><i class="fa fa-file-pdf-o text-orange"></i></button>
-                                <button type="button" id="btnExcel1021" class="btn btn-default btn-sm" data-toggle="tooltip" title="Excel"><i class="fa fa-table text-green"></i></button>
-                            </span>
-
-                            <label class="txtLabel">[1021] D-LITE (กทม.+ปริมณฑล+โพลี่ กรุ๊ป 80%)</label>
-                        </div>
-                        <div class="box-body">
-                        </div>
-                    </div>
-                </div>
-
 
                 <div class="">
                     <div class="box box-solid">

@@ -962,7 +962,86 @@
                         }
                     ]
                 })
-                
+
+                $('#tblReprot1023').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': false,
+                    'columnDefs': [
+                        {
+                            targets: [1],
+                            className: "hide_column"
+                        }
+                    ]
+                })
+
+                 $('#tblReprot1024').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': false,
+                    'columnDefs': [
+                        {
+                            targets: [1],
+                            className: "hide_column"
+                        }
+                    ]
+                })
+
+                $('#tblReprot1025').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': false,
+                    'columnDefs': [
+                        {
+                            targets: [1],
+                            className: "hide_column"
+                        }
+                    ]
+                })
+
+                 $('#tblReprot1029').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': false,
+                    'columnDefs': [
+                        {
+                            targets: [1],
+                            className: "hide_column"
+                        }
+                    ]
+                })
+
+                $('#tblReprot1030').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': false,
+                    'columnDefs': [
+                        {
+                            targets: [1],
+                            className: "hide_column"
+                        }
+                    ]
+                })
               
 			})
         </script>

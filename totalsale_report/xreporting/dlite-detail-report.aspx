@@ -5,14 +5,180 @@
         <%--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>--%>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+        <style>
+            .hide_column {
+                display: none;
+            }
+
+            #tblprojectlists i:hover {
+                cursor: pointer;
+            }
+
+            #tbltranswithoutsalesconsignee i:hover {
+                cursor: pointer;
+            }
+
+            #overlay {
+                position: fixed;
+                top: 0;
+                z-index: 100;
+                width: 100%;
+                height: 100%;
+                display: none;
+                background: rgba(0,0,0,0.6);
+            }
+
+            .cv-spinner {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .spinner {
+                width: 40px;
+                height: 40px;
+                border: 4px #ddd solid;
+                border-top: 4px #2e93e6 solid;
+                border-radius: 50%;
+                animation: sp-anime 0.8s infinite linear;
+            }
+
+            @keyframes sp-anime {
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .is-hide {
+                display: none;
+            }
+
+            .myclass {
+                text-align: right;
+            }
+
+            .mycenter {
+                text-align: center;
+            }
+        </style>
 
         <script>
             $(document).ready(function () {
-
+                $('#loaderDiv1029').hide();
+                $('#loaderDiv1030').hide();
                 //todo something here
 
+                var btnViewReport = $('#btnViewReport')
+                btnViewReport.click(function () {
+                    //get report
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
 
+                    getReprot1029(sdate, edate);
+                    getReprot1030(sdate, edate);
+                
+
+                });
             });
+
+            function getReprot1029(sdate, edate) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReport1029',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tblReprot1029 tr td").remove();
+                        $("#loaderDiv1029").show();
+                    },
+                    success: function (data) {
+                        var table;
+                        table = $('#tblReprot1029').DataTable();
+                        table.clear();
+
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].dLiteWave, data[i].dLiteSmooth, data[i].ddPro, data[i].dLite4R
+                                    , data[i].Ferrex, data[i].Arrex, data[i].Correx, data[i].louvreAX, data[i].Accessories, data[i].saleTotal, data[i].cutCN, data[i].cutTrans
+                                    , data[i].netSales, data[i].cutNetSales, data[i].grandTotal]);
+                            });
+                        }
+                        table.draw();
+                        $('#tblReprot1029 td:nth-of-type(1)').addClass('mycenter');
+                        //$('#tblReprot1019 td:nth-of-type(2)').addClass('myclass');
+                        //$('#tblReprot1019 td:nth-of-type(3)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(8)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(9)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(10)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(11)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(12)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(13)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(14)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(15)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(16)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(17)').addClass('myclass');
+                        $('#tblReprot1029 td:nth-of-type(18)').addClass('myclass');
+                        $("#loaderDiv1029").hide();
+                    }
+                });
+            }
+
+            function getReprot1030(sdate, edate) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReport1030',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tblReprot1030 tr td").remove();
+                        $("#loaderDiv1030").show();
+                    },
+                    success: function (data) {
+                        var table;
+                        table = $('#tblReprot1030').DataTable();
+                        table.clear();
+
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].dLiteWave, data[i].dLiteSmooth, data[i].ddPro, data[i].dLite4R
+                                    , data[i].Ferrex, data[i].Arrex, data[i].Correx, data[i].louvreAX, data[i].Accessories, data[i].saleTotal, data[i].cutCN, data[i].cutTrans
+                                    , data[i].netSales, data[i].cutNetSales, data[i].grandTotal]);
+                            });
+                        }
+                        table.draw();
+                        $('#tblReprot1030 td:nth-of-type(1)').addClass('mycenter');
+                        //$('#tblReprot1019 td:nth-of-type(2)').addClass('myclass');
+                        //$('#tblReprot1019 td:nth-of-type(3)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(8)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(9)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(10)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(11)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(12)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(13)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(14)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(15)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(16)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(17)').addClass('myclass');
+                        $('#tblReprot1030 td:nth-of-type(18)').addClass('myclass');
+                        $("#loaderDiv1030").hide();
+                    }
+                });
+            }
 
         </script>
 
@@ -22,6 +188,11 @@
     </section>
 
     <section class="content">
+        <div id="overlay">
+            <div class="cv-spinner">
+                <span class="spinner"></span>
+            </div>
+        </div>
         <div class="row">
             <div class="col-xs-12">
                 <div class="box box-primary" style="height: 100%;">
@@ -104,7 +275,35 @@
                             <label class="txtLabel">[1029] รายละเอียดยอดขาย D-Lite (กรุงเทพฯ+ปริมณฑล+ตะวันออก)</label>
                         </div>
                         <div class="box-body">
-                             <p class="text-red"><i class="fa fa-frown-o" aria-hidden="true"></i> <i class="fa fa-frown-o" aria-hidden="true"></i> Sorry, the report is not available. please contact to it department..</p>
+                            <div class="cv-spinner" id="loaderDiv1029">
+                                <span class="spinner"></span>
+                            </div>
+                            <table id="tblReprot1029" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th class="">No</th>
+                                        <th class="">EmpCode</th>
+                                        <th class="">EmpName</th>
+                                        <th class="">D-Lite ลอนคลื่น</th>
+                                        <th class="">D-Lite ลอนเรียบ</th>
+                                        <th class="">DD Pro</th>
+                                        <th class="">D-Lite 4R</th>
+                                        <th class="">Ferrex</th>
+                                        <th class="">Arrex</th>
+                                        <th class="">Correx</th>
+                                        <th class="">Louvre Strap AX</th>
+                                        <th class="">Accessories</th>
+                                        <th class="">Sale Total</th>
+                                        <th class="">หักส่วนลด</th>
+                                        <th class="">หักค่าขนส่ง</th>
+                                        <th class="">Net Sales</th>
+                                        <th class="">หักยอดขาย</th>
+                                        <th class="">Grand Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -122,7 +321,35 @@
                             <label class="txtLabel">[1030] รายละเอียดยอดขาย D-Lite (ตะวันออก+อีสาน กลาง เหนือ ตก ใต้)</label>
                         </div>
                         <div class="box-body">
-                            <p class="text-red"><i class="fa fa-frown-o" aria-hidden="true"></i> <i class="fa fa-frown-o" aria-hidden="true"></i> Sorry, the report is not available. please contact to it department..</p>
+                            <div class="cv-spinner" id="loaderDiv1030">
+                                <span class="spinner"></span>
+                            </div>
+                            <table id="tblReprot1030" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th class="">No</th>
+                                        <th class="">EmpCode</th>
+                                        <th class="">EmpName</th>
+                                        <th class="">D-Lite ลอนคลื่น</th>
+                                        <th class="">D-Lite ลอนเรียบ</th>
+                                        <th class="">DD Pro</th>
+                                        <th class="">D-Lite 4R</th>
+                                        <th class="">Ferrex</th>
+                                        <th class="">Arrex</th>
+                                        <th class="">Correx</th>
+                                        <th class="">Louvre Strap AX</th>
+                                        <th class="">Accessories</th>
+                                        <th class="">Sale Total</th>
+                                        <th class="">หักส่วนลด</th>
+                                        <th class="">หักค่าขนส่ง</th>
+                                        <th class="">Net Sales</th>
+                                        <th class="">หักยอดขาย</th>
+                                        <th class="">Grand Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

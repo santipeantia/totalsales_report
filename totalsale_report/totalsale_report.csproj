@@ -13701,10 +13701,14 @@
     <Content Include="total_sale.master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cGetReport1021.cs" />
-    <Compile Include="cGetReport1022.cs" />
-    <Compile Include="cGetReport1023.cs" />
-    <Compile Include="cGetReport1042.cs" />
+    <Compile Include="cGetReport1025.cs" />
+    <Compile Include="cGetReport1029.cs" />
+    <Compile Include="cGetReport1030.cs" />
+    <Compile Include="Reports\cGetReport1021.cs" />
+    <Compile Include="Reports\cGetReport1022.cs" />
+    <Compile Include="Reports\cGetReport1023.cs" />
+    <Compile Include="Reports\cGetReport1024.cs" />
+    <Compile Include="Reports\cGetReport1042.cs" />
     <Compile Include="Reports\cGetReport1019.cs" />
     <Compile Include="Reports\cGetReport1020.cs" />
     <Compile Include="Reports\cGetReport1018.cs" />

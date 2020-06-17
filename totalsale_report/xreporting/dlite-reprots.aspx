@@ -70,6 +70,8 @@
                 $('#loaderDiv1042').hide();
                 $('#loaderDiv1022').hide();
                 $('#loaderDiv1023').hide();
+                $('#loaderDiv1024').hide();
+                $('#loaderDiv1025').hide();
 
                 //todo something here
                 var btnViewReport = $('#btnViewReport')
@@ -82,6 +84,8 @@
                     getReprot1042(sdate, edate);
                     getReprot1022(sdate, edate);
                     getReprot1023(sdate, edate);
+                    getReprot1024(sdate, edate);
+                    getReprot1025(sdate, edate);
 
                 });
             });
@@ -266,9 +270,8 @@
 
                         if (data != '') {
                             $.each(data, function (i, item) {
-                                table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].dLiteWave, data[i].dLiteSmooth, data[i].ddPro, data[i].dLite4r
-                                    , data[i].kansad40, data[i].saleTotal, data[i].shareSales, data[i].cutService, data[i].cutComm, data[i].cutCN, data[i].netSales
-                                    , data[i].cutSales, data[i].granTotal, data[i].traGet, data[i].exDeff, data[i].exPercent]);
+                                table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].Ferrex, data[i].Arrex, data[i].Correx, data[i].Accessories
+                                    , data[i].accKansad, data[i].netSales, data[i].shareShales, data[i].cutComm, data[i].cutCN, data[i].cutNetSales, data[i].grandTotal]);
                             });
                         }
                         table.draw();
@@ -286,12 +289,83 @@
                         $('#tblReprot1023 td:nth-of-type(12)').addClass('myclass');
                         $('#tblReprot1023 td:nth-of-type(13)').addClass('myclass');
                         $('#tblReprot1023 td:nth-of-type(14)').addClass('myclass');
-                        $('#tblReprot1023 td:nth-of-type(15)').addClass('myclass');
-                        $('#tblReprot1023 td:nth-of-type(16)').addClass('myclass');
-                        $('#tblReprot1023 td:nth-of-type(17)').addClass('myclass');
-                        $('#tblReprot1023 td:nth-of-type(18)').addClass('myclass');
-                        $('#tblReprot1023 td:nth-of-type(19)').addClass('myclass');
                         $("#loaderDiv1023").hide();
+                    }
+                });
+            }
+
+            function getReprot1024(sdate, edate) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReport1024',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tblReprot1024 tr td").remove();
+                        $("#loaderDiv1024").show();
+                    },
+                    success: function (data) {
+                        var table;
+                        table = $('#tblReprot1024').DataTable();
+                        table.clear();
+
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].dLiteBkk, data[i].dLiteUpc, data[i].grandTotal, data[i].traGet, data[i].exDiff, data[i].exPercent]);
+                            });
+                        }
+                        table.draw();
+                        $('#tblReprot1024 td:nth-of-type(1)').addClass('mycenter');
+                        //$('#tblReprot1019 td:nth-of-type(2)').addClass('myclass');
+                        //$('#tblReprot1019 td:nth-of-type(3)').addClass('myclass');
+                        $('#tblReprot1024 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1024 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1024 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1024 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1024 td:nth-of-type(8)').addClass('myclass');
+                        $('#tblReprot1024 td:nth-of-type(9)').addClass('myclass');
+                        $("#loaderDiv1024").hide();
+                    }
+                });
+            }
+
+            function getReprot1025(sdate, edate) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReport1025',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tblReprot1025 tr td").remove();
+                        $("#loaderDiv1025").show();
+                    },
+                    success: function (data) {
+                        var table;
+                        table = $('#tblReprot1025').DataTable();
+                        table.clear();
+
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].dLiteBkk, data[i].dLiteUpc, data[i].grandTotal]);
+                            });
+                        }
+                        table.draw();
+                        $('#tblReprot1025 td:nth-of-type(1)').addClass('mycenter');
+                        //$('#tblReprot1019 td:nth-of-type(2)').addClass('myclass');
+                        //$('#tblReprot1019 td:nth-of-type(3)').addClass('myclass');
+                        $('#tblReprot1025 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1025 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1025 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1025 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1025 td:nth-of-type(8)').addClass('myclass');
+                        $('#tblReprot1025 td:nth-of-type(9)').addClass('myclass');
+                        $("#loaderDiv1025").hide();
                     }
                 });
             }
@@ -522,6 +596,31 @@
                             <label class="txtLabel">[1023] Screw, Accessories (ต่างจังหวัด)</label>
                         </div>
                         <div class="box-body">
+                            <div class="cv-spinner" id="loaderDiv1023">
+                                <span class="spinner"></span>
+                            </div>
+                            <table id="tblReprot1023" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th class="">No</th>
+                                        <th class="">EmpCode</th>
+                                        <th class="">EmpName</th>
+                                        <th class="">Ferrex</th>
+                                        <th class="">Arrex</th>
+                                        <th class="">Correx</th>
+                                        <th class="">Accessories</th>
+                                        <th class="">Accessories Kansad</th>
+                                        <th class="">Net Sales</th>
+                                        <th class="">แบ่งยอดขาย</th>
+                                        <th class="">หักค่านายหน้า</th>
+                                        <th class="">หักส่วนลด</th>
+                                        <th class="">หักยอดขาย</th>
+                                        <th class="">Grand Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -540,6 +639,26 @@
                             <label class="txtLabel">[1024] Manager D-Lite</label>
                         </div>
                         <div class="box-body">
+                            <div class="cv-spinner" id="loaderDiv1024">
+                                <span class="spinner"></span>
+                            </div>
+                            <table id="tblReprot1024" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th class="">No</th>
+                                        <th class="">EmpCode</th>
+                                        <th class="">EmpName</th>
+                                        <th class="">D-Lite BKK</th>
+                                        <th class="">D-Lite UPC</th>
+                                        <th class="">Grand Total</th>
+                                        <th class="">Traget</th>
+                                        <th class="">Diff</th>
+                                        <th class="">Percent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -558,6 +677,23 @@
                             <label class="txtLabel">[1025] Manager Screw, Accessories</label>
                         </div>
                         <div class="box-body">
+                            <div class="cv-spinner" id="loaderDiv1025">
+                                <span class="spinner"></span>
+                            </div>
+                            <table id="tblReprot1025" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th class="">No</th>
+                                        <th class="">EmpCode</th>
+                                        <th class="">EmpName</th>
+                                        <th class="">D-Lite BKK</th>
+                                        <th class="">D-Lite UPC</th>
+                                        <th class="">Grand Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
