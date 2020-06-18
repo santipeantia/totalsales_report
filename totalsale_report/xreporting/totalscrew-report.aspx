@@ -83,9 +83,16 @@
                     getReprot1040(sdate, edate);
                     getReprot1041(sdate, edate);
                     getReprot1018(sdate, edate);
+                });
 
+                var btnExcel1017 = $('#btnExcel1017')
+                btnExcel1017.click(function () {
+                    alert('1017 export to excel..');
 
                 });
+
+
+
             });
 
             jQuery(function ($) {
