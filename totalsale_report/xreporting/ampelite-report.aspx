@@ -78,7 +78,63 @@
                     getReprot1013(sdate, edate);
 
                 });
+
+                var btnExcel1011 = $('#btnExcel1011')
+                btnExcel1011.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1011] Ampelite BKK' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1011', filefulname)
+                });
+
+                var btnExcel1012 = $('#btnExcel1012')
+                btnExcel1012.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1012] Ampelite UPC (ภาคเหนือ/อีสาน)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1012', filefulname)
+                });
+
+                var btnExcel1013 = $('#btnExcel1013')
+                btnExcel1013.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1013] Ampelite UPC (ภาคตะวันออก, กลาง, ตก, ใต้)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1013', filefulname)
+                });
+
+
             });
+
+            function exportTableToExcel(tableID, filename = '') {
+                var downloadLink;
+                var dataType = 'application/vnd.ms-excel';
+                var tableSelect = document.getElementById(tableID);
+                var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+                // Specify file name
+                filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+                // Create download link element
+                downloadLink = document.createElement("a");
+                document.body.appendChild(downloadLink);
+
+                if (navigator.msSaveOrOpenBlob) {
+                    var blob = new Blob(['\ufeff', tableHTML], {
+                        type: dataType
+                    });
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                } else {
+                    // Create a link to the file
+                    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+                    // Setting the file name
+                    downloadLink.download = filename;
+
+                    //triggering the function
+                    downloadLink.click();
+                }
+            }
                         
             jQuery(function ($) {
                 $(document).ajaxSend(function () {
@@ -98,8 +154,7 @@
                     });
                 });
             });
-
-
+            
             function getReprot1011(sdate, edate) {
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReport1011',

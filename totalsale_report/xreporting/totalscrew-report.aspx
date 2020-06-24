@@ -7,6 +7,8 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 
+        <script src="https://rawgit.com/unconditional/jquery-table2excel/master/src/jquery.table2excel.js"></script>
+
         <style>
             .hide_column {
                 display: none;
@@ -87,13 +89,80 @@
 
                 var btnExcel1017 = $('#btnExcel1017')
                 btnExcel1017.click(function () {
-                    alert('1017 export to excel..');
-
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1017] Total Screw' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1017', filefulname)
                 });
 
+                var btnExcel1018 = $('#btnExcel1018')
+                btnExcel1018.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1018] Screw Team (กิตติศักดิ์)' + '_from_' + datepickerstart + '_to_' + datepickerend;
 
+                    exportTableToExcel('tblReprot1018', filefulname)
+                });
+                
+                var btnExcel1040 = $('#btnExcel1040')
+                btnExcel1040.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1040] Total Screw(ศิรัส)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+
+                    exportTableToExcel('tblReprot1040', filefulname)
+                });
+                
+                var btnExcel1041 = $('#btnExcel1041')
+                btnExcel1041.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1041] Total Screw(ส่วนภูมิภาค)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+
+                    exportTableToExcel('tblReprot1041', filefulname)
+                });
 
             });
+
+            function exportexcel() {
+                $('#tblReprot1017').table2excel({
+                    name: "tblReprot1017",
+                    filename: "myFileName",
+                    fileext: ".xls"
+                });
+            }  
+
+            function exportTableToExcel(tableID, filename = '') {
+                var downloadLink;
+                var dataType = 'application/vnd.ms-excel';
+                var tableSelect = document.getElementById(tableID);
+                var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+                // Specify file name
+                filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+                // Create download link element
+                downloadLink = document.createElement("a");
+
+                document.body.appendChild(downloadLink);
+
+                if (navigator.msSaveOrOpenBlob) {
+                    var blob = new Blob(['\ufeff', tableHTML], {
+                        type: dataType
+                    });
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                } else {
+                    // Create a link to the file
+                    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+                    // Setting the file name
+                    downloadLink.download = filename;
+
+                    //triggering the function
+                    downloadLink.click();
+                }
+            }
+
 
             jQuery(function ($) {
                 $(document).ajaxSend(function () {

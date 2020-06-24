@@ -826,7 +826,7 @@
                     'searching': false,
                     'ordering': false,
                     'info': true,
-                    'autoWidth': false,
+                    'autoWidth': false,                    
                     'columnDefs': [
                         {
                             targets: [0, 2, 4, 5],

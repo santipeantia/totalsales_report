@@ -13667,6 +13667,7 @@
     <Content Include="xreporting\dlite-detail-report.aspx" />
     <Content Include="xreporting\dlite-reprots.aspx" />
     <Content Include="xreporting\other-report.aspx" />
+    <Content Include="xreporting\report-render.aspx" />
     <Content Include="xreporting\reporting_srv.asmx" />
     <Content Include="xreporting\rpt-Individual-sales.aspx" />
     <Content Include="xreporting\rpt-salesbyzone.aspx" />
@@ -13683,6 +13684,83 @@
     <Content Include="xtransaction\trn-projecsmanagement_srv.asmx" />
     <Content Include="xtransaction\trn-sales-sharing.aspx" />
     <Content Include="xtransaction\trn-salesconsignee_srv.asmx" />
+    <Content Include="Reports\ds1031TotalSales.xsc">
+      <DependentUpon>ds1031TotalSales.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reports\ds1014AmpelProject.xsc">
+      <DependentUpon>ds1014AmpelProject.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ds1014AmpelProject.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds1014AmpelProject.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\ds1014AmpelProject.xss">
+      <DependentUpon>ds1014AmpelProject.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ds1031TotalSales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds1031TotalSales.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\ds1031TotalSales.xss">
+      <DependentUpon>ds1031TotalSales.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reports\ds1032TotalSales.xsc">
+      <DependentUpon>ds1032TotalSales.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ds1032TotalSales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds1032TotalSales.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\ds1032TotalSales.xss">
+      <DependentUpon>ds1032TotalSales.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reports\ds1033TotalSales.xsc">
+      <DependentUpon>ds1033TotalSales.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ds1033TotalSales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds1033TotalSales.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\ds1033TotalSales.xss">
+      <DependentUpon>ds1033TotalSales.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reports\ds1034TotalSales.xsc">
+      <DependentUpon>ds1034TotalSales.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ds1034TotalSales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds1034TotalSales.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\ds1034TotalSales.xss">
+      <DependentUpon>ds1034TotalSales.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reports\ds1035TotalSales.xsc">
+      <DependentUpon>ds1035TotalSales.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ds1035TotalSales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds1035TotalSales.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\ds1035TotalSales.xss">
+      <DependentUpon>ds1035TotalSales.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reports\ds1036TotalSales.xsc">
+      <DependentUpon>ds1036TotalSales.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ds1036TotalSales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds1036TotalSales.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\ds1036TotalSales.xss">
+      <DependentUpon>ds1036TotalSales.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.3.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.3.2.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -13766,6 +13844,107 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Reports\ds1014AmpelProject.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds1014AmpelProject.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ds1031TotalSales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds1031TotalSales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ds1032TotalSales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds1032TotalSales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ds1033TotalSales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds1033TotalSales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ds1034TotalSales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds1034TotalSales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ds1035TotalSales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds1035TotalSales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ds1036TotalSales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds1036TotalSales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rpt1014_AmpeliteProjects.cs">
+      <DependentUpon>rpt1014_AmpeliteProjects.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1031_TotalSales_r2.cs">
+      <DependentUpon>rpt1031_TotalSales_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpt1032_TotalSales_r2.cs">
+      <DependentUpon>rpt1032_TotalSales_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpt1033_TotalSales_r2.cs">
+      <DependentUpon>rpt1033_TotalSales_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1036_TotalSales.cs">
+      <DependentUpon>rpt1036_TotalSales.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1035_TotalSales.cs">
+      <DependentUpon>rpt1035_TotalSales.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1034_TotalSales.cs">
+      <DependentUpon>rpt1034_TotalSales.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1033_TotalSales.cs">
+      <DependentUpon>rpt1033_TotalSales.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1032_TotalSales.cs">
+      <DependentUpon>rpt1032_TotalSales.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1031_TotalSales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt1031_TotalSales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptTotalSales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTotalSales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="signin.aspx.cs">
       <DependentUpon>signin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -13864,6 +14043,13 @@
     </Compile>
     <Compile Include="xreporting\other-report.aspx.designer.cs">
       <DependentUpon>other-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xreporting\report-render.aspx.cs">
+      <DependentUpon>report-render.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\report-render.aspx.designer.cs">
+      <DependentUpon>report-render.aspx</DependentUpon>
     </Compile>
     <Compile Include="xreporting\reporting_srv.asmx.cs">
       <DependentUpon>reporting_srv.asmx</DependentUpon>
@@ -15226,6 +15412,50 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Reports\rpt1014_AmpeliteProjects.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1014_AmpeliteProjects.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1031_TotalSales_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1031_TotalSales_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1032_TotalSales_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1032_TotalSales_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1033_TotalSales_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1033_TotalSales_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1036_TotalSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1036_TotalSales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1035_TotalSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1035_TotalSales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1034_TotalSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1034_TotalSales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1033_TotalSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1033_TotalSales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1032_TotalSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1032_TotalSales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1031_TotalSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1031_TotalSales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalSales.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="bower_components\moment\moment.d.ts" />

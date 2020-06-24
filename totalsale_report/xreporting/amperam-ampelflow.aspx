@@ -78,10 +78,57 @@
 
                     getReprot1019(sdate, edate);
                     getReprot1020(sdate, edate);
-
-
                 });
+
+                var btnExcel1019 = $('#btnExcel1019')
+                btnExcel1019.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1019] AMPERAM' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1019', filefulname)
+                });
+
+                var btnExcel1020 = $('#btnExcel1020')
+                btnExcel1020.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1020] AMPELFLOW' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1020', filefulname)
+                });
+
+
             });
+
+            function exportTableToExcel(tableID, filename = '') {
+                var downloadLink;
+                var dataType = 'application/vnd.ms-excel';
+                var tableSelect = document.getElementById(tableID);
+                var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+                // Specify file name
+                filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+                // Create download link element
+                downloadLink = document.createElement("a");
+
+                document.body.appendChild(downloadLink);
+
+                if (navigator.msSaveOrOpenBlob) {
+                    var blob = new Blob(['\ufeff', tableHTML], {
+                        type: dataType
+                    });
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                } else {
+                    // Create a link to the file
+                    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+                    // Setting the file name
+                    downloadLink.download = filename;
+
+                    //triggering the function
+                    downloadLink.click();
+                }
+            }
 
              jQuery(function ($) {
                 $(document).ajaxSend(function () {
@@ -101,8 +148,7 @@
                     });
                 });
             });
-
-
+            
             function getReprot1019(sdate, edate) {
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReport1019',

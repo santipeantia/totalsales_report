@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds1033TotalSales" targetNamespace="http://tempuri.org/ds1033TotalSales.xsd" xmlns:mstns="http://tempuri.org/ds1033TotalSales.xsd" xmlns="http://tempuri.org/ds1033TotalSales.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds1033TotalSales" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds1033TotalSales" msprop:Generator_UserDSName="ds1033TotalSales">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt" msprop:Generator_TableClassName="dtDataTable" msprop:Generator_TableVarName="tabledt" msprop:Generator_TablePropName="dt" msprop:Generator_RowDeletingName="dtRowDeleting" msprop:Generator_RowChangingName="dtRowChanging" msprop:Generator_RowEvHandlerName="dtRowChangeEventHandler" msprop:Generator_RowDeletedName="dtRowDeleted" msprop:Generator_UserTableName="dt" msprop:Generator_RowChangedName="dtRowChanged" msprop:Generator_RowEvArgName="dtRowChangeEvent" msprop:Generator_RowClassName="dtRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpCode" msprop:Generator_ColumnVarNameInTable="columnEmpCode" msprop:Generator_ColumnPropNameInRow="EmpCode" msprop:Generator_ColumnPropNameInTable="EmpCodeColumn" msprop:Generator_UserColumnName="EmpCode" type="xs:string" minOccurs="0" />
+              <xs:element name="EmpName" msprop:Generator_ColumnVarNameInTable="columnEmpName" msprop:Generator_ColumnPropNameInRow="EmpName" msprop:Generator_ColumnPropNameInTable="EmpNameColumn" msprop:Generator_UserColumnName="EmpName" type="xs:string" minOccurs="0" />
+              <xs:element name="FRP" msprop:Generator_ColumnVarNameInTable="columnFRP" msprop:Generator_ColumnPropNameInRow="FRP" msprop:Generator_ColumnPropNameInTable="FRPColumn" msprop:Generator_UserColumnName="FRP" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Screw" msprop:Generator_ColumnVarNameInTable="columnScrew" msprop:Generator_ColumnPropNameInRow="Screw" msprop:Generator_ColumnPropNameInTable="ScrewColumn" msprop:Generator_UserColumnName="Screw" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GrandTotal" msprop:Generator_ColumnVarNameInTable="columnGrandTotal" msprop:Generator_ColumnPropNameInRow="GrandTotal" msprop:Generator_ColumnPropNameInTable="GrandTotalColumn" msprop:Generator_UserColumnName="GrandTotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Traget" msprop:Generator_ColumnVarNameInTable="columnTraget" msprop:Generator_ColumnPropNameInRow="Traget" msprop:Generator_ColumnPropNameInTable="TragetColumn" msprop:Generator_UserColumnName="Traget" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Diff" msprop:Generator_ColumnVarNameInTable="columnDiff" msprop:Generator_ColumnPropNameInRow="Diff" msprop:Generator_ColumnPropNameInTable="DiffColumn" msprop:Generator_UserColumnName="Diff" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Percent" msprop:Generator_ColumnVarNameInTable="columnPercent" msprop:Generator_ColumnPropNameInRow="Percent" msprop:Generator_ColumnPropNameInTable="PercentColumn" msprop:Generator_UserColumnName="Percent" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -82,7 +82,69 @@
                     getReprot1039(sdate, edate);
 
                 });
+
+                var btnExcel1015 = $('#btnExcel1015')
+                btnExcel1015.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1015] Screw Ferrex (ส่วนกลาง)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1015', filefulname)
+                });
+
+                var btnExcel1038 = $('#btnExcel1038')
+                btnExcel1038.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1038] Screw Ferrex (ส่วนภูมิภาค)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1038', filefulname)
+                });
+
+                var btnExcel1016 = $('#btnExcel1016')
+                btnExcel1016.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1016] Screw Arrex (ส่วนกลาง)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1016', filefulname)
+                });
+
+                var btnExcel1039 = $('#btnExcel1039')
+                btnExcel1039.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1039] Screw Arrex (ส่วนภูมิภาค)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1039', filefulname)
+                });
             });
+
+            function exportTableToExcel(tableID, filename = '') {
+                var downloadLink;
+                var dataType = 'application/vnd.ms-excel';
+                var tableSelect = document.getElementById(tableID);
+                var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+                // Specify file name
+                filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+                // Create download link element
+                downloadLink = document.createElement("a");
+                document.body.appendChild(downloadLink);
+
+                if (navigator.msSaveOrOpenBlob) {
+                    var blob = new Blob(['\ufeff', tableHTML], {
+                        type: dataType
+                    });
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                } else {
+                    // Create a link to the file
+                    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+                    // Setting the file name
+                    downloadLink.download = filename;
+
+                    //triggering the function
+                    downloadLink.click();
+                }
+            }
 
             jQuery(function ($) {
                 $(document).ajaxSend(function () {

@@ -76,11 +76,57 @@
                     var edate = $('#datepickerend').val();
 
                     getReprot1029(sdate, edate);
-                    getReprot1030(sdate, edate);
-                
-
+                    getReprot1030(sdate, edate);              
                 });
+
+                var btnExcel1029 = $('#btnExcel1029')
+                btnExcel1029.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1029] รายละเอียดยอดขาย D-Lite (กรุงเทพฯ+ปริมณฑล+ตะวันออก)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1029', filefulname)
+                });
+
+                var btnExcel1030 = $('#btnExcel1030')
+                btnExcel1030.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1030] รายละเอียดยอดขาย D-Lite (ตะวันออก+อีสาน กลาง เหนือ ตก ใต้)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1030', filefulname)
+                });
+
             });
+
+            function exportTableToExcel(tableID, filename = '') {
+                var downloadLink;
+                var dataType = 'application/vnd.ms-excel';
+                var tableSelect = document.getElementById(tableID);
+                var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+                // Specify file name
+                filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+                // Create download link element
+                downloadLink = document.createElement("a");
+
+                document.body.appendChild(downloadLink);
+
+                if (navigator.msSaveOrOpenBlob) {
+                    var blob = new Blob(['\ufeff', tableHTML], {
+                        type: dataType
+                    });
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                } else {
+                    // Create a link to the file
+                    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+                    // Setting the file name
+                    downloadLink.download = filename;
+
+                    //triggering the function
+                    downloadLink.click();
+                }
+            }
 
             function getReprot1029(sdate, edate) {
                 $.ajax({
@@ -280,6 +326,7 @@
                             </div>
                             <table id="tblReprot1029" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
                                 <thead>
+                                    
                                     <tr>
                                         <th class="">No</th>
                                         <th class="">EmpCode</th>

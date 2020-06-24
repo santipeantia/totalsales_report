@@ -88,7 +88,93 @@
                     getReprot1025(sdate, edate);
 
                 });
+
+                var btnExcel1021 = $('#btnExcel1021')
+                btnExcel1021.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1021] D-LITE (กทม.+ปริมณฑล+โพลี่ กรุ๊ป 80%)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+
+                    exportTableToExcel('tblReprot1021', filefulname)
+                });
+
+                var btnExcel1042 = $('#btnExcel1042')
+                btnExcel1042.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1042] Screw, Accessories (กทม+ปริมณฑล)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+
+                    exportTableToExcel('tblReprot1042', filefulname)
+                });
+
+                var btnExcel1022 = $('#btnExcel1022')
+                btnExcel1022.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1022] D-LITE (ต่างจังหวัด)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+
+                    exportTableToExcel('tblReprot1022', filefulname)
+                });
+
+                var btnExcel1023 = $('#btnExcel1023')
+                btnExcel1023.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1023] Screw, Accessories (ต่างจังหวัด)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+
+                    exportTableToExcel('tblReprot1023', filefulname)
+                });
+
+                var btnExcel1024 = $('#btnExcel1024')
+                btnExcel1024.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1024] Manager D-Lite' + '_from_' + datepickerstart + '_to_' + datepickerend;
+
+                    exportTableToExcel('tblReprot1024', filefulname)
+                });
+
+                var btnExcel1025 = $('#btnExcel1025')
+                btnExcel1025.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1025] Manager Screw, Accessories' + '_from_' + datepickerstart + '_to_' + datepickerend;
+
+                    exportTableToExcel('tblReprot1025', filefulname)
+                });
+
             });
+
+             function exportTableToExcel(tableID, filename = '') {
+                var downloadLink;
+                var dataType = 'application/vnd.ms-excel';
+                var tableSelect = document.getElementById(tableID);
+                var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+                // Specify file name
+                filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+                // Create download link element
+                downloadLink = document.createElement("a");
+
+                document.body.appendChild(downloadLink);
+
+                if (navigator.msSaveOrOpenBlob) {
+                    var blob = new Blob(['\ufeff', tableHTML], {
+                        type: dataType
+                    });
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                } else {
+                    // Create a link to the file
+                    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+                    // Setting the file name
+                    downloadLink.download = filename;
+
+                    //triggering the function
+                    downloadLink.click();
+                }
+            }
 
              jQuery(function ($) {
                 $(document).ajaxSend(function () {

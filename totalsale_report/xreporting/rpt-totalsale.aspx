@@ -53,6 +53,14 @@
             .is-hide {
                 display: none;
             }
+
+            .myclass {
+                text-align: right;
+            }
+
+            .mycenter {
+                text-align: center;
+            }
         </style>
 
         <script>           
@@ -79,9 +87,184 @@
                     getReprot1035(sdate, edate);
                     getReprot1036(sdate, edate);
                     getReprot1014(sdate, edate);
-
                 });
+
+
+                var btnExcel1031 = $('#btnExcel1031')
+                btnExcel1031.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1031] สรุปยอดขายเซลล์ กรุงเทพ (ทีม คุณกิตติศักดิ์)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1031', filefulname)
+                });
+
+                var btnExcel1032 = $('#btnExcel1032')
+                btnExcel1032.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1032] สรุปยอดขายเซลล์ กรุงเทพ (ทีม คุณชาญณรงค์)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1032', filefulname)
+                });
+                
+                var btnExcel1033 = $('#btnExcel1033')
+                btnExcel1033.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1033] สรุปยอดขายเซลล์ ต่างจังหวัด(ทีม คุณศิรัส)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1033', filefulname)
+                });
+                
+                var btnExcel1034 = $('#btnExcel1034')
+                btnExcel1034.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1034] สรุปยอดขายเซลล์ ต่างจังหวัด(ทีม คุณกิตติศักดิ์)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1034', filefulname)
+                });
+                
+                var btnExcel1035 = $('#btnExcel1035')
+                btnExcel1035.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1035] สรุปยอดขายเซลล์ D - Lite(ทีม คุณภาคภูมิ)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1035', filefulname)
+                });
+
+                var btnExcel1036 = $('#btnExcel1036')
+                btnExcel1036.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1036] สรุปยอดขายเซลล์ Screw (คุณพิมพ์ศิริ)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1036', filefulname)
+                });
+                
+                var btnExcel1014 = $('#btnExcel1014')
+                btnExcel1014.click(function () {
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1014] Ampelite FRP(งานโครงการ / Projects)' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                    exportTableToExcel('tblReprot1014', filefulname)
+                });
+
+
+                 var btnPdf1031 = $('#btnPdf1031')
+                btnPdf1031.click(function () {
+
+                    var rpt_id = '1031';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1032 = $('#btnPdf1032')
+                btnPdf1032.click(function () {
+
+                    var rpt_id = '1032';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1033 = $('#btnPdf1033')
+                btnPdf1033.click(function () {
+
+                    var rpt_id = '1033';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1034 = $('#btnPdf1034')
+                btnPdf1034.click(function () {
+
+                    var rpt_id = '1034';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1035 = $('#btnPdf1035')
+                btnPdf1035.click(function () {
+
+                    var rpt_id = '1035';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+                
+                var btnPdf1036 = $('#btnPdf1036')
+                btnPdf1036.click(function () {
+
+                    var rpt_id = '1036';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1014 = $('#btnPdf1014')
+                btnPdf1014.click(function () {
+
+                    var rpt_id = '1014';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnDownload = $('#btnDownload')
+                btnDownload.click(function () {
+
+                    var rpt_id = 'totalsale';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+
             });
+
+            function exportTableToExcel(tableID, filename = '') {
+                var downloadLink;
+                var dataType = 'application/vnd.ms-excel';
+                var tableSelect = document.getElementById(tableID);
+                var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+                // Specify file name
+                filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+                // Create download link element
+                downloadLink = document.createElement("a");
+
+                document.body.appendChild(downloadLink);
+
+                if (navigator.msSaveOrOpenBlob) {
+                    var blob = new Blob(['\ufeff', tableHTML], {
+                        type: dataType
+                    });
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                } else {
+                    // Create a link to the file
+                    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+                    // Setting the file name
+                    downloadLink.download = filename;
+
+                    //triggering the function
+                    downloadLink.click();
+                }
+            }
+
+            function pdfReportRender(rpt_id, sdate, edate) {
+                //document.location = "report-render.aspx?id=" + a;
+                window.open('report-render.aspx?id=' + rpt_id + '&sdate=' + sdate + '&edate=' + edate, '_blank');
+            }
 
             jQuery(function ($) {
                 $(document).ajaxSend(function () {
@@ -126,6 +309,13 @@
                             });
                         }
                         table.draw();
+                        //$('#tblReprot1031 td:nth-of-type(2)').addClass('mycenter');
+                        $('#tblReprot1031 td:nth-of-type(3)').addClass('myclass');
+                        $('#tblReprot1031 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1031 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1031 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1031 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1031 td:nth-of-type(8)').addClass('myclass');
                         $("#loaderDiv1031").hide();
                     }
                 });
@@ -155,6 +345,12 @@
                             });
                         }
                         table.draw();
+                        $('#tblReprot1032 td:nth-of-type(3)').addClass('myclass');
+                        $('#tblReprot1032 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1032 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1032 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1032 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1032 td:nth-of-type(8)').addClass('myclass');
                         $("#loaderDiv1032").hide();
                     }
                 });
@@ -184,6 +380,12 @@
                             });
                         }
                         table.draw();
+                        $('#tblReprot1033 td:nth-of-type(3)').addClass('myclass');
+                        $('#tblReprot1033 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1033 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1033 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1033 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1033 td:nth-of-type(8)').addClass('myclass');
                         $("#loaderDiv1033").hide();
                     }
                 });
@@ -213,6 +415,12 @@
                             });
                         }
                         table.draw();
+                        $('#tblReprot1034 td:nth-of-type(3)').addClass('myclass');
+                        $('#tblReprot1034 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1034 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1034 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1034 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1034 td:nth-of-type(8)').addClass('myclass');
                         $("#loaderDiv1034").hide();
                     }
                 });
@@ -242,6 +450,12 @@
                             });
                         }
                         table.draw();
+                        $('#tblReprot1035 td:nth-of-type(3)').addClass('myclass');
+                        $('#tblReprot1035 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1035 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1035 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1035 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1035 td:nth-of-type(8)').addClass('myclass');
                         $("#loaderDiv1035").hide();
                     }
                 });
@@ -271,6 +485,12 @@
                             });
                         }
                         table.draw();
+                        $('#tblReprot1036 td:nth-of-type(3)').addClass('myclass');
+                        $('#tblReprot1036 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1036 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1036 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1036 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1036 td:nth-of-type(8)').addClass('myclass');
                         $("#loaderDiv1036").hide();
                     }
                 });
@@ -300,6 +520,14 @@
                             });
                         }
                         table.draw();
+                        
+                        $('#tblReprot1014 td:nth-of-type(4)').addClass('myclass');
+                        $('#tblReprot1014 td:nth-of-type(5)').addClass('myclass');
+                        $('#tblReprot1014 td:nth-of-type(6)').addClass('myclass');
+                        $('#tblReprot1014 td:nth-of-type(7)').addClass('myclass');
+                        $('#tblReprot1014 td:nth-of-type(8)').addClass('myclass');
+                        $('#tblReprot1014 td:nth-of-type(9)').addClass('myclass');
+                        $('#tblReprot1014 td:nth-of-type(10)').addClass('myclass');
                         $("#loaderDiv1014").hide();
                     }
                 });
@@ -336,7 +564,7 @@
                                                 <i class="fa fa-plus"></i>
                                             </button>
                                             <span class="btn-group">
-                                                <button id="btnDownload" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
+                                                <button id="btnDownload" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
                                                 <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Screen" onclick="window.print()"><i class="fa fa-credit-card"></i></button>
                                                 <button id="btnExportExcel" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Excel"><i class="fa fa-table"></i></button>
                                             </span>
@@ -393,7 +621,7 @@
                     <div class="box box-solid">
                         <div class="box-header with-border">
                             <i class="fa fa-flag-checkered text-orange"></i>
-                            <span class="btn-group pull-right">
+                            <span class="btn-group pull-right">                              
                                 <button type="button" id="btnPdf1031" class="btn btn-default btn-sm" data-toggle="tooltip" title="PDF"><i class="fa fa-file-pdf-o text-orange"></i></button>
                                 <button type="button" id="btnExcel1031" class="btn btn-default btn-sm" data-toggle="tooltip" title="Excel"><i class="fa fa-table text-green"></i></button>
                             </span>
@@ -407,7 +635,7 @@
 
                             <div class="cv-spinner" id="loaderDiv1031">
                                 <span class="spinner"></span>
-                            </div>
+                            </div>                                                      
 
                             <table id="tblReprot1031" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
                                 <thead>
@@ -551,6 +779,10 @@
                     </div>
                 </div>
 
+            </div>
+
+            <div class="col-md-6">
+                
                 <div class="">
                     <div class="box box-solid">
                         <div class="box-header with-border">
@@ -590,9 +822,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-6">
                 <div class="">
                     <div class="box box-solid">
                         <div class="box-header with-border">
@@ -618,8 +848,8 @@
                                     <tr>
                                         <th class="">EmpCode</th>
                                         <th class="">EmpName</th>
-                                        <th class="">BKK</th>
-                                        <th class="">UPC</th>
+                                        <th class="">Ferrex Screw</th>
+                                        <th class="">Arrex Screw</th>
                                         <th class="">GrandTotal</th>
                                         <th class="">Traget</th>
                                         <th class="">Diff</th>

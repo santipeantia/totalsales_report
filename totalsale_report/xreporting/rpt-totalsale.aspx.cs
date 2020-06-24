@@ -15,10 +15,7 @@ namespace totalsale_report.xreporting
             {
                 if (Session["emp_id"] != null)
                 {
-                    //todo something......
-
-
-
+                    //todo something......                                       
                 }
                 else
                 {
@@ -29,6 +26,11 @@ namespace totalsale_report.xreporting
             {
 
             }
+        }
+
+        protected void btnPrint1031_click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('click');</script>");
         }
     }
 }
