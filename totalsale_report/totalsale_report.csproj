@@ -13879,6 +13879,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ds1036TotalSales.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rpt1014_AmpeliteProjects_r2.cs">
+      <DependentUpon>rpt1014_AmpeliteProjects_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\rpt1014_AmpeliteProjects.cs">
       <DependentUpon>rpt1014_AmpeliteProjects.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -13902,6 +13908,24 @@
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1034_TotalSales_r2.cs">
+      <DependentUpon>rpt1034_TotalSales_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpt1035_TotalSales_r2.cs">
+      <DependentUpon>rpt1035_TotalSales_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpt1036_TotalSales_r2.cs">
+      <DependentUpon>rpt1036_TotalSales_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rpt1036_TotalSales.cs">
       <DependentUpon>rpt1036_TotalSales.rpt</DependentUpon>
@@ -15412,6 +15436,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Reports\rpt1014_AmpeliteProjects_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1014_AmpeliteProjects_r2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rpt1014_AmpeliteProjects.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1014_AmpeliteProjects.cs</LastGenOutput>
@@ -15427,6 +15455,18 @@
     <EmbeddedResource Include="Reports\rpt1033_TotalSales_r2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1033_TotalSales_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1034_TotalSales_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1034_TotalSales_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1035_TotalSales_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1035_TotalSales_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1036_TotalSales_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1036_TotalSales_r2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rpt1036_TotalSales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
