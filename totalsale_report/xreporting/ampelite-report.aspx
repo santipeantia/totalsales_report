@@ -103,6 +103,16 @@
                     exportTableToExcel('tblReprot1013', filefulname)
                 });
 
+                var btnPdf1011 = $('#btnPdf1011')
+                btnPdf1011.click(function () {
+
+                    var rpt_id = '1011';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
 
             });
 
@@ -135,7 +145,11 @@
                     downloadLink.click();
                 }
             }
-                        
+
+             function pdfReportRender(rpt_id, sdate, edate) {
+                window.open('report-render.aspx?id=' + rpt_id + '&sdate=' + sdate + '&edate=' + edate, '_blank');
+            }
+
             jQuery(function ($) {
                 $(document).ajaxSend(function () {
                     $("#overlay").fadeIn(300);

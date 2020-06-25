@@ -13879,6 +13879,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ds1036TotalSales.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rpt1011_AmpeliteBKK_r2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt1011_AmpeliteBKK_r2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rpt1014_AmpeliteProjects_r2.cs">
       <DependentUpon>rpt1014_AmpeliteProjects_r2.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -15436,6 +15442,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Reports\rpt1011_AmpeliteBKK_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1011_AmpeliteBKK_r2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rpt1014_AmpeliteProjects_r2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1014_AmpeliteProjects_r2.cs</LastGenOutput>

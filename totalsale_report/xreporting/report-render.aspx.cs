@@ -45,6 +45,7 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "1036" && sdate != null && edate != null) { rpt1036(sdate, edate); }
                 else if (rpt_id == "1014" && sdate != null && edate != null) { rpt1014(sdate, edate); }
                 else if (rpt_id == "totalsale" && sdate != null && edate != null) { rptTotalSales(sdate, edate); }
+                else if (rpt_id == "1011" && sdate != null && edate != null) { rpt1011(sdate, edate); }
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
             else
@@ -422,6 +423,24 @@ namespace totalsale_report.xreporting
                 rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "ReportTotalSales" + strDate);
                 Response.End();        
 
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1011(string sdate, string edate)
+        {
+            try
+            {            
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1011_AmpeliteBKK_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1011_AmpeliteBKK" + strDate);
             }
             catch (Exception ex)
             {
