@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Data.OleDb;
 using CrystalDecisions.CrystalReports.Engine;
 using System.Security.Cryptography;
+using CrystalDecisions.Shared;
 
 
 namespace totalsale_report.xreporting
@@ -407,12 +408,20 @@ namespace totalsale_report.xreporting
                 //    rpt.SetParameterValue("edate", edate);
                 //    rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "rptTotalSales" + strDate);
                 //}
+
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales.rpt"));
                 rpt.SetParameterValue("sdate", sdate);
                 rpt.SetParameterValue("edate", edate);
-                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "ReportTotalSales" + strDate);
+
+                Response.Buffer = false;
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.ContentType = "application/pdf";
+                rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "ReportTotalSales" + strDate);
+                Response.End();        
+
             }
             catch (Exception ex)
             {
