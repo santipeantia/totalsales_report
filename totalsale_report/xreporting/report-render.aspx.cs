@@ -46,6 +46,9 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "1014" && sdate != null && edate != null) { rpt1014(sdate, edate); }
                 else if (rpt_id == "totalsale" && sdate != null && edate != null) { rptTotalSales(sdate, edate); }
                 else if (rpt_id == "1011" && sdate != null && edate != null) { rpt1011(sdate, edate); }
+                else if (rpt_id == "1012" && sdate != null && edate != null) { rpt1012(sdate, edate); }
+                else if (rpt_id == "1013" && sdate != null && edate != null) { rpt1013(sdate, edate); }
+                else if (rpt_id == "totalampelite" && sdate != null && edate != null) { rptTotalAmpelite(sdate, edate); }
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
             else
@@ -441,6 +444,67 @@ namespace totalsale_report.xreporting
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1011_AmpeliteBKK" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1012(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1012_AmpeliteUPC_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1012_AmpeliteUPC" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1013(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1013_AmpeliteUPCEast_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1013_AmpeliteUPCEast" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rptTotalAmpelite(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptTotalAmpelite.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
+                rpt.SetParameterValue("edate", edate);
+
+                Response.Buffer = false;
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.ContentType = "application/pdf";
+                rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "ReportTotalAmpelite" + strDate);
+                Response.End();
+
             }
             catch (Exception ex)
             {

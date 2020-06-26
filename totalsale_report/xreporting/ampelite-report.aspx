@@ -113,6 +113,36 @@
                     pdfReportRender(rpt_id, sdate, edate);
                 });
 
+                var btnPdf1012 = $('#btnPdf1012')
+                btnPdf1012.click(function () {
+
+                    var rpt_id = '1012';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1013 = $('#btnPdf1013')
+                btnPdf1013.click(function () {
+
+                    var rpt_id = '1013';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                 var btnDownload = $('#btnDownload')
+                btnDownload.click(function () {
+
+                    var rpt_id = 'totalampelite';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
 
             });
 
@@ -347,6 +377,7 @@
         <div id="overlay">
             <div class="cv-spinner">
                 <span class="spinner"></span>
+                <a href="#">content</a>
             </div>
         </div>
 
