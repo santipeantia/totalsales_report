@@ -55,6 +55,9 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "totalampelite" && sdate != null && edate != null) { rptTotalAmpelite(sdate, edate); }
                 else if (rpt_id == "1015" && sdate != null && edate != null) { rpt1015(sdate, edate); }
                 else if (rpt_id == "1038" && sdate != null && edate != null) { rpt1038(sdate, edate); }
+                else if (rpt_id == "1016" && sdate != null && edate != null) { rpt1016(sdate, edate); }
+                else if (rpt_id == "1039" && sdate != null && edate != null) { rpt1039(sdate, edate); }
+                else if (rpt_id == "totalscrew" && sdate != null && edate != null) { rpttotalscrew(sdate, edate); }
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
             else
@@ -423,5 +426,67 @@ namespace totalsale_report.xreporting
             }
         }
 
+        protected void rpt1016(string sdate, string edate)
+        {
+            try
+            {
+
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1016_ScrewArrex_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1016_ScrewArrex" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1039(string sdate, string edate)
+        {
+            try
+            {
+
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1039_ScrewArrex_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1039_ScrewArrex" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpttotalscrew(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptTotalScrew.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
+                rpt.SetParameterValue("edate", edate);
+
+                Response.Buffer = false;
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.ContentType = "application/pdf";
+                rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "ReportTotalScrew" + strDate);
+                Response.End();
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
     }
 }

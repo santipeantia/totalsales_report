@@ -155,6 +155,16 @@
                     pdfReportRender(rpt_id, sdate, edate);
                 });
 
+                var btnDownload = $('#btnDownload')
+                btnDownload.click(function () {
+
+                    var rpt_id = 'totalscrew';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
 
             });
 
