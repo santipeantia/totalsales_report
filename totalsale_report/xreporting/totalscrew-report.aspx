@@ -122,6 +122,56 @@
                     exportTableToExcel('tblReprot1041', filefulname)
                 });
 
+                var btnPdf1017 = $('#btnPdf1017')
+                btnPdf1017.click(function () {
+
+                    var rpt_id = '1017';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1018 = $('#btnPdf1018')
+                btnPdf1018.click(function () {
+
+                    var rpt_id = '1018';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1040 = $('#btnPdf1040')
+                btnPdf1040.click(function () {
+
+                    var rpt_id = '1040';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1041 = $('#btnPdf1041')
+                btnPdf1041.click(function () {
+
+                    var rpt_id = '1041';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnDownload = $('#btnDownload')
+                btnDownload.click(function () {
+
+                    var rpt_id = 'screwreport';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
             });
 
             function exportexcel() {
@@ -163,6 +213,10 @@
                 }
             }
 
+            function pdfReportRender(rpt_id, sdate, edate) {
+                //document.location = "report-render.aspx?id=" + a;
+                window.open('report-render.aspx?id=' + rpt_id + '&sdate=' + sdate + '&edate=' + edate, '_blank');
+            }
 
             jQuery(function ($) {
                 $(document).ajaxSend(function () {
@@ -361,7 +415,7 @@
                                                 <i class="fa fa-plus"></i>
                                             </button>
                                             <span class="btn-group">
-                                                <button id="btnDownload" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
+                                                <button id="btnDownload" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
                                                 <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Screen" onclick="window.print()"><i class="fa fa-credit-card"></i></button>
                                                 <button id="btnExportExcel" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Excel"><i class="fa fa-table"></i></button>
                                             </span>
@@ -424,7 +478,7 @@
                                 <button type="button" id="btnExcel1017" class="btn btn-default btn-sm" data-toggle="tooltip" title="Excel"><i class="fa fa-table text-green"></i></button>
                             </span>
 
-                            <label class="txtLabel">[1017] Total Screw</label>
+                            <label class="txtLabel">[1017] Total Screw (ส่วนกลาง)</label>
                         </div>
                         <div class="box-body">
                             <div class="cv-spinner" id="loaderDiv1017">
