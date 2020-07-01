@@ -94,7 +94,8 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-4">
-                        <button type="button" id="btnHome" runat="server" class="btn btn-warning btn-block btn-flat">Home</button>
+                        <button type="button" id="btnHome" runat="server" class="btn btn-warning btn-block btn-flat hidden">Home</button>
+                        <a href="http://192.168.1.4/MainCenter.aspx"  class="btn btn-warning btn-block btn-flat" > HOME</a>
                     </div>
 
                     <div class="col-xs-4">

@@ -1,1 +1,1 @@
-﻿server=SANTI-IT;database=DB_TotalSalesReport;uid=sa;pwd=AmpelitE88;
+﻿server=192.168.1.13;database=DB_TotalSalesReport;uid=sa;pwd=AmpelitE88;

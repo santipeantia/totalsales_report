@@ -27,6 +27,10 @@ namespace totalsale_report.xreporting
         ReportDocument rpt = new ReportDocument();
 
         public string strMsgAlert = "";
+        public string strUser = "sa";
+        public string strPassword = "AmpelitE88";
+        public string strServer = "192.168.1.13";
+        public string strSource = "DB_TotalSalesReport";
         string ssql;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -49,6 +53,8 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "1012" && sdate != null && edate != null) { rpt1012(sdate, edate); }
                 else if (rpt_id == "1013" && sdate != null && edate != null) { rpt1013(sdate, edate); }
                 else if (rpt_id == "totalampelite" && sdate != null && edate != null) { rptTotalAmpelite(sdate, edate); }
+                else if (rpt_id == "1015" && sdate != null && edate != null) { rpt1015(sdate, edate); }
+                else if (rpt_id == "1038" && sdate != null && edate != null) { rpt1038(sdate, edate); }
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
             else
@@ -200,34 +206,7 @@ namespace totalsale_report.xreporting
         {
             try
             {
-                //string strDate = DateTime.Now.ToString("yyyy-MM-dd");
-                //ssql = "spRpt1034_TotalSales_crs";
-
-                //Conn = dbConn.OpenConn();
-                //Comm = new SqlCommand(ssql);
-                //Comm.Connection = Conn;
-                //Comm.CommandType = CommandType.StoredProcedure;
-                //Comm.Parameters.AddWithValue("@sdate", sdate);
-                //Comm.Parameters.AddWithValue("@edate", edate);
-
-                //da = new SqlDataAdapter(Comm);
-
-                //dt = new DataTable();
-                //da.Fill(dt);
-
-                //if (dt.Rows.Count != 0)
-                //{
-                //    rpt.Load(Server.MapPath("../Reports/rpt1034_TotalSales.rpt"));
-
-                //    Reports.ds1034TotalSales ds1034TotalSales = new Reports.ds1034TotalSales();
-                //    ds1034TotalSales.Merge(dt);
-
-                //    rpt.SetDataSource(dt);
-                //    rpt.SetParameterValue("sdate", sdate);
-                //    rpt.SetParameterValue("edate", edate);
-                //    rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1034_TotalSales" + strDate);
-                //}
-
+               
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1034_TotalSales_r2.rpt"));
@@ -246,34 +225,7 @@ namespace totalsale_report.xreporting
         {
             try
             {
-            //    string strDate = DateTime.Now.ToString("yyyy-MM-dd");
-            //    ssql = "spRpt1035_TotalSales_crs";
-
-            //    Conn = dbConn.OpenConn();
-            //    Comm = new SqlCommand(ssql);
-            //    Comm.Connection = Conn;
-            //    Comm.CommandType = CommandType.StoredProcedure;
-            //    Comm.Parameters.AddWithValue("@sdate", sdate);
-            //    Comm.Parameters.AddWithValue("@edate", edate);
-
-            //    da = new SqlDataAdapter(Comm);
-
-            //    dt = new DataTable();
-            //    da.Fill(dt);
-
-            //    if (dt.Rows.Count != 0)
-            //    {
-            //        rpt.Load(Server.MapPath("../Reports/rpt1035_TotalSales.rpt"));
-
-            //        Reports.ds1035TotalSales ds1035TotalSales = new Reports.ds1035TotalSales();
-            //        ds1035TotalSales.Merge(dt);
-
-            //        rpt.SetDataSource(dt);
-            //        rpt.SetParameterValue("sdate", sdate);
-            //        rpt.SetParameterValue("edate", edate);
-            //        rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1035_TotalSales" + strDate);
-            //    }
-
+           
             string strDate = DateTime.Now.ToString("yyyy-MM-dd");
             rpt = new ReportDocument();
             rpt.Load(Server.MapPath("../Reports/rpt1035_TotalSales_r2.rpt"));
@@ -293,34 +245,7 @@ namespace totalsale_report.xreporting
         {
             try
             {
-                //string strDate = DateTime.Now.ToString("yyyy-MM-dd");
-                //ssql = "spRpt1036_TotalSales_crs";
-
-                //Conn = dbConn.OpenConn();
-                //Comm = new SqlCommand(ssql);
-                //Comm.Connection = Conn;
-                //Comm.CommandType = CommandType.StoredProcedure;
-                //Comm.Parameters.AddWithValue("@sdate", sdate);
-                //Comm.Parameters.AddWithValue("@edate", edate);
-
-                //da = new SqlDataAdapter(Comm);
-
-                //dt = new DataTable();
-                //da.Fill(dt);
-
-                //if (dt.Rows.Count != 0)
-                //{
-                //    rpt.Load(Server.MapPath("../Reports/rpt1036_TotalSales.rpt"));
-
-                //    Reports.ds1036TotalSales ds1036TotalSales = new Reports.ds1036TotalSales();
-                //    ds1036TotalSales.Merge(dt);
-
-                //    rpt.SetDataSource(dt);
-                //    rpt.SetParameterValue("sdate", sdate);
-                //    rpt.SetParameterValue("edate", edate);
-                //    rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1036_TotalSales" + strDate);
-                //}
-
+                
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1036_TotalSales_r2.rpt"));
@@ -339,34 +264,7 @@ namespace totalsale_report.xreporting
         {
             try
             {
-                //string strDate = DateTime.Now.ToString("yyyy-MM-dd");
-                //ssql = "spRpt1014_AmpeliteProjects_crs";
-
-                //Conn = dbConn.OpenConn();
-                //Comm = new SqlCommand(ssql);
-                //Comm.Connection = Conn;
-                //Comm.CommandType = CommandType.StoredProcedure;
-                //Comm.Parameters.AddWithValue("@sdate", sdate);
-                //Comm.Parameters.AddWithValue("@edate", edate);
-
-                //da = new SqlDataAdapter(Comm);
-
-                //dt = new DataTable();
-                //da.Fill(dt);
-
-                //if (dt.Rows.Count != 0)
-                //{
-                //    rpt.Load(Server.MapPath("../Reports/rpt1014_AmpeliteProjects.rpt"));
-
-                //    Reports.ds1014AmpelProject ds1014AmpelProject = new Reports.ds1014AmpelProject();
-                //    ds1014AmpelProject.Merge(dt);
-
-                //    rpt.SetDataSource(dt);
-                //    rpt.SetParameterValue("sdate", sdate);
-                //    rpt.SetParameterValue("edate", edate);
-                //    rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1014_AmpeliteProjects" + strDate);
-                //}
-
+                
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1014_AmpeliteProjects_r2.rpt"));
@@ -385,34 +283,7 @@ namespace totalsale_report.xreporting
         {
             try
             {
-                //string strDate = DateTime.Now.ToString("yyyy-MM-dd");
-                //ssql = "spRpt1014_AmpeliteProjects_crs";
-
-                //Conn = dbConn.OpenConn();
-                //Comm = new SqlCommand(ssql);
-                //Comm.Connection = Conn;
-                //Comm.CommandType = CommandType.StoredProcedure;
-                //Comm.Parameters.AddWithValue("@sdate", sdate);
-                //Comm.Parameters.AddWithValue("@edate", edate);
-
-                //da = new SqlDataAdapter(Comm);
-
-                //dt = new DataTable();
-                //da.Fill(dt);
-
-                //if (dt.Rows.Count != 0)
-                //{
-                //    rpt.Load(Server.MapPath("../Reports/rptTotalSales.rpt"));
-
-                //    Reports.ds1014AmpelProject ds1014AmpelProject = new Reports.ds1014AmpelProject();
-                //    ds1014AmpelProject.Merge(dt);
-
-                //    rpt.SetDataSource(dt);
-                //    rpt.SetParameterValue("sdate", sdate);
-                //    rpt.SetParameterValue("edate", edate);
-                //    rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "rptTotalSales" + strDate);
-                //}
-
+                
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales.rpt"));
@@ -512,5 +383,45 @@ namespace totalsale_report.xreporting
                 return;
             }
         }
+
+        protected void rpt1015(string sdate, string edate)
+        {
+            try
+            {
+               
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1015_ScrewFerrex_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1015_ScrewFerrex" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1038(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+
+                rpt.Load(Server.MapPath("../Reports/rpt1038_ScrewFerrex_r2.rpt"));
+                //rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1038_ScrewFerrex" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
     }
 }

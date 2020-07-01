@@ -13897,6 +13897,24 @@
       <DependentUpon>rpt1011_AmpeliteBKK_r2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rpt1016_ScrewArrex_r2.cs">
+      <DependentUpon>rpt1016_ScrewArrex_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1038_ScrewFerrex_r2.cs">
+      <DependentUpon>rpt1038_ScrewFerrex_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1015_ScrewFerrex_r2.cs">
+      <DependentUpon>rpt1015_ScrewFerrex_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\rpt1014_AmpeliteProjects_r2.cs">
       <DependentUpon>rpt1014_AmpeliteProjects_r2.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -15471,6 +15489,18 @@
     <EmbeddedResource Include="Reports\rpt1011_AmpeliteBKK_r2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1011_AmpeliteBKK_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1016_ScrewArrex_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1016_ScrewArrex_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1038_ScrewFerrex_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1038_ScrewFerrex_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1015_ScrewFerrex_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1015_ScrewFerrex_r2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rpt1014_AmpeliteProjects_r2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

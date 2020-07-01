@@ -114,6 +114,48 @@
                     var filefulname = '[1039] Screw Arrex (ส่วนภูมิภาค)' + '_from_' + datepickerstart + '_to_' + datepickerend;
                     exportTableToExcel('tblReprot1039', filefulname)
                 });
+
+                var btnPdf1015 = $('#btnPdf1015')
+                btnPdf1015.click(function () {
+
+                    var rpt_id = '1015';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1038 = $('#btnPdf1038')
+                btnPdf1038.click(function () {
+
+                    var rpt_id = '1038';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1016 = $('#btnPdf1016')
+                btnPdf1016.click(function () {
+
+                    var rpt_id = '1016';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1039 = $('#btnPdf1039')
+                btnPdf1039.click(function () {
+
+                    var rpt_id = '1039';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+
             });
 
             function exportTableToExcel(tableID, filename = '') {
@@ -164,6 +206,11 @@
                     });
                 });
             });
+
+            function pdfReportRender(rpt_id, sdate, edate) {
+                //document.location = "report-render.aspx?id=" + a;
+                window.open('report-render.aspx?id=' + rpt_id + '&sdate=' + sdate + '&edate=' + edate, '_blank');
+            }
 
             function getReprot1015(sdate, edate) {
                 $.ajax({
