@@ -63,6 +63,10 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "1040" && sdate != null && edate != null) { rpt1040(sdate, edate); }
                 else if (rpt_id == "1041" && sdate != null && edate != null) { rpt1041(sdate, edate); }
                 else if (rpt_id == "screwreport" && sdate != null && edate != null) { rptscrewreport(sdate, edate); }
+                else if (rpt_id == "1019" && sdate != null && edate != null) { rpt1019(sdate, edate); }
+                else if (rpt_id == "1020" && sdate != null && edate != null) { rpt1020(sdate, edate); }
+                else if (rpt_id == "amperamampelflowreport" && sdate != null && edate != null) { rptamperamampelflowreport(sdate, edate); }
+                
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
             else
@@ -584,6 +588,67 @@ namespace totalsale_report.xreporting
                 Response.ClearHeaders();
                 Response.ContentType = "application/pdf";
                 rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "Report_TotalScrew" + strDate);
+                Response.End();
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1019(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1019_Amperam_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1019_Amperam" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1020(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1020_AmpelFlow_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1020_AmpelFlow" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rptamperamampelflowreport(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptAmperamAmpelflowReport.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
+                rpt.SetParameterValue("edate", edate);
+
+                Response.Buffer = false;
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.ContentType = "application/pdf";
+                rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "rptAmperamAmpelflowReport" + strDate);
                 Response.End();
 
             }

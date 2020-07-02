@@ -95,7 +95,36 @@
                     var filefulname = '[1020] AMPELFLOW' + '_from_' + datepickerstart + '_to_' + datepickerend;
                     exportTableToExcel('tblReprot1020', filefulname)
                 });
+                
+                var btnPdf1019 = $('#btnPdf1019')
+                btnPdf1019.click(function () {
 
+                    var rpt_id = '1019';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1020 = $('#btnPdf1020')
+                btnPdf1020.click(function () {
+
+                    var rpt_id = '1020';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnDownload = $('#btnDownload')
+                btnDownload.click(function () {
+
+                    var rpt_id = 'amperamampelflowreport';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
 
             });
 
@@ -130,7 +159,11 @@
                 }
             }
 
-             jQuery(function ($) {
+            function pdfReportRender(rpt_id, sdate, edate) {
+                window.open('report-render.aspx?id=' + rpt_id + '&sdate=' + sdate + '&edate=' + edate, '_blank');
+            }
+            
+            jQuery(function ($) {
                 $(document).ajaxSend(function () {
                     $("#overlay").fadeIn(300);
                 });
@@ -280,7 +313,7 @@
                                                 <i class="fa fa-plus"></i>
                                             </button>
                                             <span class="btn-group">
-                                                <button id="btnDownload" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
+                                                <button id="btnDownload" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
                                                 <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Screen" onclick="window.print()"><i class="fa fa-credit-card"></i></button>
                                                 <button id="btnExportExcel" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Excel"><i class="fa fa-table"></i></button>
                                             </span>
