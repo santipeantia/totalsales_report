@@ -72,7 +72,12 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "amperamampelflowreport" && sdate != null && edate != null) { rptamperamampelflowreport(sdate, edate); }
 
                 else if (rpt_id == "1021" && sdate != null && edate != null) { rpt1021(sdate, edate); }
+                else if (rpt_id == "1042" && sdate != null && edate != null) { rpt1042(sdate, edate); }
                 else if (rpt_id == "1022" && sdate != null && edate != null) { rpt1022(sdate, edate); }
+                else if (rpt_id == "1023" && sdate != null && edate != null) { rpt1023(sdate, edate); }
+                else if (rpt_id == "1024" && sdate != null && edate != null) { rpt1024(sdate, edate); }
+                else if (rpt_id == "1025" && sdate != null && edate != null) { rpt1025(sdate, edate); }
+                else if (rpt_id == "managerdlite" && sdate != null && edate != null) { rptmanagerdlitereport(sdate, edate); }
 
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
@@ -694,6 +699,103 @@ namespace totalsale_report.xreporting
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1022_DLiteUPC" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1042(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1042_ScrewAccessories_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1042_ScrewAccessories" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1023(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1023_ScrewAccessories_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1023_ScrewAccessories" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1024(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1024_ManagerDLite_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1024_ManagerDLite" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1025(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1025_ManagerScrew_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1025_ManagerScrew" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rptmanagerdlitereport(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptManagerDLiteReport.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
+                rpt.SetParameterValue("edate", edate);
+
+                Response.Buffer = false;
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.ContentType = "application/pdf";
+                rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "rptManagerDLiteReport" + strDate);
+                Response.End();
+
             }
             catch (Exception ex)
             {

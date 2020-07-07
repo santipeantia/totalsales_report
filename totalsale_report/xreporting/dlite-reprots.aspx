@@ -154,12 +154,61 @@
                     pdfReportRender(rpt_id, sdate, edate);
                 });
 
+                var btnPdf1042 = $('#btnPdf1042')
+                btnPdf1042.click(function () {
+
+                    var rpt_id = '1042';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
 
 
                 var btnPdf1022 = $('#btnPdf1022')
                 btnPdf1022.click(function () {
 
                     var rpt_id = '1022';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1023 = $('#btnPdf1023')
+                btnPdf1023.click(function () {
+
+                    var rpt_id = '1023';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1024 = $('#btnPdf1024')
+                btnPdf1024.click(function () {
+
+                    var rpt_id = '1024';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1025 = $('#btnPdf1025')
+                btnPdf1025.click(function () {
+
+                    var rpt_id = '1025';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnDownload = $('#btnDownload')
+                btnDownload.click(function () {
+
+                    var rpt_id = 'managerdlite';
                     var sdate = $('#datepickerstart').val();
                     var edate = $('#datepickerend').val();
 
@@ -514,7 +563,7 @@
                                                 <i class="fa fa-plus"></i>
                                             </button>
                                             <span class="btn-group">
-                                                <button id="btnDownload" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
+                                                <button id="btnDownload" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
                                                 <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Screen" onclick="window.print()"><i class="fa fa-credit-card"></i></button>
                                                 <button id="btnExportExcel" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Excel"><i class="fa fa-table"></i></button>
                                             </span>

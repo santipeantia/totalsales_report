@@ -13,15 +13,6 @@ namespace totalsale_report.xreporting {
     public partial class dlite_reprots {
         
         /// <summary>
-        /// btnDownload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnDownload;
-        
-        /// <summary>
         /// btnExportExcel control.
         /// </summary>
         /// <remarks>
