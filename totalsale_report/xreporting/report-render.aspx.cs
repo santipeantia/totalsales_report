@@ -49,24 +49,31 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "1036" && sdate != null && edate != null) { rpt1036(sdate, edate); }
                 else if (rpt_id == "1014" && sdate != null && edate != null) { rpt1014(sdate, edate); }
                 else if (rpt_id == "totalsale" && sdate != null && edate != null) { rptTotalSales(sdate, edate); }
+
                 else if (rpt_id == "1011" && sdate != null && edate != null) { rpt1011(sdate, edate); }
                 else if (rpt_id == "1012" && sdate != null && edate != null) { rpt1012(sdate, edate); }
                 else if (rpt_id == "1013" && sdate != null && edate != null) { rpt1013(sdate, edate); }
                 else if (rpt_id == "totalampelite" && sdate != null && edate != null) { rptTotalAmpelite(sdate, edate); }
+
                 else if (rpt_id == "1015" && sdate != null && edate != null) { rpt1015(sdate, edate); }
                 else if (rpt_id == "1038" && sdate != null && edate != null) { rpt1038(sdate, edate); }
                 else if (rpt_id == "1016" && sdate != null && edate != null) { rpt1016(sdate, edate); }
                 else if (rpt_id == "1039" && sdate != null && edate != null) { rpt1039(sdate, edate); }
                 else if (rpt_id == "totalscrew" && sdate != null && edate != null) { rpttotalscrew(sdate, edate); }
+
                 else if (rpt_id == "1017" && sdate != null && edate != null) { rpt1017(sdate, edate); }
                 else if (rpt_id == "1018" && sdate != null && edate != null) { rpt1018(sdate, edate); }
                 else if (rpt_id == "1040" && sdate != null && edate != null) { rpt1040(sdate, edate); }
                 else if (rpt_id == "1041" && sdate != null && edate != null) { rpt1041(sdate, edate); }
                 else if (rpt_id == "screwreport" && sdate != null && edate != null) { rptscrewreport(sdate, edate); }
+
                 else if (rpt_id == "1019" && sdate != null && edate != null) { rpt1019(sdate, edate); }
                 else if (rpt_id == "1020" && sdate != null && edate != null) { rpt1020(sdate, edate); }
                 else if (rpt_id == "amperamampelflowreport" && sdate != null && edate != null) { rptamperamampelflowreport(sdate, edate); }
-                
+
+                else if (rpt_id == "1021" && sdate != null && edate != null) { rpt1021(sdate, edate); }
+                else if (rpt_id == "1022" && sdate != null && edate != null) { rpt1022(sdate, edate); }
+
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
             else
@@ -651,6 +658,42 @@ namespace totalsale_report.xreporting
                 rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "rptAmperamAmpelflowReport" + strDate);
                 Response.End();
 
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1021(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1021_DLiteBkk_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1021_DLiteBkk" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1022(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1022_DLiteUPC_r2.rpt"));
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1022_DLiteUPC" + strDate);
             }
             catch (Exception ex)
             {

@@ -143,9 +143,34 @@
                     exportTableToExcel('tblReprot1025', filefulname)
                 });
 
+
+                var btnPdf1021 = $('#btnPdf1021')
+                btnPdf1021.click(function () {
+
+                    var rpt_id = '1021';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+
+
+                var btnPdf1022 = $('#btnPdf1022')
+                btnPdf1022.click(function () {
+
+                    var rpt_id = '1022';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+
+
             });
 
-             function exportTableToExcel(tableID, filename = '') {
+            function exportTableToExcel(tableID, filename = '') {
                 var downloadLink;
                 var dataType = 'application/vnd.ms-excel';
                 var tableSelect = document.getElementById(tableID);
@@ -176,7 +201,10 @@
                 }
             }
 
-             jQuery(function ($) {
+            function pdfReportRender(rpt_id, sdate, edate) {
+                window.open('report-render.aspx?id=' + rpt_id + '&sdate=' + sdate + '&edate=' + edate, '_blank');
+            }
+            jQuery(function ($) {
                 $(document).ajaxSend(function () {
                     $("#overlay").fadeIn(300);
                 });

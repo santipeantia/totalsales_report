@@ -13897,6 +13897,18 @@
       <DependentUpon>rpt1011_AmpeliteBKK_r2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rpt1022_DLiteUPC_r2.cs">
+      <DependentUpon>rpt1022_DLiteUPC_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpt1021_DLiteBkk_r2.cs">
+      <DependentUpon>rpt1021_DLiteBkk_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\rpt1020_AmpelFlow_r2.cs">
       <DependentUpon>rpt1020_AmpelFlow_r2.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -14043,6 +14055,12 @@
     </Compile>
     <Compile Include="Reports\rptAmperamAmpelflowReport.cs">
       <DependentUpon>rptAmperamAmpelflowReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptAllinOneReport.cs">
+      <DependentUpon>rptAllinOneReport.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -15550,6 +15568,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1011_AmpeliteBKK_r2.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1022_DLiteUPC_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1022_DLiteUPC_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1021_DLiteBkk_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1021_DLiteBkk_r2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rpt1020_AmpelFlow_r2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1020_AmpelFlow_r2.cs</LastGenOutput>
@@ -15649,6 +15675,10 @@
     <EmbeddedResource Include="Reports\rptAmperamAmpelflowReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptAmperamAmpelflowReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptAllinOneReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAllinOneReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTotalScrewReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

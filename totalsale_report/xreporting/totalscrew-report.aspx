@@ -246,7 +246,7 @@
                         edate: edate
                     },
                     datatype: 'json',
-                    beforeSend: function () {
+                     beforeSend: function () {
                         $("#tblReprot1017 tr td").remove();
                         $("#loaderDiv1017").show();
                     },
@@ -489,7 +489,6 @@
                                     <tr>
                                         <th class="">id</th>
                                         <th class="">No</th>
-                                        <th class="">emp_id</th>
                                         <th class="">EmpName</th>
                                         <th class="">TeamGroup</th>
                                         <th class="">TeamName</th>
