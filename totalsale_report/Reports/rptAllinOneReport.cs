@@ -178,7 +178,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection15 {
             get {
                 return this.ReportDefinition.Sections[16];
             }
@@ -186,9 +186,57 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection14 {
             get {
                 return this.ReportDefinition.Sections[17];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection16 {
+            get {
+                return this.ReportDefinition.Sections[18];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection17 {
+            get {
+                return this.ReportDefinition.Sections[19];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection18 {
+            get {
+                return this.ReportDefinition.Sections[20];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection19 {
+            get {
+                return this.ReportDefinition.Sections[21];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[22];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[23];
             }
         }
         
@@ -338,7 +386,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1031_TotalSales_r2rpt_sdate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1021_DLiteBkk_r2rpt_sdate {
             get {
                 return this.DataDefinition.ParameterFields[18];
             }
@@ -346,7 +394,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1031_TotalSales_r2rpt_edate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1021_DLiteBkk_r2rpt_edate {
             get {
                 return this.DataDefinition.ParameterFields[19];
             }
@@ -354,7 +402,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1032_TotalSales_r2rpt_sdate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1022_DLiteUPC_r2rpt_sdate {
             get {
                 return this.DataDefinition.ParameterFields[20];
             }
@@ -362,7 +410,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1032_TotalSales_r2rpt_edate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1022_DLiteUPC_r2rpt_edate {
             get {
                 return this.DataDefinition.ParameterFields[21];
             }
@@ -370,7 +418,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1033_TotalSales_r2rpt_sdate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1023_ScrewAccessories_r2rpt_sdate {
             get {
                 return this.DataDefinition.ParameterFields[22];
             }
@@ -378,7 +426,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1033_TotalSales_r2rpt_edate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1023_ScrewAccessories_r2rpt_edate {
             get {
                 return this.DataDefinition.ParameterFields[23];
             }
@@ -386,7 +434,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1034_TotalSales_r2rpt_sdate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1024_ManagerDLIte_r2rpt_sdate {
             get {
                 return this.DataDefinition.ParameterFields[24];
             }
@@ -394,7 +442,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1034_TotalSales_r2rpt_edate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1024_ManagerDLIte_r2rpt_edate {
             get {
                 return this.DataDefinition.ParameterFields[25];
             }
@@ -402,7 +450,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1035_TotalSales_r2rpt_sdate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1025_ManagerScrew_r2rpt_sdate {
             get {
                 return this.DataDefinition.ParameterFields[26];
             }
@@ -410,7 +458,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1035_TotalSales_r2rpt_edate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1025_ManagerScrew_r2rpt_edate {
             get {
                 return this.DataDefinition.ParameterFields[27];
             }
@@ -418,7 +466,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1036_TotalSales_r2rpt_sdate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1031_TotalSales_r2rpt_sdate {
             get {
                 return this.DataDefinition.ParameterFields[28];
             }
@@ -426,7 +474,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1036_TotalSales_r2rpt_edate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1031_TotalSales_r2rpt_edate {
             get {
                 return this.DataDefinition.ParameterFields[29];
             }
@@ -434,7 +482,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1038_ScrewFerrex_r2rpt_sdate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1032_TotalSales_r2rpt_sdate {
             get {
                 return this.DataDefinition.ParameterFields[30];
             }
@@ -442,7 +490,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1038_ScrewFerrex_r2rpt_edate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1032_TotalSales_r2rpt_edate {
             get {
                 return this.DataDefinition.ParameterFields[31];
             }
@@ -450,7 +498,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1039_ScrewArrex_r2rpt_sdate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1033_TotalSales_r2rpt_sdate {
             get {
                 return this.DataDefinition.ParameterFields[32];
             }
@@ -458,9 +506,105 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_rpt1039_ScrewArrex_r2rpt_edate {
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1033_TotalSales_r2rpt_edate {
             get {
                 return this.DataDefinition.ParameterFields[33];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1034_TotalSales_r2rpt_sdate {
+            get {
+                return this.DataDefinition.ParameterFields[34];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1034_TotalSales_r2rpt_edate {
+            get {
+                return this.DataDefinition.ParameterFields[35];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1035_TotalSales_r2rpt_sdate {
+            get {
+                return this.DataDefinition.ParameterFields[36];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1035_TotalSales_r2rpt_edate {
+            get {
+                return this.DataDefinition.ParameterFields[37];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1036_TotalSales_r2rpt_sdate {
+            get {
+                return this.DataDefinition.ParameterFields[38];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1036_TotalSales_r2rpt_edate {
+            get {
+                return this.DataDefinition.ParameterFields[39];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1038_ScrewFerrex_r2rpt_sdate {
+            get {
+                return this.DataDefinition.ParameterFields[40];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1038_ScrewFerrex_r2rpt_edate {
+            get {
+                return this.DataDefinition.ParameterFields[41];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1039_ScrewArrex_r2rpt_sdate {
+            get {
+                return this.DataDefinition.ParameterFields[42];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1039_ScrewArrex_r2rpt_edate {
+            get {
+                return this.DataDefinition.ParameterFields[43];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1042_ScrewAccessories_r2rpt_sdate {
+            get {
+                return this.DataDefinition.ParameterFields[44];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_rpt1042_ScrewAccessories_r2rpt_edate {
+            get {
+                return this.DataDefinition.ParameterFields[45];
             }
         }
     }
