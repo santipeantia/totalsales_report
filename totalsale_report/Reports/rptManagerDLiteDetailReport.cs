@@ -16,14 +16,14 @@ namespace totalsale_report.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptTotalAmpelite : ReportClass {
+    public class rptManagerDLiteDetailReport : ReportClass {
         
-        public rptTotalAmpelite() {
+        public rptManagerDLiteDetailReport() {
         }
         
         public override string ResourceName {
             get {
-                return "rptTotalAmpelite.rpt";
+                return "rptManagerDLiteDetailReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace totalsale_report.Reports {
         
         public override string FullResourceName {
             get {
-                return "totalsale_report.Reports.rptTotalAmpelite.rpt";
+                return "totalsale_report.Reports.rptManagerDLiteDetailReport.rpt";
             }
             set {
                 // Do nothing
@@ -122,9 +122,9 @@ namespace totalsale_report.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptTotalAmpelite : Component, ICachedReport {
+    public class CachedrptManagerDLiteDetailReport : Component, ICachedReport {
         
-        public CachedrptTotalAmpelite() {
+        public CachedrptManagerDLiteDetailReport() {
         }
         
         [Browsable(false)]
@@ -161,7 +161,7 @@ namespace totalsale_report.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptTotalAmpelite rpt = new rptTotalAmpelite();
+            rptManagerDLiteDetailReport rpt = new rptManagerDLiteDetailReport();
             rpt.Site = this.Site;
             return rpt;
         }

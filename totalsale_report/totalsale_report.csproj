@@ -13897,6 +13897,18 @@
       <DependentUpon>rpt1011_AmpeliteBKK_r2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rpt1030_ManagerDLiteDetail_r2.cs">
+      <DependentUpon>rpt1030_ManagerDLiteDetail_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1029_ManagerDLiteDetail_r2.cs">
+      <DependentUpon>rpt1029_ManagerDLiteDetail_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\rpt1025_ManagerScrew_r2.cs">
       <DependentUpon>rpt1025_ManagerScrew_r2.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -14091,6 +14103,12 @@
     </Compile>
     <Compile Include="Reports\rptManagerDLiteReport.cs">
       <DependentUpon>rptManagerDLiteReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptManagerDLiteDetailReport.cs">
+      <DependentUpon>rptManagerDLiteDetailReport.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -15598,6 +15616,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1011_AmpeliteBKK_r2.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1030_ManagerDLiteDetail_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1030_ManagerDLiteDetail_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1029_ManagerDLiteDetail_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1029_ManagerDLiteDetail_r2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rpt1025_ManagerScrew_r2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1025_ManagerScrew_r2.cs</LastGenOutput>
@@ -15729,6 +15755,10 @@
     <EmbeddedResource Include="Reports\rptManagerDLiteReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptManagerDLiteReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptManagerDLiteDetailReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptManagerDLiteDetailReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTotalScrewReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

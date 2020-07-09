@@ -95,6 +95,37 @@
                     exportTableToExcel('tblReprot1030', filefulname)
                 });
 
+                var btnPdf1029 = $('#btnPdf1029')
+                btnPdf1029.click(function () {
+
+                    var rpt_id = '1029';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnPdf1030 = $('#btnPdf1030')
+                btnPdf1030.click(function () {
+
+                    var rpt_id = '1030';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnDownload = $('#btnDownload')
+                btnDownload.click(function () {
+
+                    var rpt_id = 'managerdlitedetail';
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    pdfReportRender(rpt_id, sdate, edate);
+                });
+
+
             });
 
             function exportTableToExcel(tableID, filename = '') {
@@ -126,6 +157,10 @@
                     //triggering the function
                     downloadLink.click();
                 }
+            }
+
+            function pdfReportRender(rpt_id, sdate, edate) {
+                window.open('report-render.aspx?id=' + rpt_id + '&sdate=' + sdate + '&edate=' + edate, '_blank');
             }
 
             function getReprot1029(sdate, edate) {
@@ -255,7 +290,7 @@
                                                 <i class="fa fa-plus"></i>
                                             </button>
                                             <span class="btn-group">
-                                                <button id="btnDownload" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
+                                                <button id="btnDownload" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
                                                 <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Screen" onclick="window.print()"><i class="fa fa-credit-card"></i></button>
                                                 <button id="btnExportExcel" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Excel"><i class="fa fa-table"></i></button>
                                             </span>

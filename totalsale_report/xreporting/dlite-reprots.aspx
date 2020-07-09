@@ -164,7 +164,6 @@
                     pdfReportRender(rpt_id, sdate, edate);
                 });
 
-
                 var btnPdf1022 = $('#btnPdf1022')
                 btnPdf1022.click(function () {
 
@@ -253,6 +252,7 @@
             function pdfReportRender(rpt_id, sdate, edate) {
                 window.open('report-render.aspx?id=' + rpt_id + '&sdate=' + sdate + '&edate=' + edate, '_blank');
             }
+
             jQuery(function ($) {
                 $(document).ajaxSend(function () {
                     $("#overlay").fadeIn(300);

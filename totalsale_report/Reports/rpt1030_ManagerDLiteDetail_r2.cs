@@ -16,14 +16,14 @@ namespace totalsale_report.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptTotalAmpelite : ReportClass {
+    public class rpt1030_ManagerDLiteDetail_r2 : ReportClass {
         
-        public rptTotalAmpelite() {
+        public rpt1030_ManagerDLiteDetail_r2() {
         }
         
         public override string ResourceName {
             get {
-                return "rptTotalAmpelite.rpt";
+                return "rpt1030_ManagerDLiteDetail_r2.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace totalsale_report.Reports {
         
         public override string FullResourceName {
             get {
-                return "totalsale_report.Reports.rptTotalAmpelite.rpt";
+                return "totalsale_report.Reports.rpt1030_ManagerDLiteDetail_r2.rpt";
             }
             set {
                 // Do nothing
@@ -74,7 +74,7 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,25 +82,9 @@ namespace totalsale_report.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection2 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
         
@@ -122,9 +106,9 @@ namespace totalsale_report.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptTotalAmpelite : Component, ICachedReport {
+    public class Cachedrpt1030_ManagerDLiteDetail_r2 : Component, ICachedReport {
         
-        public CachedrptTotalAmpelite() {
+        public Cachedrpt1030_ManagerDLiteDetail_r2() {
         }
         
         [Browsable(false)]
@@ -161,7 +145,7 @@ namespace totalsale_report.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptTotalAmpelite rpt = new rptTotalAmpelite();
+            rpt1030_ManagerDLiteDetail_r2 rpt = new rpt1030_ManagerDLiteDetail_r2();
             rpt.Site = this.Site;
             return rpt;
         }

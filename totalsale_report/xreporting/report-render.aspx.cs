@@ -79,6 +79,10 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "1025" && sdate != null && edate != null) { rpt1025(sdate, edate); }
                 else if (rpt_id == "managerdlite" && sdate != null && edate != null) { rptmanagerdlitereport(sdate, edate); }
 
+                else if (rpt_id == "1029" && sdate != null && edate != null) { rpt1029(sdate, edate); }
+                else if (rpt_id == "1030" && sdate != null && edate != null) { rpt1030(sdate, edate); }
+                else if (rpt_id == "managerdlitedetail" && sdate != null && edate != null) { rptmanagerdlitedetailreport(sdate, edate); }
+
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
             else
@@ -121,6 +125,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1031_TotalSales_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1031_TotalSales" + strDate);
@@ -169,6 +174,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1032_TotalSales_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1032_TotalSales" + strDate);
@@ -215,6 +221,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1033_TotalSales_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1033_TotalSales" + strDate);
@@ -234,6 +241,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1034_TotalSales_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1034_TotalSales" + strDate);
@@ -251,8 +259,9 @@ namespace totalsale_report.xreporting
             {
            
             string strDate = DateTime.Now.ToString("yyyy-MM-dd");
-            rpt = new ReportDocument();
+            rpt = new ReportDocument();            
             rpt.Load(Server.MapPath("../Reports/rpt1035_TotalSales_r2.rpt"));
+            rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
             rpt.SetParameterValue("@sdate", sdate);
             rpt.SetParameterValue("@edate", edate);
             rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1035_TotalSales" + strDate);
@@ -273,6 +282,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1036_TotalSales_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1036_TotalSales" + strDate);
@@ -292,6 +302,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1014_AmpeliteProjects_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1014_AmpeliteProjects" + strDate);
@@ -311,6 +322,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("sdate", sdate);
                 rpt.SetParameterValue("edate", edate);
 
@@ -336,6 +348,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1011_AmpeliteBKK_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1011_AmpeliteBKK" + strDate);
@@ -354,6 +367,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1012_AmpeliteUPC_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1012_AmpeliteUPC" + strDate);
@@ -372,6 +386,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1013_AmpeliteUPCEast_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1013_AmpeliteUPCEast" + strDate);
@@ -390,6 +405,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalAmpelite.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("sdate", sdate);
                 rpt.SetParameterValue("edate", edate);
 
@@ -416,6 +432,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1015_ScrewFerrex_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1015_ScrewFerrex" + strDate);
@@ -435,7 +452,7 @@ namespace totalsale_report.xreporting
                 rpt = new ReportDocument();
 
                 rpt.Load(Server.MapPath("../Reports/rpt1038_ScrewFerrex_r2.rpt"));
-                //rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1038_ScrewFerrex" + strDate);
@@ -455,6 +472,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1016_ScrewArrex_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1016_ScrewArrex" + strDate);
@@ -474,6 +492,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1039_ScrewArrex_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1039_ScrewArrex" + strDate);
@@ -492,6 +511,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalScrew.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("sdate", sdate);
                 rpt.SetParameterValue("edate", edate);
 
@@ -518,6 +538,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1017_TotalScrew_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1017_TotalScrew" + strDate);
@@ -537,6 +558,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1018_TotalScrew_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1018_TotalScrew" + strDate);
@@ -556,6 +578,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1040_TotalScrew_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1040_TotalScrew" + strDate);
@@ -574,6 +597,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1041_TotalScrew_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1041_TotalScrew" + strDate);
@@ -592,6 +616,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalScrewReport.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("sdate", sdate);
                 rpt.SetParameterValue("edate", edate);
 
@@ -617,6 +642,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1019_Amperam_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1019_Amperam" + strDate);
@@ -635,6 +661,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1020_AmpelFlow_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1020_AmpelFlow" + strDate);
@@ -653,6 +680,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptAmperamAmpelflowReport.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("sdate", sdate);
                 rpt.SetParameterValue("edate", edate);
 
@@ -678,6 +706,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1021_DLiteBkk_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1021_DLiteBkk" + strDate);
@@ -696,6 +725,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1022_DLiteUPC_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1022_DLiteUPC" + strDate);
@@ -714,6 +744,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1042_ScrewAccessories_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1042_ScrewAccessories" + strDate);
@@ -732,6 +763,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1023_ScrewAccessories_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1023_ScrewAccessories" + strDate);
@@ -750,6 +782,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1024_ManagerDLite_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1024_ManagerDLite" + strDate);
@@ -768,6 +801,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rpt1025_ManagerScrew_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1025_ManagerScrew" + strDate);
@@ -786,6 +820,7 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptManagerDLiteReport.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("sdate", sdate);
                 rpt.SetParameterValue("edate", edate);
 
@@ -794,6 +829,70 @@ namespace totalsale_report.xreporting
                 Response.ClearHeaders();
                 Response.ContentType = "application/pdf";
                 rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "rptManagerDLiteReport" + strDate);
+                Response.End();
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1029(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1029_ManagerDLiteDetail_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1029_ManagerDLiteDetail" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1030(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1030_ManagerScrewDetail_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1030_ManagerScrewDetail" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rptmanagerdlitedetailreport(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptManagerDLiteDetailReport.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("sdate", sdate);
+                rpt.SetParameterValue("edate", edate);
+
+                Response.Buffer = false;
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.ContentType = "application/pdf";
+                rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "rptManagerDLiteDetailReport" + strDate);
                 Response.End();
 
             }
