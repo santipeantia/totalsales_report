@@ -124,8 +124,6 @@
 
                     pdfReportRender(rpt_id, sdate, edate);
                 });
-
-
             });
 
             function exportTableToExcel(tableID, filename = '') {
