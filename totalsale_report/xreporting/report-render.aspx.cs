@@ -83,6 +83,11 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "1030" && sdate != null && edate != null) { rpt1030(sdate, edate); }
                 else if (rpt_id == "managerdlitedetail" && sdate != null && edate != null) { rptmanagerdlitedetailreport(sdate, edate); }
 
+                else if (rpt_id == "1026" && sdate != null && edate != null) { rpt1026(sdate, edate); }
+                else if (rpt_id == "1027" && sdate != null && edate != null) { rpt1027(sdate, edate); }
+                else if (rpt_id == "1028" && sdate != null && edate != null) { rpt1028(sdate, edate); }
+                else if (rpt_id == "otherreport" && sdate != null && edate != null) { rptotherreport(sdate, edate); }
+
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
             else
@@ -893,6 +898,89 @@ namespace totalsale_report.xreporting
                 Response.ClearHeaders();
                 Response.ContentType = "application/pdf";
                 rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "rptManagerDLiteDetailReport" + strDate);
+                Response.End();
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1026(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1026_SalesNoComm_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1026_SalesNoComm" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1027(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1027_KansadCenter_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1027_KansadCenter" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1028(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1028_SalesOutlet_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1028_SalesOutlet" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rptotherreport(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptOtherReport.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("sdate", sdate);
+                rpt.SetParameterValue("edate", edate);
+
+                Response.Buffer = false;
+                Response.ClearContent();
+                Response.ClearHeaders();
+                Response.ContentType = "application/pdf";
+                rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "rptOtherReport" + strDate);
                 Response.End();
 
             }

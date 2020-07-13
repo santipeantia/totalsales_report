@@ -13779,9 +13779,12 @@
     <Content Include="total_sale.master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cGetReport1025.cs" />
-    <Compile Include="cGetReport1029.cs" />
-    <Compile Include="cGetReport1030.cs" />
+    <Compile Include="Reports\cGetReport1027.cs" />
+    <Compile Include="Reports\cGetReport1028.cs" />
+    <Compile Include="Reports\cGetReport1025.cs" />
+    <Compile Include="Reports\cGetReport1026.cs" />
+    <Compile Include="Reports\cGetReport1029.cs" />
+    <Compile Include="Reports\cGetReport1030.cs" />
     <Compile Include="Reports\cGetReport1021.cs" />
     <Compile Include="Reports\cGetReport1022.cs" />
     <Compile Include="Reports\cGetReport1023.cs" />
@@ -13895,6 +13898,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt1011_AmpeliteBKK_r2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpt1028_SalesOutlet_r2.cs">
+      <DependentUpon>rpt1028_SalesOutlet_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1027_KansadCenter_r2.cs">
+      <DependentUpon>rpt1027_KansadCenter_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1026_SalesNoComm_r2.cs">
+      <DependentUpon>rpt1026_SalesNoComm_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rpt1030_ManagerDLiteDetail_r2.cs">
@@ -14109,6 +14130,12 @@
     </Compile>
     <Compile Include="Reports\rptManagerDLiteDetailReport.cs">
       <DependentUpon>rptManagerDLiteDetailReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptOtherReport.cs">
+      <DependentUpon>rptOtherReport.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -15616,6 +15643,18 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1011_AmpeliteBKK_r2.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1028_SalesOutlet_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1028_SalesOutlet_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1027_KansadCenter_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1027_KansadCenter_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1026_SalesNoComm_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1026_SalesNoComm_r2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rpt1030_ManagerDLiteDetail_r2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1030_ManagerDLiteDetail_r2.cs</LastGenOutput>
@@ -15759,6 +15798,10 @@
     <EmbeddedResource Include="Reports\rptManagerDLiteDetailReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptManagerDLiteDetailReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptOtherReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOtherReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTotalScrewReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
