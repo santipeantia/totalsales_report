@@ -257,7 +257,7 @@
 
                         if (data != '') {
                             $.each(data, function (i, item) {
-                                table.row.add([data[i].id, data[i].No, data[i].emp_id, data[i].EmpName, data[i].TeamGroup, data[i].TeamName, data[i].ferrexScrew
+                                table.row.add([data[i].id, data[i].No, data[i].EmpName, data[i].TeamGroup, data[i].TeamName, data[i].ferrexScrew
                                     , data[i].arrexScrew, data[i].GrandTotal, data[i].Traget, data[i].Diff, data[i].perCent]);
                             });
                         }
