@@ -14140,6 +14140,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Reports\rptReportTotalSalesFinally.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReportTotalSalesFinally.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptTotalScrewReport.cs">
       <DependentUpon>rptTotalScrewReport.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -15802,6 +15808,10 @@
     <EmbeddedResource Include="Reports\rptOtherReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptOtherReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptReportTotalSalesFinally.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReportTotalSalesFinally.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTotalScrewReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
