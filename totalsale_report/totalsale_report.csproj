@@ -13673,6 +13673,7 @@
     <Content Include="xreporting\rpt-salesbyzone.aspx" />
     <Content Include="xreporting\rpt-totalsale.aspx" />
     <Content Include="xreporting\screw-report.aspx" />
+    <Content Include="xreporting\strategic_marketing.aspx" />
     <Content Include="xreporting\totalscrew-report.aspx" />
     <Content Include="xSetting\createmenupages.aspx" />
     <Content Include="xSetting\createmenupages_srv.asmx" />
@@ -14307,6 +14308,13 @@
     </Compile>
     <Compile Include="xreporting\screw-report.aspx.designer.cs">
       <DependentUpon>screw-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xreporting\strategic_marketing.aspx.cs">
+      <DependentUpon>strategic_marketing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\strategic_marketing.aspx.designer.cs">
+      <DependentUpon>strategic_marketing.aspx</DependentUpon>
     </Compile>
     <Compile Include="xreporting\totalscrew-report.aspx.cs">
       <DependentUpon>totalscrew-report.aspx</DependentUpon>

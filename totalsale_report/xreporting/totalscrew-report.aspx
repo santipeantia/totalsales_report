@@ -103,7 +103,7 @@
 
                     exportTableToExcel('tblReprot1018', filefulname)
                 });
-                
+
                 var btnExcel1040 = $('#btnExcel1040')
                 btnExcel1040.click(function () {
                     var datepickerstart = $('#datepickerstart').val();
@@ -112,7 +112,7 @@
 
                     exportTableToExcel('tblReprot1040', filefulname)
                 });
-                
+
                 var btnExcel1041 = $('#btnExcel1041')
                 btnExcel1041.click(function () {
                     var datepickerstart = $('#datepickerstart').val();
@@ -180,7 +180,7 @@
                     filename: "myFileName",
                     fileext: ".xls"
                 });
-            }  
+            }
 
             function exportTableToExcel(tableID, filename = '') {
                 var downloadLink;
@@ -246,7 +246,7 @@
                         edate: edate
                     },
                     datatype: 'json',
-                     beforeSend: function () {
+                    beforeSend: function () {
                         $("#tblReprot1017 tr td").remove();
                         $("#loaderDiv1017").show();
                     },

@@ -1092,6 +1092,16 @@
                     ]
                 })
 
+                 $('#tblReportStrategic').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': false
+                })
+                
               
 			})
         </script>
@@ -1275,23 +1285,7 @@
 				}
 			};
 
-			function screenZoom() {
-				var x = screen.width;
-				if (x <= 1366) {
-					//document.body.style.zoom = "80%"
-					window.parent.document.body.style.zoom = 0.8;
-					//myIframeZoom();             
-				}
-			};
-
-			function myIframeZoom() {
-				var x = document.getElementById("ifmBody");
-				var y = (x.contentWindow || x.contentDocument);
-				if (y.document) y = y.document;
-				y.body.style.zoom = 0.8;
-            };
-
-
+			
 
             function permissionEmpty() {
                 alert('Do you not have permission..');
