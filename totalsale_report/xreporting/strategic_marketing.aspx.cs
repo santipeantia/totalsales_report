@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Text;
 using System.Data;
+using System.ComponentModel;
+using System.Threading;
 
 namespace totalsale_report.xreporting
 {
@@ -44,7 +46,8 @@ namespace totalsale_report.xreporting
             }
         }
 
-        protected void btnReport_click(object sender, EventArgs e) {
+        protected void btnReport_click(object sender, EventArgs e)
+        {
 
             string sdate = Request.Form["datepickerstart"];
             string edate = Request.Form["datepickerend"];
@@ -59,155 +62,163 @@ namespace totalsale_report.xreporting
             }
         }
 
+
         protected void getStrategicReport(string sdate, string edate)
         {
-
-            Conn = new SqlConnection();
-            Conn = dbConn.OpenConn();
-
-            Comm = new SqlCommand("spRptReportStrategic", Conn);
-            Comm.CommandType = CommandType.StoredProcedure;
-
-            SqlParameter param1 = new SqlParameter() { ParameterName = "@sdate", Value = sdate };
-            SqlParameter param2 = new SqlParameter() { ParameterName = "@edate", Value = edate };
-            Comm.Parameters.Add(param1);
-            Comm.Parameters.Add(param2);
-            Comm.ExecuteNonQuery();
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = Comm;
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-
-            if (dt.Rows.Count != 0)
+            try
             {
-                for (int i = 0; i <= dt.Rows.Count - 1; i++)
+                Conn = new SqlConnection();
+                Conn = dbConn.OpenConn();
+
+                Comm = new SqlCommand("spRptReportStrategic", Conn);
+                Comm.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter param1 = new SqlParameter() { ParameterName = "@sdate", Value = sdate };
+                SqlParameter param2 = new SqlParameter() { ParameterName = "@edate", Value = edate };
+                Comm.Parameters.Add(param1);
+                Comm.Parameters.Add(param2);
+                Comm.ExecuteNonQuery();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = Comm;
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                if (dt.Rows.Count != 0)
                 {
-                    string id = dt.Rows[i]["id"].ToString();
-                    string busgroup = dt.Rows[i]["busgroup"].ToString();
-                    string sbus = dt.Rows[i]["sbus"].ToString();
-                    string target_year = dt.Rows[i]["target_year"].ToString();
-                    string ytd_sales_year = dt.Rows[i]["ytd_sales_year"].ToString();
-                    string ytd_sales_previous = dt.Rows[i]["ytd_sales_previous"].ToString();
-                    string yrcompr = dt.Rows[i]["yrcompr"].ToString();
-                    string ytd_target = dt.Rows[i]["ytd_target"].ToString();
-                    string target_month = dt.Rows[i]["target_month"].ToString();
-                    string target_amount = dt.Rows[i]["target_amount"].ToString();
-                    string current_month = dt.Rows[i]["current_month"].ToString();
-                    string current_amount = dt.Rows[i]["current_amount"].ToString();
-                    string previous_month = dt.Rows[i]["previous_month"].ToString();
-                    string previous_amount = dt.Rows[i]["previous_amount"].ToString();
-                    string growth = dt.Rows[i]["growth"].ToString();
-                    string xsdate = dt.Rows[i]["sdate"].ToString();
-                    string xedate = dt.Rows[i]["edate"].ToString();
-                    string summary = dt.Rows[i]["summary"].ToString();
+                    for (int i = 0; i <= dt.Rows.Count - 1; i++)
+                    {
+                        string id = dt.Rows[i]["id"].ToString();
+                        string busgroup = dt.Rows[i]["busgroup"].ToString();
+                        string sbus = dt.Rows[i]["sbus"].ToString();
+                        string target_year = dt.Rows[i]["target_year"].ToString();
+                        string ytd_sales_year = dt.Rows[i]["ytd_sales_year"].ToString();
+                        string ytd_sales_previous = dt.Rows[i]["ytd_sales_previous"].ToString();
+                        string yrcompr = dt.Rows[i]["yrcompr"].ToString();
+                        string ytd_target = dt.Rows[i]["ytd_target"].ToString();
+                        string target_month = dt.Rows[i]["target_month"].ToString();
+                        string target_amount = dt.Rows[i]["target_amount"].ToString();
+                        string current_month = dt.Rows[i]["current_month"].ToString();
+                        string current_amount = dt.Rows[i]["current_amount"].ToString();
+                        string previous_month = dt.Rows[i]["previous_month"].ToString();
+                        string previous_amount = dt.Rows[i]["previous_amount"].ToString();
+                        string growth = dt.Rows[i]["growth"].ToString();
+                        string xsdate = dt.Rows[i]["sdate"].ToString();
+                        string xedate = dt.Rows[i]["edate"].ToString();
+                        string summary = dt.Rows[i]["summary"].ToString();
 
-                    string xtarget_year = "";
-                    if (string.IsNullOrEmpty(target_year))
-                    {
-                        xtarget_year = "";
-                    }
-                    else {
-                        xtarget_year = double.Parse(target_year).ToString("#,###.#");
-                    }
-
-                    string xtarget_amount = "";
-                    if (string.IsNullOrEmpty(target_amount))
-                    {
-                        xtarget_amount = "";
-                    }
-                    else
-                    {
-                        xtarget_amount = double.Parse(target_amount).ToString("#,###.#");
-                    }
-
-                    string xytd_sales_year = "";
-                    if (string.IsNullOrEmpty(ytd_sales_year))
-                    {
-                        xytd_sales_year = "";
-                    }
-                    else
-                    {
-                        xytd_sales_year = double.Parse(ytd_sales_year).ToString("#,###.#");
-                    }
-
-                    string xytd_sales_previous = "";
-                    if (string.IsNullOrEmpty(ytd_sales_previous))
-                    {
-                        xytd_sales_previous = "";
-                    }
-                    else
-                    {
-                        xytd_sales_previous = double.Parse(ytd_sales_previous).ToString("#,###.#");
-                    }
-
-                    string sclass = "";  
-                    if (id == "1" || id == "12" || id == "13" || id == "22" || id == "28" || id == "39" || id == "40") {
-                        sclass = "style=\"font-weight: bold; text-decoration: underline;\"";
-                    }
-
-                    string gclass = "";
-                    if (double.Parse(growth) < 0)
-                    {
-                        gclass = "class=\"text-red\"";
-                    }
-                    else if (double.Parse(growth) > 0)
-                    {
-                        gclass = "class=\"text-blue\"";
-                    }
-                    else { gclass = ""; }
-
-                    string gclasspr = "";
-                    if (string.IsNullOrEmpty(yrcompr))
-                    {
-                        gclasspr = "";
-                    }
-                    else
-                    {
-                        if (double.Parse(yrcompr) < 0)
+                        string xtarget_year = "";
+                        if (string.IsNullOrEmpty(target_year))
                         {
-                            gclasspr = "class=\"text-red\"";
+                            xtarget_year = "";
                         }
-                        else if (double.Parse(yrcompr) > 0)
+                        else
                         {
-                            gclasspr = "class=\"text-blue\"";
+                            xtarget_year = double.Parse(target_year).ToString("#,###.#");
                         }
-                        else { gclasspr = ""; }
+
+                        string xtarget_amount = "";
+                        if (string.IsNullOrEmpty(target_amount))
+                        {
+                            xtarget_amount = "";
+                        }
+                        else
+                        {
+                            xtarget_amount = double.Parse(target_amount).ToString("#,###.#");
+                        }
+
+                        string xytd_sales_year = "";
+                        if (string.IsNullOrEmpty(ytd_sales_year))
+                        {
+                            xytd_sales_year = "";
+                        }
+                        else
+                        {
+                            xytd_sales_year = double.Parse(ytd_sales_year).ToString("#,###.#");
+                        }
+
+                        string xytd_sales_previous = "";
+                        if (string.IsNullOrEmpty(ytd_sales_previous))
+                        {
+                            xytd_sales_previous = "";
+                        }
+                        else
+                        {
+                            xytd_sales_previous = double.Parse(ytd_sales_previous).ToString("#,###.#");
+                        }
+
+                        string sclass = "";
+                        if (id == "1" || id == "12" || id == "13" || id == "22" || id == "28" || id == "39" || id == "40")
+                        {
+                            sclass = "style=\"font-weight: bold; text-decoration: underline;\"";
+                        }
+
+                        string gclass = "";
+                        if (double.Parse(growth) < 0)
+                        {
+                            gclass = "class=\"text-red\"";
+                        }
+                        else if (double.Parse(growth) > 0)
+                        {
+                            gclass = "class=\"text-blue\"";
+                        }
+                        else { gclass = ""; }
+
+                        string gclasspr = "";
+                        if (string.IsNullOrEmpty(yrcompr))
+                        {
+                            gclasspr = "";
+                        }
+                        else
+                        {
+                            if (double.Parse(yrcompr) < 0)
+                            {
+                                gclasspr = "class=\"text-red\"";
+                            }
+                            else if (double.Parse(yrcompr) > 0)
+                            {
+                                gclasspr = "class=\"text-blue\"";
+                            }
+                            else { gclasspr = ""; }
+                        }
+
+                        strTblDetail += "<tr " + sclass + ">" +
+                                                "<td class=\"\">" + id + "</td>" +
+                                                "<td >" + busgroup + "</td>" +
+                                                "<td >" + sbus + "</td>" +
+                                                "<td style=\"text-align:right;\">" + xtarget_year + "</td>" +
+                                                "<td style=\"text-align:right;\">" + xytd_sales_year + "</td>" +
+                                                "<td style=\"text-align:right;\">" + xytd_sales_previous + "</td>" +
+                                                "<td " + gclasspr + "style =\"text-align:right;\">" + yrcompr + "</td>" +
+                                                "<td style=\"text-align:right;\">" + ytd_target + "</td>" +
+                                                "<td class=\"hidden\" style=\"text-align:right;\"" + target_month + "</td>" +
+                                                "<td style=\"text-align:right;\">" + xtarget_amount + "</td>" +
+                                                "<td class=\"hidden\">" + current_month + "</td>" +
+                                                "<td style=\"text-align:right;\">" + double.Parse(current_amount).ToString("#,###.#") + "</td>" +
+                                                "<td class=\"hidden\">>" + previous_month + "</td>" +
+                                                "<td style=\"text-align:right;\"><span>" + double.Parse(previous_amount).ToString("#,###.#") + "</span></td>" +
+                                                "<td " + gclass + "style =\"text-align:right;\"><span>" + growth + "</span></td>" +
+                                                "<td class=\"hidden\">" + xsdate + "</td>" +
+                                                "<td class=\"hidden\">" + xedate + "</td>" +
+                                                "<td ><center><span>" + summary + "</span></center></td>" +
+                                        "</tr> ";
+
+                        ssdate = sdate;
+                        eedate = edate;
+
+                        current_name_year = Convert.ToDateTime(edate).ToString("yyyy");
+                        current_name_month = Convert.ToDateTime(edate).ToString("MMM-yyyy");
+
+                        previouse_name_year = Convert.ToDateTime(edate).AddYears(-1).ToString("yyyy");
+                        previouse_name_month = Convert.ToDateTime(edate).AddYears(-1).ToString("MMM-yyyy");
                     }
-
-                    strTblDetail += "<tr " + sclass + ">" +
-                                            "<td class=\"\">" + id + "</td>" +
-                                            "<td >" + busgroup + "</td>" +
-                                            "<td >" + sbus + "</td>" +
-                                            "<td style=\"text-align:right;\">" + xtarget_year + "</td>" +
-                                            "<td style=\"text-align:right;\">" + xytd_sales_year + "</td>" +
-                                            "<td style=\"text-align:right;\">" + xytd_sales_previous + "</td>" +
-                                            "<td " + gclasspr + "style =\"text-align:right;\">" + yrcompr + "</td>" +
-                                            "<td style=\"text-align:right;\">" + ytd_target + "</td>" +
-                                            "<td class=\"hidden\" style=\"text-align:right;\"" + target_month + "</td>" +
-                                            "<td style=\"text-align:right;\">" + xtarget_amount + "</td>" +
-                                            "<td class=\"hidden\">" + current_month + "</td>" +
-                                            "<td style=\"text-align:right;\">" + double.Parse(current_amount).ToString("#,###.#") + "</td>" +
-                                            "<td class=\"hidden\">>" + previous_month + "</td>" +
-                                            "<td style=\"text-align:right;\"><span>" + double.Parse(previous_amount).ToString("#,###.#") + "</span></td>" +
-                                            "<td " + gclass + "style =\"text-align:right;\"><span>" + growth + "</span></td>" +
-                                            "<td class=\"hidden\">" + xsdate + "</td>" +
-                                            "<td class=\"hidden\">" + xedate + "</td>" +
-                                            "<td ><center><span>" + summary + "</span></center></td>" +
-                                    "</tr> ";
-
-                    ssdate = sdate;
-                    eedate = edate;
-
-                    current_name_year = Convert.ToDateTime(edate).ToString("yyyy");
-                    current_name_month = Convert.ToDateTime(edate).ToString("MMM-yyyy");
-
-                    previouse_name_year = Convert.ToDateTime(edate).AddYears(-1).ToString("yyyy");
-                    previouse_name_month = Convert.ToDateTime(edate).AddYears(-1).ToString("MMM-yyyy");
                 }
             }
+            catch
+            {
+
+            }
+
         }
     }
-
-   
 }

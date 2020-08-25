@@ -18,12 +18,34 @@
             #tbltranswithoutsalesconsignee i:hover {
                 cursor: pointer;
             }
+            .cv-spinner {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .spinner {
+                width: 40px;
+                height: 40px;
+                border: 4px #ddd solid;
+                border-top: 4px #2e93e6 solid;
+                border-radius: 50%;
+                animation: sp-anime 0.8s infinite linear;
+            }
+
+            @keyframes sp-anime {
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
 
         </style>
 
         <script>
             $(document).ready(function () {
                 //todo something here
+                $('#loaderDivx').hide();
                 getProjectLists();
 
                 var btntransinv = $('#btntransinv')
@@ -33,6 +55,9 @@
                         url: '../../xtransaction/trn-projecsmanagement_srv.asmx/GetTransactionMasterWithProjects',
                         method: 'post',
                         datatype: 'json',
+                        beforeSend: function () {
+                            $('#loaderDivx').show();
+                        },
                         success: function (data) {
                             var table;
                             table = $('#tbltranswithoutsalesconsignee').DataTable();
@@ -43,7 +68,8 @@
                                     table.row.add([data[i].DocuNo, data[i].DocuDate, data[i].DocuDateDue, data[i].CustCode, data[i].CustName, data[i].EmpCode, data[i].SaleName, data[i].TotalPrice, data[i].urlmember]);
                                 });                                 
                             }
-                            table.draw();                              
+                            table.draw();   
+                            $('#loaderDivx').hide();
                         }
                     });
 
@@ -399,7 +425,9 @@
                     </div>
                     <div class="modal-body">
                         <!-- Post -->                       
-
+                        <div class="cv-spinner" id="loaderDivx">
+                                <span class="spinner"></span>
+                            </div>
                         <div class="post">
                             <table id="tbltranswithoutsalesconsignee" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
                                 <thead>

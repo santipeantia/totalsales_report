@@ -51,6 +51,7 @@ namespace totalsale_report.xtransaction
                 datas.Add(data);
             }
             JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
             Context.Response.Write(js.Serialize(datas));
             Context.Response.ContentType = "application/json";
             conn.CloseConn();
@@ -82,6 +83,7 @@ namespace totalsale_report.xtransaction
                     datas.Add(data);
                 }
                 JavaScriptSerializer js = new JavaScriptSerializer();
+                js.MaxJsonLength = Int32.MaxValue;
                 Context.Response.Write(js.Serialize(datas));
                 Context.Response.ContentType = "application/json";
                 conn.CloseConn();
@@ -136,6 +138,7 @@ namespace totalsale_report.xtransaction
                 datas.Add(data);
             }
             JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
             Context.Response.Write(js.Serialize(datas));
             Context.Response.ContentType = "application/json";
             conn.CloseConn();

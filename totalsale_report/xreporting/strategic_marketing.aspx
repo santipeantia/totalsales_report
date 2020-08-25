@@ -69,7 +69,7 @@
 
         <script>
             $(document).ready(function () {
-                $('#loaderDivStrategic').hide();
+                $('#overlay').hide();
 
                 //todo something here
                 var btnViewReport = $('#btnViewReport')
@@ -78,10 +78,10 @@
                     var sdate = $('#datepickerstart').val();
                     var edate = $('#datepickerend').val();
 
-                    $("#loaderDivStrategic").show();
+                    $("#overlay").show();
                     //getReportStrategic(sdate, edate);
                     document.getElementById("<%= btnReport.ClientID %>").click();
-                    $('#loaderDivStrategic').hide();
+                    //$('#loaderDivStrategic').hide();
                 });
 
                 var btnExcelStrategic = $('#btnExcelStrategic')
@@ -116,6 +116,13 @@
 
             });
 
+            function load() {
+                $("#loaderDivStrategic").show();
+            }
+
+            function unload() {
+                $("#loaderDivStrategic").hide();
+            }
 
 
             function exportTableToExcel(tableID, filename = '') {
@@ -219,143 +226,149 @@
     </section>
 
     <section class="content">
-        <div id="overlay">
-            <div class="cv-spinner">
-                <span class="spinner"></span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box box-primary" style="height: 100%;">
-                    <div class="box-header">
-                        <div class="box-body">
-
-                            <div id="divOption">
-                                <div class="user-block">
-                                    <img class="img-circle img-bordered-sm" src="../../dist/img/handshake.png" alt="User Image">
-                                    <span class="username">
-                                        <a href="#">Strategic Marketing Reports</a>
-                                        <span class="pull-right">
-                                            <button type="button" class="btn btn-default btn-sm checkbox-toggle" onclick="openModal()" data-toggle="tooltip" title="New Entry!">
-                                                <i class="fa fa-plus"></i>
-                                            </button>
-                                            <span class="btn-group">
-                                                <button id="btnDownload" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
-                                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Screen" onclick="window.print()"><i class="fa fa-credit-card"></i></button>
-                                                <button id="btnExportExcel" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Excel"><i class="fa fa-table"></i></button>
-                                            </span>
-                                        </span>
-
-                                    </span>
-                                    <span class="description">Strategic Marketing Reports</span>
-                                </div>
-                            </div>
-                        </div>
+        
+                <div id="overlay">
+                    <div class="cv-spinner">
+                        <span class="spinner"></span>
+                        โปรดรอสักครู่ระบบกำลังประมวลผล....
                     </div>
-
-
-                    <%-- <%--step 2 design user interface ui below--%>
-                    <div class="box-body">
-
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label class="txtLabel">Date Start:</label>
-                                <div class="input-group date">
-                                    <input type="text" class="form-control pull-right" id="datepickerstart" name="datepickerstart" autocomplete="off" value="<%= ssdate %>">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-calendar"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label class="txtLabel">Date End:</label>
-                                <div class="input-group date">
-                                    <input type="text" class="form-control pull-right" id="datepickerend" name="datepickerend" autocomplete="off" value="<%= eedate %>">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-calendar"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label class="txtLabel">View Report</label>
-                                <div class="input-group date">
-                                    <button type="button" class="btn btn-success btn-flat btn-block btn-sm hidden" id="btnReport" runat="server"
-                                        onserverclick="btnReport_click" data-toggle="tooltip" title="Report">
-                                    </button>
-                                    <input type="button" id="btnViewReport" name="btnViewReport" class="btn btn-info btn-flat btn-block btn-sm" value="Show Report Here" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
-            </div>
 
-            <div class="col-md-12">
-                <div class="">
-                    <div class="box box-solid">
-                        <div class="box-header with-border">
-                            <i class="fa fa-flag-checkered text-primary"></i>
-                            <span class="btn-group pull-right">
-                                <button type="button" id="btnPdfStrategic" class="btn btn-default btn-sm" data-toggle="tooltip" title="PDF"><i class="fa fa-file-pdf-o text-orange"></i></button>
-                                <button type="button" id="btnExcelStrategic" class="btn btn-default btn-sm" data-toggle="tooltip" title="Excel"><i class="fa fa-table text-green"></i></button>
-                            </span>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box box-primary" style="height: 100%;">
+                            <div class="box-header">
+                                <div class="box-body">
 
-                            <label class="txtLabel">Strategic Marketing Report</label>
-                        </div>
-                        <div class="box-body">
-                            <div class="cv-spinner" id="loaderDivStrategic">
-                                <span class="spinner"></span>
+                                    <div id="divOption">
+                                        <div class="user-block">
+                                            <img class="img-circle img-bordered-sm" src="../../dist/img/handshake.png" alt="User Image">
+                                            <span class="username">
+                                                <a href="#">Strategic Marketing Reports</a>
+                                                <span class="pull-right">
+                                                    <button type="button" class="btn btn-default btn-sm checkbox-toggle" onclick="openModal()" data-toggle="tooltip" title="New Entry!">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                    <span class="btn-group">
+                                                        <button id="btnDownload" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
+                                                        <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Screen" onclick="window.print()"><i class="fa fa-credit-card"></i></button>
+                                                        <button id="btnExportExcel" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Excel"><i class="fa fa-table"></i></button>
+                                                    </span>
+                                                </span>
+
+                                            </span>
+                                            <span class="description">Strategic Marketing Reports</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <%--<i class="fa fa-caret-up fa-2x text-green" aria-hidden="true"></i>
+
+                            <%-- <%--step 2 design user interface ui below--%>
+                            <div class="box-body">
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label class="txtLabel">Date Start:</label>
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control pull-right" id="datepickerstart" name="datepickerstart" autocomplete="off" value="<%= ssdate %>">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label class="txtLabel">Date End:</label>
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control pull-right" id="datepickerend" name="datepickerend" autocomplete="off" value="<%= eedate %>">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label class="txtLabel">View Report</label>
+                                        <div class="input-group date">
+
+                                            
+
+
+                                            <input type="button" id="btnViewReport" name="btnViewReport" class="btn btn-info btn-flat btn-block btn-sm" value="Show Report Here" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <button type="button" class="btn btn-success btn-flat btn-block btn-sm hidden" id="btnReport" runat="server"
+                                                onserverclick="btnReport_click" data-toggle="tooltip" title="Report">
+                                            </button>
+                    <div class="col-md-12">
+                        <div class="">
+                            <div class="box box-solid">
+                                <div class="box-header with-border">
+                                    <i class="fa fa-flag-checkered text-primary"></i>
+                                    <span class="btn-group pull-right">
+                                        <button type="button" id="btnPdfStrategic" class="btn btn-default btn-sm" data-toggle="tooltip" title="PDF"><i class="fa fa-file-pdf-o text-orange"></i></button>
+                                        <button type="button" id="btnExcelStrategic" class="btn btn-default btn-sm" data-toggle="tooltip" title="Excel"><i class="fa fa-table text-green"></i></button>
+                                    </span>
+
+                                    <label class="txtLabel">Strategic Marketing Report</label>
+                                </div>
+                                <div class="box-body">
+
+                                    <%--<i class="fa fa-caret-up fa-2x text-green" aria-hidden="true"></i>
 
                             <i class="fa fa-caret-down fa-2x text-red" aria-hidden="true"></i>--%>
 
 
-                            <table id="tblReportStrategic" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
-                                <thead>
-                                    <tr>
-                                        <td class="font-weight-bold "><b>No.</b></td>
-                                        <td class="font-weight-bold"><b>BusGroup</b></td>
-                                        <td class="font-weight-bold"><b>SBUs</b></td>
-                                        <td class="font-weight-bold" style="text-align: center"><b>Target-<%=previouse_name_year %></b></td>
-                                        <td class="font-weight-bold" style="text-align: center"><b>YTD Sales <%= current_name_year %></b></td>
-                                        <td class="font-weight-bold" style="text-align: center"><b>YTD Sales <%= previouse_name_year %></b></td>
-                                        <td class="font-weight-bold" style="text-align: center"><b>YrCompr(%)</b></td>
-                                        <td class="font-weight-bold" style="text-align: center"><b>YTD/Target(%)</b></td>
-                                        <td class="font-weight-bold" hidden><b>target_month</b></td>
-                                        <td class="font-weight-bold" style="text-align: center"><b>Target/<%= current_name_month %></b></td>
-                                        <td class="font-weight-bold hidden"><b>current_montd</b></td>
-                                        <td class="font-weight-bold" style="text-align: center"><b><%= current_name_month %></b></td>
-                                        <td class="font-weight-bold hidden"><b>previous_montd</b> </td>
-                                        <td class="font-weight-bold" style="text-align: center"><b><%= previouse_name_month %></b></td>
-                                        <td class="font-weight-bold" style="text-align: center"><b>Growth(%)</b></td>
-                                        <td class="font-weight-bold hidden"><b>xsdate</b> </td>
-                                        <td class="font-weight-bold hidden"><b>xedate</b> </td>
-                                        <td class="font-weight-bold" style="text-align: center"><b>Summary</b></td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <%= strTblDetail %>
-                                </tbody>
-                            </table>
+                                    <table id="tblReportStrategic" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
+                                        <thead>
+                                            <tr>
+                                                <td class="font-weight-bold "><b>No.</b></td>
+                                                <td class="font-weight-bold"><b>BusGroup</b></td>
+                                                <td class="font-weight-bold"><b>SBUs</b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>Target-<%=previouse_name_year %></b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>YTD Sales <%= current_name_year %></b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>YTD Sales <%= previouse_name_year %></b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>YrCompr(%)</b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>YTD/Target(%)</b></td>
+                                                <td class="font-weight-bold" hidden><b>target_month</b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>Target/<%= current_name_month %></b></td>
+                                                <td class="font-weight-bold hidden"><b>current_montd</b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b><%= current_name_month %></b></td>
+                                                <td class="font-weight-bold hidden"><b>previous_montd</b> </td>
+                                                <td class="font-weight-bold" style="text-align: center"><b><%= previouse_name_month %></b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>Growth(%)</b></td>
+                                                <td class="font-weight-bold hidden"><b>xsdate</b> </td>
+                                                <td class="font-weight-bold hidden"><b>xedate</b> </td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>Summary</b></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%= strTblDetail %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
+
+                 </ContentTemplate>
+        </asp:UpdatePanel>
                 </div>
-
-            </div>
-
-
-
-
-        </div>
-
+           
     </section>
 </asp:Content>

@@ -174,7 +174,7 @@
 
 </head>
 
-<body  onselect="return true" onload="screenZoom()" class="hold-transition skin-blue-light sidebar-mini fixed ">
+<body  onselect="return true"  class="hold-transition skin-blue-light sidebar-mini fixed ">
 	<div class="loader">
 		<img src="../../dist/img/loader3.gif" alt="Loading..." />
 	</div>

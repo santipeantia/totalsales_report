@@ -7,10 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace totalsale_report.xreporting {
+namespace totalsale_report.xtransaction {
     
     
-    public partial class strategic_marketing {
+    public partial class projectspecial {
+        
+        /// <summary>
+        /// btnDownload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnDownload;
         
         /// <summary>
         /// btnExportExcel control.
@@ -22,30 +31,12 @@ namespace totalsale_report.xreporting {
         protected global::System.Web.UI.HtmlControls.HtmlButton btnExportExcel;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// btnsavenew control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// UpdatePanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// btnReport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnReport;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnsavenew;
     }
 }

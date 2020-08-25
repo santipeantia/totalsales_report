@@ -13467,6 +13467,7 @@
     <Content Include="documentation\docs.js" />
     <Content Include="documentation\index.html" />
     <Content Include="documentation\style.css" />
+    <Content Include="errorpage.aspx" />
     <Content Include="Favicon.ico" />
     <Content Include="icon.ico" />
     <Content Include="image\accepted.png" />
@@ -13680,6 +13681,7 @@
     <Content Include="xSetting\usermanagement.aspx" />
     <Content Include="xSetting\usermanagement_srv.asmx" />
     <Content Include="xtransaction\projectsmanagement.aspx" />
+    <Content Include="xtransaction\projectspecial.aspx" />
     <Content Include="xtransaction\SalesConsignee.aspx" />
     <Content Include="xtransaction\trn-grouping.aspx" />
     <Content Include="xtransaction\trn-projecsmanagement_srv.asmx" />
@@ -13780,6 +13782,14 @@
     <Content Include="total_sale.master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\cGetSpecialPrjectLists.cs" />
+    <Compile Include="errorpage.aspx.cs">
+      <DependentUpon>errorpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="errorpage.aspx.designer.cs">
+      <DependentUpon>errorpage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\cGetReport1027.cs" />
     <Compile Include="Reports\cGetReport1028.cs" />
     <Compile Include="Reports\cGetReport1025.cs" />
@@ -14351,6 +14361,13 @@
     </Compile>
     <Compile Include="xtransaction\projectsmanagement.aspx.designer.cs">
       <DependentUpon>projectsmanagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xtransaction\projectspecial.aspx.cs">
+      <DependentUpon>projectspecial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xtransaction\projectspecial.aspx.designer.cs">
+      <DependentUpon>projectspecial.aspx</DependentUpon>
     </Compile>
     <Compile Include="xtransaction\SalesConsignee.aspx.cs">
       <DependentUpon>SalesConsignee.aspx</DependentUpon>
