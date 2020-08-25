@@ -226,14 +226,13 @@
     </section>
 
     <section class="content">
-        
-                <div id="overlay">
-                    <div class="cv-spinner">
-                        <span class="spinner"></span>
-                        โปรดรอสักครู่ระบบกำลังประมวลผล....
-                    </div>
-                    
-                </div>
+
+        <div id="overlay">
+            <div class="cv-spinner" style="padding-right: 300px;">
+                <span class="spinner"></span>
+                <div style="position: absolute; padding-top: 80px; color: coral;"><span class="text-white">โปรดรอสักครู่ระบบกำลังประมวลผล....</span></div>
+            </div>            
+        </div>
 
                 <div class="row">
                     <div class="col-xs-12">
