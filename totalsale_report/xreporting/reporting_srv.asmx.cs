@@ -822,6 +822,7 @@ namespace totalsale_report.xreporting
                 data.ddPro = rdr["ddPro"].ToString();
                 data.dLite4R = rdr["dLite4R"].ToString();
                 data.kansad40 = rdr["kansad40"].ToString();
+                data.frp = rdr["frp"].ToString();
                 data.saleTotal = rdr["saleTotal"].ToString();
                 data.shareSales = rdr["shareSales"].ToString();
                 data.netSales = rdr["netSales"].ToString();
@@ -1216,5 +1217,42 @@ namespace totalsale_report.xreporting
             conn.CloseConn();
         }
 
+        [WebMethod]
+        public void GetReport1043(string sdate, string edate)
+        {
+            List<cGetReport1043> datas = new List<cGetReport1043>();
+            SqlCommand comm = new SqlCommand("spRpt1043_ProjectsReport", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReport1043 data = new cGetReport1043();
+                data.CustCode = rdr["CustCode"].ToString();
+                data.CustName = rdr["CustName"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                data.DocuNo = rdr["DocuNo"].ToString();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.SaleTotal = rdr["SaleTotal"].ToString();
+                data.cutTransport = rdr["cutTransport"].ToString();
+                data.cutComm = rdr["cutComm"].ToString();
+                data.cutCN = rdr["cutCN"].ToString();
+                data.cutDiscount = rdr["cutDiscount"].ToString();
+                data.NetSale = rdr["NetSale"].ToString();
+                data.cutNetSale = rdr["cutNetSale"].ToString();
+                data.GrandTotal = rdr["GrandTotal"].ToString();
+                data.NetRF_B = rdr["NetRF_B"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
     }
 }

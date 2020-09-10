@@ -293,7 +293,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].dLiteWave, data[i].dLiteSmooth, data[i].ddPro
-                                    , data[i].dLite4R, data[i].kansad40, data[i].saleTotal, data[i].shareSales, data[i].netSales, data[i].cutNetSales
+                                    , data[i].dLite4R, data[i].kansad40, data[i].frp, data[i].saleTotal, data[i].shareSales, data[i].netSales, data[i].cutNetSales
                                     , data[i].grandTotal, data[i].extraGet, data[i].exDiff, data[i].Percent]);
                             });
                         }
@@ -643,6 +643,7 @@
                                         <th class="">DD Pro</th>
                                         <th class="">D-Lite4R</th>
                                         <th class="">Kansad 40%</th>
+                                        <th class="">FRP</th>
                                         <th class="">Sale Total</th>
                                         <th class="">แบ่งยอดขาย</th>
                                         <th class="">Net Sales</th>

@@ -1102,7 +1102,21 @@
                     'autoWidth': false
                 })
                 
-              
+               $('#tblReprot1043').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                   'autoWidth': false,
+                    'columnDefs': [
+                        {
+                            targets: [0,2],
+                            className: "hide_column"
+                        }
+                    ]
+                })
 			})
         </script>
 

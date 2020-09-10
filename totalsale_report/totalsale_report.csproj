@@ -13668,6 +13668,7 @@
     <Content Include="xreporting\dlite-detail-report.aspx" />
     <Content Include="xreporting\dlite-reprots.aspx" />
     <Content Include="xreporting\other-report.aspx" />
+    <Content Include="xreporting\projectsreport.aspx" />
     <Content Include="xreporting\report-render.aspx" />
     <Content Include="xreporting\reporting_srv.asmx" />
     <Content Include="xreporting\rpt-Individual-sales.aspx" />
@@ -13782,6 +13783,7 @@
     <Content Include="total_sale.master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reports\cGetReport1043.cs" />
     <Compile Include="Class\cGetSpecialPrjectLists.cs" />
     <Compile Include="errorpage.aspx.cs">
       <DependentUpon>errorpage.aspx</DependentUpon>
@@ -13909,6 +13911,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt1011_AmpeliteBKK_r2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpt1044_SpecialProjectWithoutComm.cs">
+      <DependentUpon>rpt1044_SpecialProjectWithoutComm.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt1043_ProjectsReport_r2.cs">
+      <DependentUpon>rpt1043_ProjectsReport_r2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rpt1028_SalesOutlet_r2.cs">
@@ -14279,6 +14293,13 @@
     </Compile>
     <Compile Include="xreporting\other-report.aspx.designer.cs">
       <DependentUpon>other-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xreporting\projectsreport.aspx.cs">
+      <DependentUpon>projectsreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\projectsreport.aspx.designer.cs">
+      <DependentUpon>projectsreport.aspx</DependentUpon>
     </Compile>
     <Compile Include="xreporting\report-render.aspx.cs">
       <DependentUpon>report-render.aspx</DependentUpon>
@@ -15673,6 +15694,14 @@
     <EmbeddedResource Include="Reports\rpt1011_AmpeliteBKK_r2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt1011_AmpeliteBKK_r2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1044_SpecialProjectWithoutComm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1044_SpecialProjectWithoutComm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1043_ProjectsReport_r2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt1043_ProjectsReport_r2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rpt1028_SalesOutlet_r2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

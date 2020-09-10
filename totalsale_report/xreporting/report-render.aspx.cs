@@ -88,6 +88,8 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "1028" && sdate != null && edate != null) { rpt1028(sdate, edate); }
                 else if (rpt_id == "otherreport" && sdate != null && edate != null) { rptotherreport(sdate, edate); }
 
+                else if (rpt_id == "1043" && sdate != null && edate != null) { rpt1043(sdate, edate); }
+
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
             else
@@ -957,6 +959,25 @@ namespace totalsale_report.xreporting
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1028_SalesOutlet" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rpt1043(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rpt1043_ProjectsReport_r2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1043_ProjectsReport" + strDate);
             }
             catch (Exception ex)
             {

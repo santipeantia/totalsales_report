@@ -15,6 +15,7 @@ namespace totalsale_report
         public string ddPro { get; set; }
         public string dLite4R { get; set; }
         public string kansad40 { get; set; }
+        public string frp { get; set; }
         public string saleTotal { get; set; }
         public string shareSales { get; set; }
         public string netSales { get; set; }

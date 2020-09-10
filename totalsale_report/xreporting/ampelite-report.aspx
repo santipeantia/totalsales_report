@@ -483,7 +483,7 @@
                                         <th class="">ChemBlok</th>
                                         <th class="">SumTotal</th>
                                         <th class="">แบ่งยอดขาย</th>
-                                        <th class="">หักค่าโมล</th>
+                                        <th class="">หักค่าโมล/ค่าขนส่ง</th>
                                         <th class="">ค่านายหน้า</th>
                                         <th class="">ส่วนลดจ่าย</th>
                                         <th class="">NetSales</th>
@@ -536,7 +536,7 @@
                                         <th class="">ChemBlok</th>
                                         <th class="">SumTotal</th>
                                         <th class="">แบ่งยอดขาย</th>
-                                        <th class="">หักค่าโมล</th>
+                                        <th class="">หักค่าโมล/ค่าขนส่ง</th>
                                         <th class="">ค่านายหน้า</th>
                                         <th class="">ส่วนลดจ่าย</th>
                                         <th class="">NetSales</th>
@@ -590,7 +590,7 @@
                                         <th class="">ChemBlok</th>
                                         <th class="">SumTotal</th>
                                         <th class="">แบ่งยอดขาย</th>
-                                        <th class="">หักค่าโมล</th>
+                                        <th class="">หักค่าโมล/ค่าขนส่ง</th>
                                         <th class="">ค่านายหน้า</th>
                                         <th class="">ส่วนลดจ่าย</th>
                                         <th class="">NetSales</th>
