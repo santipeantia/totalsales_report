@@ -99,7 +99,7 @@
                     var rpt_id = 'projectsreport';
                     var sdate = $('#datepickerstart').val();
                     var edate = $('#datepickerend').val();
-
+                    alert('test');
                     pdfReportRender(rpt_id, sdate, edate);
                 });
 
