@@ -1,11 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/total_sale.master" AutoEventWireup="true" CodeBehind="strategic_marketing.aspx.cs" Inherits="totalsale_report.xreporting.strategic_marketing" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/total_sale.master" AutoEventWireup="true" CodeBehind="generatereport.aspx.cs" Inherits="totalsale_report.xreporting.generatereport" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <section class="content-header">
+     <section class="content-header">
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <%--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>--%>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 
         <script src="https://rawgit.com/unconditional/jquery-table2excel/master/src/jquery.table2excel.js"></script>
@@ -124,14 +122,6 @@
                 $("#loaderDivStrategic").hide();
             }
 
-
-            function emptyMessage(sdate, edate) {
-                swal("Report find not found the data..!")
-                    .then((value) => {
-                        //swal(`The returned value is: ${value}`);
-                        location.reload(true);
-                    });
-            }
 
             function exportTableToExcel(tableID, filename = '') {
                 var downloadLink;

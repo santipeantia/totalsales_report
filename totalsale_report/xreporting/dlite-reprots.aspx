@@ -273,6 +273,7 @@
             });
 
             function getReprot1021(sdate, edate) {
+
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReport1021',
                     method: 'post',

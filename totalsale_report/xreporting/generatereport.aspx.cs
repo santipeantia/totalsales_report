@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace totalsale_report.xreporting
 {
-    public partial class strategic_marketing : System.Web.UI.Page
+    public partial class generatereport : System.Web.UI.Page
     {
         dbConnection dbConn = new dbConnection();
         SqlConnection Conn = new SqlConnection();
@@ -70,7 +70,7 @@ namespace totalsale_report.xreporting
                 Conn = new SqlConnection();
                 Conn = dbConn.OpenConn();
 
-                Comm = new SqlCommand("spRptReportStrategic", Conn);
+                Comm = new SqlCommand("spRptReportStrategicGenerate", Conn);
                 Comm.CommandType = CommandType.StoredProcedure;
                 Comm.CommandTimeout = 1200;
 
@@ -188,7 +188,7 @@ namespace totalsale_report.xreporting
                                 }
                                 else { gclasspr = ""; }
                             }
-                           
+
                         }
 
                         string xcurrent;
@@ -196,10 +196,11 @@ namespace totalsale_report.xreporting
                         {
                             xcurrent = double.Parse(current_amount).ToString("#,###.#");
                         }
-                        else {
+                        else
+                        {
                             xcurrent = "";
                         }
-                        
+
                         string xprevious;
                         if (!string.IsNullOrEmpty(previous_amount))
                         {
@@ -240,13 +241,6 @@ namespace totalsale_report.xreporting
                         previouse_name_year = Convert.ToDateTime(edate).AddYears(-1).ToString("yyyy");
                         previouse_name_month = Convert.ToDateTime(edate).AddYears(-1).ToString("MMM-yyyy");
                     }
-                }
-                else
-                {
-                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Notify", "alert('data find not found..!');", true);
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Notify", "emptyMessage();", true);
-                    
-
                 }
             }
             catch (Exception ex)

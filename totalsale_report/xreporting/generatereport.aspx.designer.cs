@@ -10,7 +10,7 @@
 namespace totalsale_report.xreporting {
     
     
-    public partial class strategic_marketing {
+    public partial class generatereport {
         
         /// <summary>
         /// ScriptManager1 control.

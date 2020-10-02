@@ -293,7 +293,7 @@
     <section class="content">
         <div id="overlay">
             <div class="cv-spinner">
-                <span class="spinner"></span>
+                <%--<span class="spinner"></span>--%>
             </div>
         </div>
 

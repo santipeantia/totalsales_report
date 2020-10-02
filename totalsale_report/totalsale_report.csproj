@@ -13667,6 +13667,7 @@
     <Content Include="xreporting\amperam-ampelflow.aspx" />
     <Content Include="xreporting\dlite-detail-report.aspx" />
     <Content Include="xreporting\dlite-reprots.aspx" />
+    <Content Include="xreporting\generatereport.aspx" />
     <Content Include="xreporting\other-report.aspx" />
     <Content Include="xreporting\projectsreport.aspx" />
     <Content Include="xreporting\report-render.aspx" />
@@ -14286,6 +14287,13 @@
     </Compile>
     <Compile Include="xreporting\dlite-reprots.aspx.designer.cs">
       <DependentUpon>dlite-reprots.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xreporting\generatereport.aspx.cs">
+      <DependentUpon>generatereport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\generatereport.aspx.designer.cs">
+      <DependentUpon>generatereport.aspx</DependentUpon>
     </Compile>
     <Compile Include="xreporting\other-report.aspx.cs">
       <DependentUpon>other-report.aspx</DependentUpon>
