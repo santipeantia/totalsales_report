@@ -13471,6 +13471,8 @@
     <Content Include="Favicon.ico" />
     <Content Include="icon.ico" />
     <Content Include="image\accepted.png" />
+    <Content Include="image\arrow_green.jpg" />
+    <Content Include="image\arrow_red.jpg" />
     <Content Include="image\f0929.png" />
     <Content Include="image\g0929.png" />
     <Content Include="image\HelpResource.gif" />
@@ -14170,6 +14172,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptReportTotalSalesFinally.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptStrategic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStrategic.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rptTotalScrewReport.cs">
@@ -15874,6 +15882,10 @@
     <EmbeddedResource Include="Reports\rptReportTotalSalesFinally.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptReportTotalSalesFinally.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptStrategic.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStrategic.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTotalScrewReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

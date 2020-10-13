@@ -84,14 +84,7 @@
                     //$('#loaderDivStrategic').hide();
                 });
 
-                var btnExcelStrategic = $('#btnExcelStrategic')
-                btnExcelStrategic.click(function () {
-                    var datepickerstart = $('#datepickerstart').val();
-                    var datepickerend = $('#datepickerend').val();
-                    var filefulname = 'strategic' + '_from_' + datepickerstart + '_to_' + datepickerend;
-                    exportTableToExcel('tblReportStrategic', filefulname)
-                });
-
+               
 
                 var btnPdfStrategic = $('#btnPdfStrategic')
                 btnPdfStrategic.click(function () {
@@ -115,6 +108,23 @@
                 });
 
             });
+
+          
+
+            function loadExcel() {
+                //alert('you click');
+                var datepickerstart = $('#datepickerstart').val();
+                var datepickerend = $('#datepickerend').val();
+                var filefulname = 'strategic' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                exportTableToExcel('tblReportStrategic', filefulname)
+            }
+
+            function loadPDF() {
+                var rpt_id = 'strategic';
+                var sdate = $('#datepickerstart').val();
+                var edate = $('#datepickerend').val();
+                pdfReportRender(rpt_id, sdate, edate);
+            }
 
             function load() {
                 $("#loaderDivStrategic").show();
@@ -327,8 +337,8 @@
                                 <div class="box-header with-border">
                                     <i class="fa fa-flag-checkered text-primary"></i>
                                     <span class="btn-group pull-right">
-                                        <button type="button" id="btnPdfStrategic" class="btn btn-default btn-sm" data-toggle="tooltip" title="PDF"><i class="fa fa-file-pdf-o text-orange"></i></button>
-                                        <button type="button" id="btnExcelStrategic" class="btn btn-default btn-sm" data-toggle="tooltip" title="Excel"><i class="fa fa-table text-green"></i></button>
+                                        <button type="button" id="btnPdfStrategic" class="btn btn-default btn-sm" onclick="loadPDF()" data-toggle="tooltip" title="PDF"><i class="fa fa-file-pdf-o text-orange"></i></button>
+                                        <button type="button" id="btnExcelStrategic" class="btn btn-default btn-sm" onclick="loadExcel()" data-toggle="tooltip" title="Excel"><i class="fa fa-table text-green"></i></button>
                                     </span>
 
                                     <label class="txtLabel">Strategic Marketing Report</label>

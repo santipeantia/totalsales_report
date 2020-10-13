@@ -219,11 +219,11 @@ namespace totalsale_report.xreporting
                                                 "<td style=\"text-align:right;\">" + xytd_sales_previous + "</td>" +
                                                 "<td " + gclasspr + "style =\"text-align:right;\">" + yrcompr + "</td>" +
                                                 "<td style=\"text-align:right;\">" + ytd_target + "</td>" +
-                                                "<td class=\"hidden\" style=\"text-align:right;\"" + target_month + "</td>" +
+                                                "<td class=\"hidden\" style=\"text-align:right;\">" + target_month + "</td>" +
                                                 "<td style=\"text-align:right;\">" + xtarget_amount + "</td>" +
                                                 "<td class=\"hidden\">" + current_month + "</td>" +
                                                 "<td style=\"text-align:right;\">" + xcurrent + "</td>" +
-                                                "<td class=\"hidden\">>" + previous_month + "</td>" +
+                                                "<td class=\"hidden\">" + previous_month + "</td>" +
                                                 "<td style=\"text-align:right;\"><span>" + xprevious + "</span></td>" +
                                                 "<td " + gclass + "style =\"text-align:right;\"><span>" + growth + "</span></td>" +
                                                 "<td class=\"hidden\">" + xsdate + "</td>" +

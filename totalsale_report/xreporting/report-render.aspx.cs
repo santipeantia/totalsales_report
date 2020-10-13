@@ -90,6 +90,9 @@ namespace totalsale_report.xreporting
 
                 else if (rpt_id == "1043" && sdate != null && edate != null) { rpt1043(sdate, edate); }
 
+                else if (rpt_id == "strategic" && sdate != null && edate != null) { rptStrategic(sdate, edate); }
+                
+
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
             }
             else
@@ -1011,5 +1014,26 @@ namespace totalsale_report.xreporting
                 return;
             }
         }
+
+        protected void rptStrategic(string sdate, string edate)
+        {
+            try
+            {
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptStrategic.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@sdate", sdate);
+                rpt.SetParameterValue("@edate", edate);
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "rptStrategic" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+        
+
     }
 }

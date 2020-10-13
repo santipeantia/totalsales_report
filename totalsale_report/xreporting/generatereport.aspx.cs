@@ -70,7 +70,7 @@ namespace totalsale_report.xreporting
                 Conn = new SqlConnection();
                 Conn = dbConn.OpenConn();
 
-                Comm = new SqlCommand("spRptReportStrategicGenerate", Conn);
+                Comm = new SqlCommand("spRptReportStrategicGenerate_new", Conn);
                 Comm.CommandType = CommandType.StoredProcedure;
                 Comm.CommandTimeout = 1200;
 

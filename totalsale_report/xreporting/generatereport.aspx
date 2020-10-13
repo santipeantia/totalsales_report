@@ -218,21 +218,22 @@
 
         </script>
 
-        <h1>Year To Date Reports <%--step 1 check pages content name--%>
+        <h1>Generate Report Of Year <%--step 1 check pages content name--%>
             <small>Control panel</small>
         </h1>
     </section>
 
     <section class="content">
+        <div id="overlay">
+            <div class="cv-spinner" style="padding-right: 300px;">
+                <span class="spinner"></span>
+                <div style="position: absolute; padding-top: 80px; color: coral;"><span class="text-white">โปรดรอสักครู่ระบบกำลังประมวลผล....</span></div>
+            </div>
+        </div>
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <div id="overlay">
-                    <div class="cv-spinner" style="padding-right: 300px;">
-                        <span class="spinner"></span>
-                        <div style="position: absolute; padding-top: 80px; color: coral;"><span class="text-white">โปรดรอสักครู่ระบบกำลังประมวลผล....</span></div>
-                    </div>
-                </div>
+                
 
                 <div class="row">
                     <div class="col-xs-12">
@@ -244,7 +245,7 @@
                                         <div class="user-block">
                                             <img class="img-circle img-bordered-sm" src="../../dist/img/handshake.png" alt="User Image">
                                             <span class="username">
-                                                <a href="#">Year To Date Reports</a>
+                                                <a href="#">Generate Report Of Year</a>
                                                 <span class="pull-right">
                                                     <button type="button" class="btn btn-default btn-sm checkbox-toggle" onclick="openModal()" data-toggle="tooltip" title="New Entry!">
                                                         <i class="fa fa-plus"></i>
@@ -336,7 +337,7 @@
                                                 <td class="font-weight-bold "><b>No.</b></td>
                                                 <td class="font-weight-bold"><b>BusGroup</b></td>
                                                 <td class="font-weight-bold"><b>SBUs</b></td>
-                                                <td class="font-weight-bold" style="text-align: center"><b>Target-<%=previouse_name_year %></b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>Target-<%=current_name_year %></b></td>
                                                 <td class="font-weight-bold" style="text-align: center"><b>YTD Sales <%= current_name_year %></b></td>
                                                 <td class="font-weight-bold" style="text-align: center"><b>YTD Sales <%= previouse_name_year %></b></td>
                                                 <td class="font-weight-bold" style="text-align: center"><b>YrCompr(%)</b></td>
