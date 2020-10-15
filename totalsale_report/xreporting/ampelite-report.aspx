@@ -55,8 +55,14 @@
             }
 
             .myclass {
-                text-align: right;            
+                text-align: right;
             }
+
+            .myclassblue {
+                text-align: right;
+                color: blue;
+            }
+
         </style>
 
         <script>
@@ -81,6 +87,7 @@
 
                 var btnExcel1011 = $('#btnExcel1011')
                 btnExcel1011.click(function () {
+
                     var datepickerstart = $('#datepickerstart').val();
                     var datepickerend = $('#datepickerend').val();
                     var filefulname = '[1011] Ampelite BKK' + '_from_' + datepickerstart + '_to_' + datepickerend;
@@ -102,6 +109,41 @@
                     var filefulname = '[1013] Ampelite UPC (ภาคตะวันออก, กลาง, ตก, ใต้)' + '_from_' + datepickerstart + '_to_' + datepickerend;
                     exportTableToExcel('tblReprot1013', filefulname)
                 });
+
+                var btnprintdetail1011 = $('#btnprintdetail1011');
+                btnprintdetail1011.click(function () {
+                    var today = new Date();
+                    var tt = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1011] Ampelite BKK' + '_from_' + datepickerstart + '_to_' + datepickerend + '_' + tt;
+                    exportTableToExcel('tableReportDetails1011', filefulname)
+                });
+
+                var btnprintdetail1012 = $('#btnprintdetail1012');
+                btnprintdetail1012.click(function () {
+                    var today = new Date();
+                    var tt = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = '[1012] Ampelite UPC' + '_from_' + datepickerstart + '_to_' + datepickerend + '_' + tt;
+                    exportTableToExcel('tableReportDetails1012', filefulname)
+                });
+
+                var btnprintdetail1013 = $('#btnprintdetail1013');
+                btnprintdetail1013.click(function () {
+                    var today = new Date();
+                    var tt = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+                    var datepickerstart = $('#datepickerstart').val();
+                    var datepickerend = $('#datepickerend').val();
+                    var filefulname = ' [1013] Ampelite UPC (ภาคตะวันออก, กลาง, ตก, ใต้)' + '_from_' + datepickerstart + '_to_' + datepickerend + '_' + tt;
+                    exportTableToExcel('tableReportDetails1013', filefulname)
+                });
+
+                               
 
                 var btnPdf1011 = $('#btnPdf1011')
                 btnPdf1011.click(function () {
@@ -142,8 +184,7 @@
 
                     pdfReportRender(rpt_id, sdate, edate);
                 });
-
-
+                                            
             });
 
             function exportTableToExcel(tableID, filename = '') {
@@ -222,9 +263,7 @@
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].mAmplite, data[i].mRooflite, data[i].tAmpelite, data[i].tRooflite
                                     , data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].chemBlok, data[i].sumTotal, data[i].sharedSale, data[i].cutModel
                                     , data[i].cutComm, data[i].cutCN, data[i].netSales, data[i].exChemblok, data[i].cutProjects, data[i].overSixtyDay, data[i].cutNetSale
-                                    , data[i].cutOEM, data[i].grandTotal, data[i].traGet, data[i].tDiff, data[i].tPercent]);
-
-                               
+                                    , data[i].cutOEM, data[i].grandTotal, data[i].traGet, data[i].tDiff, data[i].tPercent]);                               
                             });
                         }
                         table.draw();
@@ -236,23 +275,102 @@
                         $('#tblReprot1011 td:nth-of-type(9)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(10)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(11)').addClass('myclass');
-                        $('#tblReprot1011 td:nth-of-type(12)').addClass('myclass');
+                        $('#tblReprot1011 td:nth-of-type(12)').addClass('myclassblue');
                         $('#tblReprot1011 td:nth-of-type(13)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(14)').addClass('myclass');
-                        $('#tblReprot1011 td:nth-of-type(15)').addClass('myclass');
+                        $('#tblReprot1011 td:nth-of-type(15)').addClass('myclassblue');
                         $('#tblReprot1011 td:nth-of-type(16)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(17)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(18)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(19)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(20)').addClass('myclass');
-                        $('#tblReprot1011 td:nth-of-type(21)').addClass('myclass');
+                        $('#tblReprot1011 td:nth-of-type(21)').addClass('myclassblue');
                         $('#tblReprot1011 td:nth-of-type(22)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(23)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(24)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(25)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(26)').addClass('myclass');
                         $("#loaderDiv1011").hide();
-                    }
+
+
+                        $('#tblReprot1011 td').hover(function () {
+                            rIndex = this.parentElement.rowIndex;
+                            cIndex = this.cellIndex;
+                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                                $(this).css('cursor', 'pointer');
+                                $(this).css('color', 'red');
+                                $(this).css('font-weight', 'bold');
+                            }
+                        }, function () {
+                            rIndex = this.parentElement.rowIndex;
+                            cIndex = this.cellIndex;
+                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                                $(this).css("color", "blue");
+                                $(this).css('font-weight', 'normal');
+                            }
+                        });
+
+                        $('#tblReprot1011 td').click(function () {
+                            rIndex = this.parentElement.rowIndex;
+                            cIndex = this.cellIndex;
+
+                            //alert(rIndex);
+
+                            if (rIndex != 0 & cIndex == 11) {
+                                var strempcode = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
+                                var strempname = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
+                                var strVal1 = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
+
+                                if (strempcode.text() != "") {
+                                    console.log('row :' + rIndex + ', cols : ' + cIndex + '\n' +
+                                        ', sdate : ' + sdate +
+                                        ', edate : ' + edate + '\n' +
+                                        ', strempcode : ' + strempcode.text() + '\n' +
+                                        ', strempname : ' + strempname.text() + '\n ' +
+                                        ', comm : ' + strVal1.text());
+
+                                    //window.open('https://support.wwf.org.uk', '_blank');
+
+                                    getReportDetails1011_Sumtotal(sdate, edate, '1011', '[1011] Ampelite BKK', strempcode.text(), strempname.text());
+                                }
+                            } else if (rIndex != 0 & cIndex == 14) {
+                                var strempcode = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
+                                var strempname = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
+                                var strVal1 = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
+
+                                if (strempcode.text() != "") {
+                                    console.log('row :' + rIndex + ', cols : ' + cIndex + '\n' +
+                                        ', sdate : ' + sdate +
+                                        ', edate : ' + edate + '\n' +
+                                        ', strempcode : ' + strempcode.text() + '\n' +
+                                        ', strempname : ' + strempname.text() + '\n ' +
+                                        ', comm : ' + strVal1.text());
+
+                                    //window.open('https://support.wwf.org.uk', '_blank');
+
+                                    getReportDetails1011_netCutComm(sdate, edate, '1011', '[1011] Ampelite BKK', strempcode.text(), strempname.text());
+                                }
+                            } else if (rIndex != 0 & cIndex == 20) {
+                                var strempcode = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
+                                var strempname = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
+                                var strVal1 = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
+
+                                if (strempcode.text() != "") {
+                                    console.log('row :' + rIndex + ', cols : ' + cIndex + '\n' +
+                                        ', sdate : ' + sdate +
+                                        ', edate : ' + edate + '\n' +
+                                        ', strempcode : ' + strempcode.text() + '\n' +
+                                        ', strempname : ' + strempname.text() + '\n ' +
+                                        ', comm : ' + strVal1.text());
+
+                                    //window.open('https://support.wwf.org.uk', '_blank');
+
+                                    getReportDetails1011(sdate, edate, '1011', '[1011] Ampelite BKK', strempcode.text(), strempname.text());
+                                }
+                            }
+
+                        });
+                                                                                         }
                 });
             }
 
@@ -291,22 +409,99 @@
                         $('#tblReprot1012 td:nth-of-type(9)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(10)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(11)').addClass('myclass');
-                        $('#tblReprot1012 td:nth-of-type(12)').addClass('myclass');
+                        $('#tblReprot1012 td:nth-of-type(12)').addClass('myclassblue');
                         $('#tblReprot1012 td:nth-of-type(13)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(14)').addClass('myclass');
-                        $('#tblReprot1012 td:nth-of-type(15)').addClass('myclass');
+                        $('#tblReprot1012 td:nth-of-type(15)').addClass('myclassblue');
                         $('#tblReprot1012 td:nth-of-type(16)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(17)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(18)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(19)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(20)').addClass('myclass');
-                        $('#tblReprot1012 td:nth-of-type(21)').addClass('myclass');
+                        $('#tblReprot1012 td:nth-of-type(21)').addClass('myclassblue');
                         $('#tblReprot1012 td:nth-of-type(22)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(23)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(24)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(25)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(26)').addClass('myclass');
                         $("#loaderDiv1012").hide();
+
+                        $('#tblReprot1012 td').hover(function () {
+                            rIndex = this.parentElement.rowIndex;
+                            cIndex = this.cellIndex;
+                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                                $(this).css('cursor', 'pointer');
+                                $(this).css('color', 'red');
+                                $(this).css('font-weight', 'bold');
+                            }
+                        }, function () {
+                            rIndex = this.parentElement.rowIndex;
+                            cIndex = this.cellIndex;
+                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                                $(this).css("color", "blue");
+                                $(this).css('font-weight', 'normal');
+                            }
+                        });
+
+                        $('#tblReprot1012 td').click(function () {
+                            rIndex = this.parentElement.rowIndex;
+                            cIndex = this.cellIndex;
+
+                            //alert(rIndex);
+
+                            if (rIndex != 0 & cIndex == 11) {
+                                var strempcode = $("#tblReprot1012").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
+                                var strempname = $("#tblReprot1012").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
+                                var strVal1 = $("#tblReprot1012").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
+
+                                if (strempcode.text() != "") {
+                                    console.log('row :' + rIndex + ', cols : ' + cIndex + '\n' +
+                                        ', sdate : ' + sdate +
+                                        ', edate : ' + edate + '\n' +
+                                        ', strempcode : ' + strempcode.text() + '\n' +
+                                        ', strempname : ' + strempname.text() + '\n ' +
+                                        ', comm : ' + strVal1.text());
+
+                                    //window.open('https://support.wwf.org.uk', '_blank');
+
+                                    getReportDetails1012_Sumtotal(sdate, edate, '1012', '[1012] Ampelite UPC (ภาคเหนือ/อีสาน)', strempcode.text(), strempname.text());
+                                }
+                            } else if (rIndex != 0 & cIndex == 14) {
+                                var strempcode = $("#tblReprot1012").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
+                                var strempname = $("#tblReprot1012").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
+                                var strVal1 = $("#tblReprot1012").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
+
+                                if (strempcode.text() != "") {
+                                    console.log('row :' + rIndex + ', cols : ' + cIndex + '\n' +
+                                        ', sdate : ' + sdate +
+                                        ', edate : ' + edate + '\n' +
+                                        ', strempcode : ' + strempcode.text() + '\n' +
+                                        ', strempname : ' + strempname.text() + '\n ' +
+                                        ', comm : ' + strVal1.text());
+
+                                    //window.open('https://support.wwf.org.uk', '_blank');
+
+                                   getReportDetails1012_netCutComm(sdate, edate, '1012', '[1012] Ampelite UPC (ภาคเหนือ/อีสาน)', strempcode.text(), strempname.text());
+                                }
+                            }if (rIndex != 0 & cIndex == 20) {
+                                var strempcode = $("#tblReprot1012").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
+                                var strempname = $("#tblReprot1012").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
+                                var strVal1 = $("#tblReprot1012").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
+
+                                if (strempcode.text() != "") {
+                                    console.log('row :' + rIndex + ', cols : ' + cIndex + '\n' +
+                                        ', sdate : ' + sdate +
+                                        ', edate : ' + edate + '\n' +
+                                        ', strempcode : ' + strempcode.text() + '\n' +
+                                        ', strempname : ' + strempname.text() + '\n ' +
+                                        ', comm : ' + strVal1.text());
+
+                                    //window.open('https://support.wwf.org.uk', '_blank');
+
+                                    getReportDetails1012(sdate, edate, '1012', '[1012] Ampelite UPC (ภาคเหนือ/อีสาน)', strempcode.text(), strempname.text());
+                                }
+                            }
+                        });
                     }
                 });
             }
@@ -346,24 +541,403 @@
                         $('#tblReprot1013 td:nth-of-type(9)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(10)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(11)').addClass('myclass');
-                        $('#tblReprot1013 td:nth-of-type(12)').addClass('myclass');
+                        $('#tblReprot1013 td:nth-of-type(12)').addClass('myclassblue');
                         $('#tblReprot1013 td:nth-of-type(13)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(14)').addClass('myclass');
-                        $('#tblReprot1013 td:nth-of-type(15)').addClass('myclass');
+                        $('#tblReprot1013 td:nth-of-type(15)').addClass('myclassblue');
                         $('#tblReprot1013 td:nth-of-type(16)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(17)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(18)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(19)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(20)').addClass('myclass');
-                        $('#tblReprot1013 td:nth-of-type(21)').addClass('myclass');
+                        $('#tblReprot1013 td:nth-of-type(21)').addClass('myclassblue');
                         $('#tblReprot1013 td:nth-of-type(22)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(23)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(24)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(25)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(26)').addClass('myclass');
                         $("#loaderDiv1013").hide();
+
+                         $('#tblReprot1013 td').hover(function () {
+                            rIndex = this.parentElement.rowIndex;
+                            cIndex = this.cellIndex;
+                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                                $(this).css('cursor', 'pointer');
+                                $(this).css('color', 'red');
+                                $(this).css('font-weight', 'bold');
+                            }
+                        }, function () {
+                            rIndex = this.parentElement.rowIndex;
+                            cIndex = this.cellIndex;
+                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                                $(this).css("color", "blue");
+                                $(this).css('font-weight', 'normal');
+                            }
+                        });
+
+                        $('#tblReprot1013 td').click(function () {
+                            rIndex = this.parentElement.rowIndex;
+                            cIndex = this.cellIndex;
+
+                            //alert(rIndex);
+
+                            if (rIndex != 0 & cIndex == 11) {
+                                var strempcode = $("#tblReprot1013").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
+                                var strempname = $("#tblReprot1013").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
+                                var strVal1 = $("#tblReprot1013").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
+
+                                if (strempcode.text() != "") {
+                                    console.log('row :' + rIndex + ', cols : ' + cIndex + '\n' +
+                                        ', sdate : ' + sdate +
+                                        ', edate : ' + edate + '\n' +
+                                        ', strempcode : ' + strempcode.text() + '\n' +
+                                        ', strempname : ' + strempname.text() + '\n ' +
+                                        ', comm : ' + strVal1.text());
+
+                                    //window.open('https://support.wwf.org.uk', '_blank');
+
+                                    getReportDetails1013_Sumtotal(sdate, edate, '1013', '[1013] Ampelite UPC (ภาคตะวันออก, กลาง, ตก, ใต้)', strempcode.text(), strempname.text());
+                                }
+                            } else if (rIndex != 0 & cIndex == 14) {
+                                var strempcode = $("#tblReprot1013").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
+                                var strempname = $("#tblReprot1013").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
+                                var strVal1 = $("#tblReprot1013").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
+
+                                if (strempcode.text() != "") {
+                                    console.log('row :' + rIndex + ', cols : ' + cIndex + '\n' +
+                                        ', sdate : ' + sdate +
+                                        ', edate : ' + edate + '\n' +
+                                        ', strempcode : ' + strempcode.text() + '\n' +
+                                        ', strempname : ' + strempname.text() + '\n ' +
+                                        ', comm : ' + strVal1.text());
+
+                                    //window.open('https://support.wwf.org.uk', '_blank');
+
+                                   getReportDetails1013_netCutComm(sdate, edate, '1013', '[1013] Ampelite UPC (ภาคตะวันออก, กลาง, ตก, ใต้)', strempcode.text(), strempname.text());
+                                }
+                            }if (rIndex != 0 & cIndex == 20) {
+                                var strempcode = $("#tblReprot1013").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
+                                var strempname = $("#tblReprot1013").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
+                                var strVal1 = $("#tblReprot1013").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
+
+                                if (strempcode.text() != "") {
+                                    console.log('row :' + rIndex + ', cols : ' + cIndex + '\n' +
+                                        ', sdate : ' + sdate +
+                                        ', edate : ' + edate + '\n' +
+                                        ', strempcode : ' + strempcode.text() + '\n' +
+                                        ', strempname : ' + strempname.text() + '\n ' +
+                                        ', comm : ' + strVal1.text());
+
+                                    //window.open('https://support.wwf.org.uk', '_blank');
+
+                                    getReportDetails1013(sdate, edate, '1013', '[1013] Ampelite UPC (ภาคตะวันออก, กลาง, ตก, ใต้)', strempcode.text(), strempname.text());
+                                }
+                            }
+                        });
                     }
                 });
+            }
+
+            function getReportDetails1011_Sumtotal(sdate, edate, zoneid, rptname, empcode, empname) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReportDetail1011_sumtotal',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate,
+                        zoneid: zoneid,
+                        empcode: empcode
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tableReportDetails1011 tr td").remove(); 
+                        $("#loaderDetail1011").show();
+                    },
+                    success: function (data) {
+                        var table = $('#tableReportDetails1011').DataTable();
+                        table.clear();
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].DocuDate, data[i].InvNo, data[i].ProductCode, data[i].NetCutSale
+                                    , data[i].EmpCode, data[i].SaleName]);
+                            });
+                        }
+                        table.draw();
+                        $("#loaderDetail1011").hide();
+                    }
+                });
+                
+                $("#empcode").text(rptname + ' : ' + empcode + ' : ' + empname);
+                $("#modal-reportdetail-1011").modal({ backdrop: false });
+                $("#modal-reportdetail-1011").modal("show");
+            }
+            function getReportDetails1011_netCutComm(sdate, edate, zoneid, rptname, empcode, empname) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReportDetail1011_netCutComm',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate,
+                        zoneid: zoneid,
+                        empcode: empcode
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tableReportDetails1011 tr td").remove(); 
+                        $("#loaderDetail1011").show();
+                    },
+                    success: function (data) {
+                        var table = $('#tableReportDetails1011').DataTable();
+                        table.clear();
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].DocuDate, data[i].InvNo, data[i].ProductCode, data[i].NetCutSale
+                                    , data[i].EmpCode, data[i].SaleName]);
+                            });
+                        }
+                        table.draw();
+                        $("#loaderDetail1011").hide();
+                    }
+                });
+                
+                $("#empcode").text(rptname + ' : ' + empcode + ' : ' + empname);
+                $("#modal-reportdetail-1011").modal({ backdrop: false });
+                $("#modal-reportdetail-1011").modal("show");
+            }
+            function getReportDetails1011(sdate, edate, zoneid, rptname, empcode, empname) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReportDetail1011',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate,
+                        zoneid: zoneid,
+                        empcode: empcode
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tableReportDetails1011 tr td").remove(); 
+                        $("#loaderDetail1011").show();
+                    },
+                    success: function (data) {
+                        var table = $('#tableReportDetails1011').DataTable();
+                        table.clear();
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].DocuDate, data[i].InvNo, data[i].ProductCode, data[i].NetCutSale
+                                    , data[i].EmpCode, data[i].SaleName]);
+                            });
+                        }
+                        table.draw();
+                        $("#loaderDetail1011").hide();
+                    }
+                });
+                
+                $("#empcode").text(rptname + ' : ' + empcode + ' : ' + empname);
+                $("#modal-reportdetail-1011").modal({ backdrop: false });
+                $("#modal-reportdetail-1011").modal("show");
+            }
+
+
+            function getReportDetails1012_Sumtotal(sdate, edate, zoneid, rptname, empcode, empname) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReportDetail1012_sumtotal',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate,
+                        zoneid: zoneid,
+                        empcode: empcode
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tableReportDetails1012 tr td").remove(); 
+                        $("#loaderDetail1011").show();
+                    },
+                    success: function (data) {
+                        var table = $('#tableReportDetails1012').DataTable();
+                        table.clear();
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].DocuDate, data[i].InvNo, data[i].ProductCode, data[i].NetCutSale
+                                    , data[i].EmpCode, data[i].SaleName]);
+                            });
+                        }
+                        table.draw();
+                        $("#loaderDetail1012").hide();
+                    }
+                });
+                
+                $("#empcode1012").text(rptname + ' : ' + empcode + ' : ' + empname);
+                $("#modal-reportdetail-1012").modal({ backdrop: false });
+                $("#modal-reportdetail-1012").modal("show");
+            }
+            function getReportDetails1012_netCutComm(sdate, edate, zoneid, rptname, empcode, empname) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReportDetail1012_netCutComm',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate,
+                        zoneid: zoneid,
+                        empcode: empcode
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tableReportDetails1012 tr td").remove(); 
+                        $("#loaderDetail1012").show();
+                    },
+                    success: function (data) {
+                        var table = $('#tableReportDetails1012').DataTable();
+                        table.clear();
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].DocuDate, data[i].InvNo, data[i].ProductCode, data[i].NetCutSale
+                                    , data[i].EmpCode, data[i].SaleName]);
+                            });
+                        }
+                        table.draw();
+                        $("#loaderDetail1012").hide();
+                    }
+                });
+                
+                $("#empcode1012").text(rptname + ' : ' + empcode + ' : ' + empname);
+                $("#modal-reportdetail-1012").modal({ backdrop: false });
+                $("#modal-reportdetail-1012").modal("show");
+            }
+            function getReportDetails1012(sdate, edate, zoneid, rptname, empcode, empname) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReportDetail1012',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate,
+                        zoneid: zoneid,
+                        empcode: empcode
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tableReportDetails1012 tr td").remove(); 
+                        $("#loaderDetail1012").show();
+                    },
+                    success: function (data) {
+                        var table = $('#tableReportDetails1012').DataTable();
+                        table.clear();
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].DocuDate, data[i].InvNo, data[i].ProductCode, data[i].NetCutSale
+                                    , data[i].EmpCode, data[i].SaleName]);
+                            });
+                        }
+                        table.draw();
+                        $("#loaderDetail1012").hide();
+                    }
+                });
+                
+                $("#empcode1012").text(rptname + ' : ' + empcode + ' : ' + empname);
+                $("#modal-reportdetail-1012").modal({ backdrop: false });
+                $("#modal-reportdetail-1012").modal("show");
+            }
+
+
+            function getReportDetails1013_Sumtotal(sdate, edate, zoneid, rptname, empcode, empname) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReportDetail1013_sumtotal',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate,
+                        zoneid: zoneid,
+                        empcode: empcode
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tableReportDetails1013 tr td").remove(); 
+                        $("#loaderDetail1013").show();
+                    },
+                    success: function (data) {
+                        var table = $('#tableReportDetails1013').DataTable();
+                        table.clear();
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].DocuDate, data[i].InvNo, data[i].ProductCode, data[i].NetCutSale
+                                    , data[i].EmpCode, data[i].SaleName]);
+                            });
+                        }
+                        table.draw();
+                        $("#loaderDetail1013").hide();
+                    }
+                });
+                
+                $("#empcode1013").text(rptname + ' : ' + empcode + ' : ' + empname);
+                $("#modal-reportdetail-1013").modal({ backdrop: false });
+                $("#modal-reportdetail-1013").modal("show");
+            }
+            function getReportDetails1013_netCutComm(sdate, edate, zoneid, rptname, empcode, empname) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReportDetail1013_netCutComm',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate,
+                        zoneid: zoneid,
+                        empcode: empcode
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tableReportDetails1013 tr td").remove(); 
+                        $("#loaderDetail1013").show();
+                    },
+                    success: function (data) {
+                        var table = $('#tableReportDetails1013').DataTable();
+                        table.clear();
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].DocuDate, data[i].InvNo, data[i].ProductCode, data[i].NetCutSale
+                                    , data[i].EmpCode, data[i].SaleName]);
+                            });
+                        }
+                        table.draw();
+                        $("#loaderDetail1013").hide();
+                    }
+                });
+                
+                $("#empcode1013").text(rptname + ' : ' + empcode + ' : ' + empname);
+                $("#modal-reportdetail-1013").modal({ backdrop: false });
+                $("#modal-reportdetail-1013").modal("show");
+            }
+            function getReportDetails1013(sdate, edate, zoneid, rptname, empcode, empname) {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetReportDetail1013',
+                    method: 'post',
+                    data: {
+                        sdate: sdate,
+                        edate: edate,
+                        zoneid: zoneid,
+                        empcode: empcode
+                    },
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $("#tableReportDetails1013 tr td").remove(); 
+                        $("#loaderDetail1012").show();
+                    },
+                    success: function (data) {
+                        var table = $('#tableReportDetails1013').DataTable();
+                        table.clear();
+                        if (data != '') {
+                            $.each(data, function (i, item) {
+                                table.row.add([data[i].DocuDate, data[i].InvNo, data[i].ProductCode, data[i].NetCutSale
+                                    , data[i].EmpCode, data[i].SaleName]);
+                            });
+                        }
+                        table.draw();
+                        $("#loaderDetail1013").hide();
+                    }
+                });
+                
+                $("#empcode1012").text(rptname + ' : ' + empcode + ' : ' + empname);
+                $("#modal-reportdetail-1013").modal({ backdrop: false });
+                $("#modal-reportdetail-1013").modal("show");
             }
 
         </script>
@@ -377,7 +951,7 @@
         <div id="overlay">
             <div class="cv-spinner">
                 <span class="spinner"></span>
-                
+
             </div>
         </div>
 
@@ -397,7 +971,7 @@
                                                 <i class="fa fa-plus"></i>
                                             </button>
                                             <span class="btn-group">
-                                                <button id="btnDownload"  type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
+                                                <button id="btnDownload" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print PDF"><i class="fa fa-download"></i></button>
                                                 <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Screen" onclick="window.print()"><i class="fa fa-credit-card"></i></button>
                                                 <button id="btnExportExcel" runat="server" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print Excel"><i class="fa fa-table"></i></button>
                                             </span>
@@ -495,7 +1069,7 @@
                                         <th class="">GrandTotal</th>
                                         <th class="">Traget</th>
                                         <th class="">Diff</th>
-                                       	<th class="">%</th>
+                                        <th class="">%</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -515,7 +1089,7 @@
                             </span>
                             <label class="txtLabel">[1012] Ampelite UPC (ภาคเหนือ/อีสาน)</label>
                         </div>
-                        <div class="box-body"  style="overflow: scroll">
+                        <div class="box-body" style="overflow: scroll">
                             <div class="cv-spinner" id="loaderDiv1012">
                                 <span class="spinner"></span>
                             </div>
@@ -548,7 +1122,7 @@
                                         <th class="">GrandTotal</th>
                                         <th class="">Traget</th>
                                         <th class="">Diff</th>
-                                       	<th class="">%</th>
+                                        <th class="">%</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -602,7 +1176,7 @@
                                         <th class="">GrandTotal</th>
                                         <th class="">Traget</th>
                                         <th class="">Diff</th>
-                                       	<th class="">%</th>
+                                        <th class="">%</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -628,5 +1202,125 @@
 
         </div>
 
+        <div class="modal fade" id="modal-reportdetail-1011">
+            <div class="modal-dialog" style="width: 1000px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Report of
+                            <label class="txtLabel" id="empcode"></label>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="box-body" style="overflow: scroll">
+                            <div class="cv-spinner" id="loaderDetail1011">
+                                <span class="spinner"></span>
+                            </div>
+                            <table id="tableReportDetails1011" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th class="">DocuDate</th>
+                                        <th class="">InvNo</th>
+                                        <th class="">ProductCode</th>
+                                        <th class="">TotalPrice</th>                                        
+                                        <th class="">EmpCode</th>
+                                        <th class="">SaleName</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="button" id="btnprintdetail1011" name="btnprintdetail1011" class="btn btn-primary">Print Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modal-reportdetail-1012">
+            <div class="modal-dialog" style="width: 1000px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Report of
+                            <label class="txtLabel" id="empcode1012"></label>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="box-body" style="overflow: scroll">
+                            <div class="cv-spinner" id="loaderDetail1012">
+                                <span class="spinner"></span>
+                            </div>
+                            <table id="tableReportDetails1012" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th class="">DocuDate</th>
+                                        <th class="">InvNo</th>
+                                        <th class="">ProductCode</th>
+                                        <th class="">TotalPrice</th>                                        
+                                        <th class="">EmpCode</th>
+                                        <th class="">SaleName</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="button" id="btnprintdetail1012" name="btnprintdetail1012" class="btn btn-primary">Print Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modal-reportdetail-1013">
+            <div class="modal-dialog" style="width: 1000px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Report of
+                            <label class="txtLabel" id="empcode1013"></label>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="box-body" style="overflow: scroll">
+                            <div class="cv-spinner" id="loaderDetail1013">
+                                <span class="spinner"></span>
+                            </div>
+                            <table id="tableReportDetails1013" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th class="">DocuDate</th>
+                                        <th class="">InvNo</th>
+                                        <th class="">ProductCode</th>
+                                        <th class="">TotalPrice</th>                                        
+                                        <th class="">EmpCode</th>
+                                        <th class="">SaleName</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="button" id="btnprintdetail1013" name="btnprintdetail1013" class="btn btn-primary">Print Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </section>
 </asp:Content>

@@ -13786,6 +13786,8 @@
     <Content Include="total_sale.master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reports\cGetReportDetail1012.cs" />
+    <Compile Include="Reports\cGetReportDetail1011.cs" />
     <Compile Include="Reports\cGetReport1043.cs" />
     <Compile Include="Class\cGetSpecialPrjectLists.cs" />
     <Compile Include="errorpage.aspx.cs">

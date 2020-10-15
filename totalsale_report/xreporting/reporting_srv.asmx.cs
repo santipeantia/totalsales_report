@@ -1254,5 +1254,285 @@ namespace totalsale_report.xreporting
             Context.Response.ContentType = "application/json";
             conn.CloseConn();
         }
+
+        [WebMethod]
+        public void GetReportDetail1011_sumtotal(string sdate, string edate, string zoneid, string empcode)
+        {
+            List<cGetReportDetail1011> datas = new List<cGetReportDetail1011>();
+            SqlCommand comm = new SqlCommand("spGetReportDetail_1011_Sumtotal", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@zone_id", zoneid);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReportDetail1011 data = new cGetReportDetail1011();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+        
+        [WebMethod]
+        public void GetReportDetail1011_netCutComm(string sdate, string edate, string zoneid, string empcode)
+        {
+            List<cGetReportDetail1011> datas = new List<cGetReportDetail1011>();
+            SqlCommand comm = new SqlCommand("spGetReportDetail_1011_netCutComm", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@zone_id", zoneid);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReportDetail1011 data = new cGetReportDetail1011();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetReportDetail1011(string sdate, string edate, string zoneid, string empcode) {
+            List<cGetReportDetail1011> datas = new List<cGetReportDetail1011>();
+            SqlCommand comm = new SqlCommand("spGetReportDetail_1011_cutNetSales", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@zone_id", zoneid);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReportDetail1011 data = new cGetReportDetail1011();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+
+        [WebMethod]
+        public void GetReportDetail1012_sumtotal(string sdate, string edate, string zoneid, string empcode)
+        {
+            List<cGetReportDetail1012> datas = new List<cGetReportDetail1012>();
+            SqlCommand comm = new SqlCommand("spGetReportDetail_1012_Sumtotal", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@zone_id", zoneid);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReportDetail1012 data = new cGetReportDetail1012();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetReportDetail1012_netCutComm(string sdate, string edate, string zoneid, string empcode)
+        {
+            List<cGetReportDetail1012> datas = new List<cGetReportDetail1012>();
+            SqlCommand comm = new SqlCommand("spGetReportDetail_1012_netCutComm", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@zone_id", zoneid);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReportDetail1012 data = new cGetReportDetail1012();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetReportDetail1012(string sdate, string edate, string zoneid, string empcode)
+        {
+            List<cGetReportDetail1012> datas = new List<cGetReportDetail1012>();
+            SqlCommand comm = new SqlCommand("spGetReportDetail_1012_cutNetSales", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@zone_id", zoneid);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReportDetail1012 data = new cGetReportDetail1012();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+
+        [WebMethod]
+        public void GetReportDetail1013_sumtotal(string sdate, string edate, string zoneid, string empcode)
+        {
+            List<cGetReportDetail1012> datas = new List<cGetReportDetail1012>();
+            SqlCommand comm = new SqlCommand("spGetReportDetail_1013_Sumtotal", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@zone_id", zoneid);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReportDetail1012 data = new cGetReportDetail1012();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetReportDetail1013_netCutComm(string sdate, string edate, string zoneid, string empcode)
+        {
+            List<cGetReportDetail1012> datas = new List<cGetReportDetail1012>();
+            SqlCommand comm = new SqlCommand("spGetReportDetail_1013_netCutComm", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@zone_id", zoneid);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReportDetail1012 data = new cGetReportDetail1012();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetReportDetail1013(string sdate, string edate, string zoneid, string empcode)
+        {
+            List<cGetReportDetail1012> datas = new List<cGetReportDetail1012>();
+            SqlCommand comm = new SqlCommand("spGetReportDetail_1013_cutNetSales", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@zone_id", zoneid);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReportDetail1012 data = new cGetReportDetail1012();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
     }
 }
