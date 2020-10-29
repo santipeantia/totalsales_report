@@ -149,7 +149,7 @@ namespace totalsale_report.xreporting
                         }
 
                         string sclass = "";
-                        if (id == "1" || id == "12" || id == "13" || id == "22" || id == "28" || id == "39" || id == "40")
+                        if (id == "1" || id == "12" || id == "13" || id == "22" || id == "25" || id == "39" || id == "40")
                         {
                             sclass = "style=\"font-weight: bold; text-decoration: underline;\"";
                         }
