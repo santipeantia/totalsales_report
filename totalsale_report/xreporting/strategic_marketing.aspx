@@ -65,11 +65,30 @@
             .mycenter {
                 text-align: center;
             }
+
+            .pointer:hover {
+            cursor: pointer;
+            color: red;
+            font-weight: bold;
+        }
         </style>
+
+        <script>
+            document.addEventListener('keydown', function (event) {
+                if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
+                    var form = event.target.form;
+                    var index = Array.prototype.indexOf.call(form, event.target);
+                    form.elements[index + 1].focus();
+                    event.preventDefault();
+                }
+            });
+        </script>
 
         <script>
             $(document).ready(function () {
                 $('#overlay').hide();
+
+                updSos();
 
                 //todo something here
                 var btnViewReport = $('#btnViewReport')
@@ -107,6 +126,52 @@
                     pdfReportRender(rpt_id, sdate, edate);
                 });
 
+                var btnConfirmed = $('#btnConfirmed');
+                btnConfirmed.click(function () {
+
+                    //id
+                    //busgroup
+                    //sbus
+                    //target_year
+                    //ytd_sales_year
+                    //ytd_sales_previous
+                    //yrcompr
+                    //ytd_target
+                    //target_month
+                    //target_amount
+                    //current_month
+                    //current_amount
+                    //previous_month
+                    //previous_amount
+                    //growth
+                    //sdate
+                    //edate
+                    //summary
+
+                    //$('#txtid').val('');
+                    //$('#txtbusgroup').val('');
+                    //$('#txtsbus').val('');
+                    //$('#txttargetyear').val('');
+                    //$('#txtytdsalesyear').val('');
+                    //$('#txtytdsalesprevious').val('');
+                    //$('#txtyrcompr').val('');
+                    //$('#txtytdtarget').val('');                    
+                    //$('#txttargetmonth').val('');
+                    //$('#txttargetamount').val('');
+                    //$('#txtcurrentmonth').val('');
+                    //$('#txtcurrentamount').val('');
+                    //$('#txtpreviousmonth').val('');
+                    //$('#txtpreviousamount').val('');
+                    //$('#txtgrowth').val('');
+                    //$('#txtsdate').val('');
+                    //$('#txtedate').val('');
+                    //$('#txtsummary').val('');
+
+                    document.getElementById("<%= btnSavenew.ClientID %>").click();
+
+
+
+                });
             });
 
           
@@ -116,7 +181,10 @@
                 var datepickerstart = $('#datepickerstart').val();
                 var datepickerend = $('#datepickerend').val();
                 var filefulname = 'strategic' + '_from_' + datepickerstart + '_to_' + datepickerend;
+                //var filefulnamesos = 'strategicsos' + '_from_' + datepickerstart + '_to_' + datepickerend;
                 exportTableToExcel('tblReportStrategic', filefulname)
+
+                //exportTableToExcel('tblReportSaleOnSpec', filefulnamesos)
             }
 
             function loadPDF() {
@@ -382,8 +450,346 @@
                         </div>
 
                     </div>
+
+                    <div class="col-md-12">
+                        <div class="">
+                            <div class="box box-solid">
+                                <div class="box-header with-border">
+                                    <i class="fa fa-flag-checkered text-orange"></i>
+                                    <span class="btn-group pull-right">
+                                        <button type="button" id="btnAddSOS" class="btn btn-default btn-sm" onclick="addSos()" data-toggle="tooltip" title="New"><i class="fa fa-user-plus text-primary"></i></button>
+                                        <%--<button type="button" id="btnUpdateSOS" class="btn btn-default btn-sm" onclick="updSos()" data-toggle="tooltip" title="Edit"><i class="fa fa-edit text-orange"></i></button>
+                                        <button type="button" id="btnDelSOS" class="btn btn-default btn-sm" onclick="delSos()" data-toggle="tooltip" title="Trash"><i class="fa fa-trash text-red"></i></button>--%>
+                                    </span>
+
+                                    <label class="txtLabel">Sales On Spec</label>
+                                </div>
+                                <div class="box-body">
+
+                                    <%--<i class="fa fa-caret-up fa-2x text-green" aria-hidden="true"></i>
+
+                            <i class="fa fa-caret-down fa-2x text-red" aria-hidden="true"></i>--%>
+
+
+                                    <table id="tblReportSaleOnSpec" class="table table-striped table-bordered table-hover table-condensed" style="width: 100%">
+                                        <thead>
+                                            <tr>
+                                                <td class="font-weight-bold "><b>No.</b></td>
+                                                <td class="font-weight-bold"><b>BusGroup</b></td>
+                                                <td class="font-weight-bold"><b>SBUs</b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>Target-<%=previouse_name_year %></b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>YTD Sales <%= current_name_year %></b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>YTD Sales <%= previouse_name_year %></b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>YrCompr(%)</b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>YTD/Target(%)</b></td>
+                                                <td class="font-weight-bold" hidden><b>target_month</b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>Target/<%= current_name_month %></b></td>
+                                                <td class="font-weight-bold hidden"><b>current_montd</b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b><%= current_name_month %></b></td>
+                                                <td class="font-weight-bold hidden"><b>previous_montd</b> </td>
+                                                <td class="font-weight-bold" style="text-align: center"><b><%= previouse_name_month %></b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>Growth(%)</b></td>
+                                                <td class="font-weight-bold hidden"><b>xsdate</b> </td>
+                                                <td class="font-weight-bold hidden"><b>xedate</b> </td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>Summary</b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>#</b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>#</b></td>
+                                                <td class="font-weight-bold hidden"><b>rid</b> </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%= strTblDetailSOS %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
+
+        <!-- /.modal myModalVerifyPassword -->
+        <div class="modal modal-default fade" id="modal-sales-sos">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Add New Sales Spec Of Month</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="post clearfix">
+                                <div class="row hidden" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">RefID.</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtid" name="txtid" readonly value="">
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">BusGroup</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtbusgroup" name="txtbusgroup" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">SBUs</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtsbus" name="txtsbus" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">TargetYear</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txttargetyear" name="txttargetyear" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">YTD Sales Year</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtytdsalesyear" name="txtytdsalesyear" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">YTD Last Year</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtytdsalesprevious" name="txtytdsalesprevious" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">YrCompr</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtyrcompr" name="txtyrcompr" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">YTD/Target(%)</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtytdtarget" name="txtytdtarget" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row hidden" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">Target Month</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txttargetmonth" name="txttargetmonth" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+                                
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">Target Amount</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txttargetamount" name="txttargetamount" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                 <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">Current Amount</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtcurrentamount" name="txtcurrentamount" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                 <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">Previous Amount</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtpreviousamount" name="txtpreviousamount" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">Growth</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtgrowth" name="txtgrowth" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row hidden" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">Summary</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtsummary" name="txtsummary" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row hidden" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">Current Month</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtcurrentmonth" name="txtcurrentmonth" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>                                                              
+
+                                <div class="row hidden" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">Previous Month</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtpreviousmonth" name="txtpreviousmonth" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>                                                           
+
+                                <div class="row hidden" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">Sdate</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtsdate" name="txtsdate" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row hidden" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">Edate</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtedate" name="txtedate" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row hidden" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">rid</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txtrid" name="txtrid" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+                                <div class="row hidden" style="margin-bottom: 5px">
+                                    <div class="col-md-4 txtLabel">trn</div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input input-sm txtLabel" id="txttrn" name="txttrn" autocomplete="off" placeholder="" value="">
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>             
+                    
+
+                    <div class="modal-footer clearfix">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <input type="text" id="txtRepOpt" name="txtRepOpt" class="hidden" value="" />
+                        <button class="btn btn-default hidden" id="btnSavenew" runat="server" onserverclick="btnSavenew_Click" >Save New</button>
+                       
+                        
+                        <button type="button" class="btn btn-primary" id="btnConfirmed" >Save and Changed</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            function addSos() {
+
+                $('#txtbusgroup').val('FRP');
+                $('#txtsbus').val('Actual x 1.5');
+                $('#txttargetyear').val('');
+                $('#txtytdsalesprevious').val('');
+                $('#txtyrcompr').val('');
+                $('#txtytdtarget').val('');
+                $('#txtytdsalesyear').val('');
+                $('#txttargetmonth').val('');
+                $('#txttargetamount').val('');
+                $('#txtcurrentamount').val('');
+                $('#txtpreviousamount').val('');
+                $('#txtgrowth').val('');
+                $('#txtsummary').val('');
+                $('#txtrid').val('');
+                $('#txttrn').val('0');
+
+                $("#modal-sales-sos").modal({ backdrop: false });
+                $("#modal-sales-sos").modal("show");
+            }
+
+            function updSos() {
+
+                $('#tblReportSaleOnSpec tbody').on('click', 'td', function (e) {
+                    e.preventDefault();
+                    var id = $(this).parent().children().eq(0).text();
+                    var busgroup = $(this).parent().children().eq(1).text();
+                    var sbus = $(this).parent().children().eq(2).text();
+                    var targetyear = $(this).parent().children().eq(3).text();
+                    var ytdsalesyear = $(this).parent().children().eq(4).text();
+                    var ytdsalesprevious = $(this).parent().children().eq(5).text();
+                    var yrcompr = $(this).parent().children().eq(6).text();
+                    var ytdtarget = $(this).parent().children().eq(7).text();
+
+                    var targetmonth = $(this).parent().children().eq(8).text();
+                    var targetamount = $(this).parent().children().eq(9).text();
+                    var currentamount = $(this).parent().children().eq(11).text();
+                    var previousamount = $(this).parent().children().eq(13).text();
+                    var growth = $(this).parent().children().eq(14).text();
+                    var rid = $(this).parent().children().eq(20).text();
+
+
+                    var rIndex = this.parentElement.rowIndex;
+                    var cIndex = this.cellIndex;
+                    if (rIndex != 0 & cIndex == 18) {
+                        console.log('col: ' + id + ' row: ' + rIndex + ' cell: ' + cIndex);
+
+                        $('#txtid').val(id);
+                        $('#txtbusgroup').val(busgroup);
+                        $('#txtsbus').val(sbus);
+                        $('#txttargetyear').val(targetyear);
+                        $('#txtytdsalesprevious').val(ytdsalesprevious);
+                        $('#txtyrcompr').val(yrcompr);
+                        $('#txtytdtarget').val(ytdtarget);
+                        $('#txtytdsalesyear').val(ytdsalesyear);
+                        $('#txttargetmonth').val(targetmonth);
+                        $('#txttargetamount').val(targetamount);
+                        $('#txtcurrentamount').val(currentamount);
+                        $('#txtpreviousamount').val(previousamount);
+                        $('#txtgrowth').val(growth);
+                        $('#txtsummary').val('');
+                        $('#txtrid').val(rid);
+                        $('#txttrn').val('1');
+
+                        $("#modal-sales-sos").modal({ backdrop: false });
+                        $("#modal-sales-sos").modal("show");
+
+                    }
+                    else if (rIndex != 0 & cIndex == 19) {
+                        console.log('col: ' + id + ' row: ' + rIndex + ' cell: ' + cIndex + ' rid: ' + rid);
+                        
+                        Swal.fire({
+                            title: 'Are you sure?',
+                            text: "You won't be able to revert this!",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Yes, delete it!'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+
+                                $('#txtid').val(id);
+                                $('#txtbusgroup').val(busgroup);
+                                $('#txtsbus').val(sbus);
+                                $('#txttargetyear').val(targetyear);
+                                $('#txtytdsalesprevious').val(ytdsalesprevious);
+                                $('#txtyrcompr').val(yrcompr);
+                                $('#txtytdtarget').val(ytdtarget);
+                                $('#txtytdsalesyear').val(ytdsalesyear);
+                                $('#txttargetmonth').val(targetmonth);
+                                $('#txttargetamount').val(targetamount);
+                                $('#txtcurrentamount').val(currentamount);
+                                $('#txtpreviousamount').val(previousamount);
+                                $('#txtgrowth').val(growth);
+                                $('#txtsummary').val('');
+                                $('#txtrid').val(rid);
+                                $('#txttrn').val('2');
+
+                                document.getElementById("<%= btnSavenew.ClientID %>").click();
+                            }
+                        })                        
+                    }
+                })
+            }
+
+        </script>
     </section>
 </asp:Content>
