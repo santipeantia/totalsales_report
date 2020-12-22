@@ -17,6 +17,7 @@ namespace totalsale_report
         public string exFlashing { get; set; }
         public string exService { get; set; }
         public string saleTotal { get; set; }
+        public string cutCNc { get; set; }
         public string cutAmperamBill { get; set; }
         public string cutAmperamMan { get; set; }
         public string cutAmperamComm { get; set; }
