@@ -216,6 +216,7 @@
                     var totalprice = currentRow.find("td:eq(7)").html();
 
                     //alert(docuno);
+                    console.log(docuno, docudate, empcode);
 
                     Swal.fire({
                         title: 'Are you sure?',
@@ -265,7 +266,7 @@
                 var tt = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
                 var currentdate = yyyy + '-' + mm + '-' + dd + ' ' + tt;
 
-                //alert(docuno + docudate + docudatedue + empcode + salename + custcode + custname);
+                console.log(userscode, docuno ,docudate , empcode);
 
                 $.ajax({
                     url: '../../xtransaction/trn-projecsmanagement_srv.asmx/GetSavechangeSpecialProjects',

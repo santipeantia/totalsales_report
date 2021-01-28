@@ -824,6 +824,7 @@ namespace totalsale_report.xreporting
                 data.dLite4R = rdr["dLite4R"].ToString();
                 data.kansad40 = rdr["kansad40"].ToString();
                 data.frp = rdr["frp"].ToString();
+                data.PolySky = rdr["PolySky"].ToString();
                 data.saleTotal = rdr["saleTotal"].ToString();
                 data.shareSales = rdr["shareSales"].ToString();
                 data.netSales = rdr["netSales"].ToString();
