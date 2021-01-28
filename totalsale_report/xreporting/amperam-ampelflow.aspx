@@ -68,6 +68,12 @@
             $(document).ready(function () {
                 $('#loaderDiv1019').hide();
                 $('#loaderDiv1020').hide();
+                
+                var ssdate = localStorage.getItem('sdate');
+                var eedate = localStorage.getItem('edate');
+
+                $('#datepickerstart').val(ssdate);
+                $('#datepickerend').val(eedate);
 
                 //todo something here
                 var btnViewReport = $('#btnViewReport')
@@ -334,7 +340,7 @@
                             <div class="form-group">
                                 <label class="txtLabel">Date Start:</label>
                                 <div class="input-group date">
-                                    <input type="text" class="form-control pull-right" id="datepickerstart">
+                                    <input type="text" class="form-control pull-right" disabled id="datepickerstart">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
@@ -346,7 +352,7 @@
                             <div class="form-group">
                                 <label class="txtLabel">Date End:</label>
                                 <div class="input-group date">
-                                    <input type="text" class="form-control pull-right" id="datepickerend">
+                                    <input type="text" class="form-control pull-right" disabled id="datepickerend">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>

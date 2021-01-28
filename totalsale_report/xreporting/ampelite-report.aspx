@@ -72,12 +72,32 @@
                 $('#loaderDiv1012').hide();
                 $('#loaderDiv1013').hide();
 
+                var today = new Date();
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth() + 1).padStart(2, '0');
+                var yyyy = today.getFullYear();
+                var tt = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                var firstdate = yyyy + '-' + mm + '-' + '01';
+                var nowdate = yyyy + '-' + mm + '-' + dd;
+                
+                var ssdate = firstdate;
+                var eedate = nowdate;
+
+                $('#datepickerstart').val(ssdate);
+                $('#datepickerend').val(eedate);
+
                 //todo something here
                 var btnViewReport = $('#btnViewReport')
                 btnViewReport.click(function () {
                     //get report_1031
                     var sdate = $('#datepickerstart').val();
                     var edate = $('#datepickerend').val();
+
+                    localStorage.setItem('sdate', sdate);
+                    localStorage.setItem('edate', edate);
+
+                    //var ssdate = localStorage.getItem('sdate');
+                    //var eedate = localStorage.getItem('edate');                 
 
                     getReprot1011(sdate, edate);
                     getReprot1012(sdate, edate);
