@@ -348,7 +348,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].Ferrex, data[i].Arrex, data[i].Correx, data[i].Accessories
-                                    , data[i].accKansad, data[i].netSales, data[i].shareSales, data[i].cutComm, data[i].cutCN, data[i].cutNetSales, data[i].grandTotal]);
+                                    , data[i].accKansad, data[i].accPolySky , data[i].netSales, data[i].shareSales, data[i].cutComm, data[i].cutCN, data[i].cutNetSales, data[i].grandTotal]);
                             });
                         }
                         table.draw();
@@ -442,7 +442,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].Ferrex, data[i].Arrex, data[i].Correx, data[i].Accessories
-                                    , data[i].accKansad, data[i].netSales, data[i].shareShales, data[i].cutComm, data[i].cutCN, data[i].cutNetSales, data[i].grandTotal]);
+                                    , data[i].accKansad , data[i].accPolySky, data[i].netSales, data[i].shareShales, data[i].cutComm, data[i].cutCN, data[i].cutNetSales, data[i].grandTotal]);
                             });
                         }
                         table.draw();
@@ -696,6 +696,7 @@
                                         <th class="">Correx</th>
                                         <th class="">Accessories</th>
                                         <th class="">Accessories Kansad</th>
+                                        <th class="">Accessories PolySky</th>
                                         <th class="">Sales Total</th>
                                         <th class="">แบ่งยอดขาย</th>
                                         <th class="">หักค่านายหน้า</th>
@@ -783,6 +784,7 @@
                                         <th class="">Correx</th>
                                         <th class="">Accessories</th>
                                         <th class="">Accessories Kansad</th>
+                                        <th class="">Accessories PolySky</th>
                                         <th class="">Net Sales</th>
                                         <th class="">แบ่งยอดขาย</th>
                                         <th class="">หักค่านายหน้า</th>

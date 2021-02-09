@@ -13786,6 +13786,7 @@
     <Content Include="total_sale.master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cGetReport1044.cs" />
     <Compile Include="Reports\cGetReportDetail1012.cs" />
     <Compile Include="Reports\cGetReportDetail1011.cs" />
     <Compile Include="Reports\cGetReport1043.cs" />
@@ -13975,8 +13976,8 @@
     <Compile Include="Reports\rpt1023_ScrewAccessories_r2.cs">
       <DependentUpon>rpt1023_ScrewAccessories_r2.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rpt1042_ScrewAccessories_r2.cs">
       <DependentUpon>rpt1042_ScrewAccessories_r2.rpt</DependentUpon>

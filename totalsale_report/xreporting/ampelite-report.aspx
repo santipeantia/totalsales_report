@@ -74,11 +74,12 @@
 
                 var today = new Date();
                 var dd = String(today.getDate()).padStart(2, '0');
+                var ddd = String(today.getDate() - 1).padStart(2, '0');
                 var mm = String(today.getMonth() + 1).padStart(2, '0');
                 var yyyy = today.getFullYear();
                 var tt = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
                 var firstdate = yyyy + '-' + mm + '-' + '01';
-                var nowdate = yyyy + '-' + mm + '-' + dd;
+                var nowdate = yyyy + '-' + mm + '-' + ddd;
                 
                 var ssdate = firstdate;
                 var eedate = nowdate;

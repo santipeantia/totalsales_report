@@ -15,6 +15,7 @@ namespace totalsale_report
         public string Correx { get; set; }
         public string Accessories { get; set; }
         public string accKansad { get; set; }
+        public string accPolySky { get; set; }
         public string netSales { get; set; }
         public string shareShales { get; set; }
         public string cutComm { get; set; }

@@ -707,6 +707,23 @@
                     ]
                 })
 
+                $('#tblReprot1044').DataTable({
+                    'paging': false,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'scrollX': true,
+                    'autoWidth': false,
+                    'columnDefs': [
+                        {
+                            targets: [0,2,3,5,11],
+                            className: "hide_column"
+                        }
+                    ]
+                })
+
+
                  $('#tblReprot1011').DataTable({
                     //'iDisplayLength': 10,
                     'paging': false,
@@ -1275,7 +1292,12 @@
 					autoclose: true,
 					todayHighlight: true,
 					format: 'yyyy-mm-dd'
-			});
+            });
+            $('#projectdate').datepicker({
+                autoclose: true,
+                todayHighlight: true,
+                format: 'yyyy-mm-dd'
+            });
 
           
 

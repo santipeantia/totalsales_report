@@ -250,6 +250,64 @@ namespace totalsale_report.xreporting
         }
 
         [WebMethod]
+        public void GetReport1044(string sdate, string edate)
+        {
+            List<cGetReport1044> datas = new List<cGetReport1044>();
+            SqlCommand comm = new SqlCommand("spRpt1044_ProjectWithoutComm_vw", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.CommandTimeout = 600;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetReport1044 data = new cGetReport1044();
+                data.id = rdr["id"].ToString();
+                data.ProjectName = rdr["ProjectName"].ToString();
+                data.ProjectDate = rdr["ProjectDate"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.CustCode = rdr["CustCode"].ToString();
+                data.CustName = rdr["CustName"].ToString();
+                data.TotalTraget = rdr["TotalTraget"].ToString();
+                data.SubTraget = rdr["SubTraget"].ToString();
+                data.TotalPrice = rdr["TotalPrice"].ToString();
+                data.RemarkDesc = rdr["RemarkDesc"].ToString();
+                data.LastUpdate = rdr["LastUpdate"].ToString();
+                datas.Add(data);
+
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetUpdateProjectCommission(string id, string projname, string projdate, string empcode, string empname, string custcode
+                                                , string custname, string target, string pertarget, string totalprice, string remark, string currentdate, string createby) {
+
+            SqlCommand comm = new SqlCommand("spProjectCommissionGetUpdate", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@id", id);
+            comm.Parameters.AddWithValue("@projname", projname);
+            comm.Parameters.AddWithValue("@projdate", projdate);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.Parameters.AddWithValue("@empname", empname);
+            comm.Parameters.AddWithValue("@custcode", custcode);
+            comm.Parameters.AddWithValue("@custname", custname);
+            comm.Parameters.AddWithValue("@target", target);
+            comm.Parameters.AddWithValue("@pertarget", pertarget);
+            comm.Parameters.AddWithValue("@totalprice", totalprice);
+            comm.Parameters.AddWithValue("@remark", remark);
+            comm.Parameters.AddWithValue("@currentdate", currentdate);
+            comm.Parameters.AddWithValue("@createby", createby);
+            conn.CloseConn();
+
+        }
+
+        [WebMethod]
         public void GetReport1011(string sdate, string edate)
         {
             List<cGetReport1011> datas = new List<cGetReport1011>();
@@ -863,6 +921,7 @@ namespace totalsale_report.xreporting
                 data.Correx = rdr["Correx"].ToString();
                 data.Accessories = rdr["Accessories"].ToString();
                 data.accKansad = rdr["accKansad"].ToString();
+                data.accPolySky = rdr["accPolySky"].ToString();
                 data.netSales = rdr["netSales"].ToString();
                 data.shareSales = rdr["shareSales"].ToString();
                 data.cutComm = rdr["cutComm"].ToString();
@@ -940,6 +999,7 @@ namespace totalsale_report.xreporting
                 data.Correx = rdr["Correx"].ToString();
                 data.Accessories = rdr["Accessories"].ToString();
                 data.accKansad = rdr["accKansad"].ToString();
+                data.accPolySky = rdr["accPolySky"].ToString();
                 data.netSales = rdr["netSales"].ToString();
                 data.shareShales = rdr["shareShales"].ToString();
                 data.cutComm = rdr["cutComm"].ToString();
