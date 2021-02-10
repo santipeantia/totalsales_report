@@ -103,12 +103,12 @@
                     var sdate = $('#datepickerstart').val();
                     var edate = $('#datepickerend').val();
 
-                    //getReprot1031(sdate, edate);
-                    //getReprot1032(sdate, edate);
-                    //getReprot1033(sdate, edate);
-                    //getReprot1034(sdate, edate);
-                    //getReprot1035(sdate, edate);
-                    //getReprot1036(sdate, edate);
+                    getReprot1031(sdate, edate);
+                    getReprot1032(sdate, edate);
+                    getReprot1033(sdate, edate);
+                    getReprot1034(sdate, edate);
+                    getReprot1035(sdate, edate);
+                    getReprot1036(sdate, edate);
                     getReprot1014(sdate, edate);
                     getReprot1044(sdate, edate);
                 });
