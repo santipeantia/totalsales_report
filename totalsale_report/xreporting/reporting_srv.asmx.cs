@@ -285,11 +285,14 @@ namespace totalsale_report.xreporting
         }
 
         [WebMethod]
-        public void GetUpdateProjectCommission(string id, string projname, string projdate, string empcode, string empname, string custcode
-                                                , string custname, string target, string pertarget, string totalprice, string remark, string currentdate, string createby) {
-
+        public void GetUpdateProjectCommission(string trn, string id, string projname, string projdate, string empcode, string empname, string custcode
+                                                , string custname, string target, string pertarget, string totalprice, string remark, string currentdate, string createby)
+        {
+            //try
+            //{
             SqlCommand comm = new SqlCommand("spProjectCommissionGetUpdate", conn.OpenConn());
             comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@trn", trn);
             comm.Parameters.AddWithValue("@id", id);
             comm.Parameters.AddWithValue("@projname", projname);
             comm.Parameters.AddWithValue("@projdate", projdate);
@@ -303,8 +306,13 @@ namespace totalsale_report.xreporting
             comm.Parameters.AddWithValue("@remark", remark);
             comm.Parameters.AddWithValue("@currentdate", currentdate);
             comm.Parameters.AddWithValue("@createby", createby);
+            comm.ExecuteNonQuery();
             conn.CloseConn();
+            //}
+            //catch (Exception ex)
+            //{
 
+            //}
         }
 
         [WebMethod]

@@ -278,7 +278,10 @@
 
                 var btnUpdateProject = $('#btnUpdateProject');
                 btnUpdateProject.click(function () {
-                    
+
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
                     var id = $('#txtid').val();
                     var projname = $('#txtProjectName').val();
                     var projdate = $('#projectdate').val();
@@ -353,7 +356,44 @@
                     }
 
                     //alert('done');
-                    getSaveProjectCommission(id, projname, projdate, empname, empname, custname, custname, target, pertarget, totalprice, remark, currentdate, createby);
+                    getSaveProjectCommission('', id, projname, projdate, empname, empname, custname, custname, target, pertarget, totalprice, remark, currentdate, createby);
+                    getReprot1044(sdate, edate);
+
+                    $("#modal-ProjectCommission").modal({ backdrop: false });
+                    $("#modal-ProjectCommission").modal("hide");
+                });
+
+                var btnDeleteProject = $('#btnDeleteProject')
+                btnDeleteProject.click(function () {
+
+                    var sdate = $('#datepickerstart').val();
+                    var edate = $('#datepickerend').val();
+
+                    var id = $('#txtid').val();
+                    var projname = $('#txtProjectName').val();
+                    var projdate = $('#projectdate').val();
+                    var custname = $('#txtCustName').val();
+                    var empname = $('#txtEmpName').val();
+                    var target = $('#txtTarget').val();
+                    var pertarget = $('#txtPerTarget').val();
+                    var totalprice = $('#txtTotalPrice').val();
+                    var remark = $('#txtRemark').val();
+
+                    var createby = '<%= Session["UserID"]%>';
+
+                    var today = new Date();
+                    var dd = String(today.getDate()).padStart(2, '0');
+                    var mm = String(today.getMonth() + 1).padStart(2, '0');
+                    var yyyy = today.getFullYear();
+                    var tt = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                    var currentdate = yyyy + '-' + mm + '-' + dd + ' ' + tt;
+
+                    //alert('done');
+                    getSaveProjectCommission('1', id, projname, projdate, empname, empname, custname, custname, target, pertarget, totalprice, remark, currentdate, createby);
+                    getReprot1044(sdate, edate);
+
+                    $("#modal-ProjectCommission").modal({ backdrop: false });
+                    $("#modal-ProjectCommission").modal("hide");
 
                 });
 
@@ -762,24 +802,25 @@
                 });
             }
 
-            function getSaveProjectCommission(id, projname, projdate, empcode, empname, custcode, custname, target, pertarget, totalprice, remark, currentdate, createby) {
+            function getSaveProjectCommission(trn, id, projname, projdate, empcode, empname, custcode, custname, target, pertarget, totalprice, remark, currentdate, createby) {
                 $.ajax({
                     url: '../xreporting/reporting_srv.asmx/GetUpdateProjectCommission',
-                    method: '',
+                    method: 'post',
                     data: {
-                        id,
-                        projname,
-                        projdate,
-                        empcode,
-                        empname,
-                        custcode,
-                        custname,
-                        target,
-                        pertarget,
-                        totalprice,
-                        remark,
-                        currentdate,
-                        createby
+                        trn: trn,
+                        id: id,
+                        projname: projname,
+                        projdate: projdate,
+                        empcode: empcode,
+                        empname: empname,
+                        custcode: custcode,
+                        custname: custname,
+                        target: target,
+                        pertarget: pertarget,
+                        totalprice: totalprice,
+                        remark: remark,
+                        currentdate: currentdate,
+                        createby: createby
                     },
                     datatype: 'json',
                     success: function (data) {
