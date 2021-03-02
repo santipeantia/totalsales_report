@@ -356,11 +356,12 @@ namespace totalsale_report.xreporting
             try
             {            
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
-                rpt = new ReportDocument();
+                rpt = new ReportDocument();               
                 rpt.Load(Server.MapPath("../Reports/rpt1011_AmpeliteBKK_r2.rpt"));
-                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@sdate", sdate);
                 rpt.SetParameterValue("@edate", edate);
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "Report1011_AmpeliteBKK" + strDate);
             }
             catch (Exception ex)

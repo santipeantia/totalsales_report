@@ -1416,8 +1416,7 @@ namespace totalsale_report.xreporting
             Context.Response.ContentType = "application/json";
             conn.CloseConn();
         }
-
-
+        
         [WebMethod]
         public void GetReportDetail1012_sumtotal(string sdate, string edate, string zoneid, string empcode)
         {
@@ -1510,8 +1509,7 @@ namespace totalsale_report.xreporting
             Context.Response.ContentType = "application/json";
             conn.CloseConn();
         }
-
-
+        
         [WebMethod]
         public void GetReportDetail1013_sumtotal(string sdate, string edate, string zoneid, string empcode)
         {
