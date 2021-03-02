@@ -72,7 +72,7 @@ namespace totalsale_report.xreporting
 
                 Comm = new SqlCommand("spRptReportStrategicGenerate_new", Conn);
                 Comm.CommandType = CommandType.StoredProcedure;
-                Comm.CommandTimeout = 1200;
+                Comm.CommandTimeout = 4800;
 
                 SqlParameter param1 = new SqlParameter() { ParameterName = "@sdate", Value = sdate };
                 SqlParameter param2 = new SqlParameter() { ParameterName = "@edate", Value = edate };

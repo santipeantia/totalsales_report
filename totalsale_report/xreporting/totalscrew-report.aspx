@@ -89,7 +89,12 @@
 
                     getReprot1017(sdate, edate);
                     getReprot1040(sdate, edate);
-                    getReprot1041(sdate, edate);
+
+                    setTimeout(function () {
+                       // to do someting
+                    }, 2000);
+
+                    //getReprot1041(sdate, edate);
                     getReprot1018(sdate, edate);
                 });
 
@@ -293,6 +298,7 @@
                     beforeSend: function () {
                         $("#tblReprot1040 tr td").remove();
                         $("#loaderDiv1040").show();
+                        $("#loaderDiv1041").show();
                     },
                     success: function (data) {
                         var table;
@@ -314,6 +320,8 @@
                         $('#tblReprot1040 td:nth-of-type(11)').addClass('myclass');
                         $('#tblReprot1040 td:nth-of-type(12)').addClass('myclass');
                         $("#loaderDiv1040").hide();
+
+                        getReprot1041(sdate, edate);
                     }
                 });
             }

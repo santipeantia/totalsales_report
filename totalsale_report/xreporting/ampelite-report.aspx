@@ -162,9 +162,7 @@
                     var datepickerend = $('#datepickerend').val();
                     var filefulname = ' [1013] Ampelite UPC (ภาคตะวันออก, กลาง, ตก, ใต้)' + '_from_' + datepickerstart + '_to_' + datepickerend + '_' + tt;
                     exportTableToExcel('tableReportDetails1013', filefulname)
-                });
-
-                               
+                });     
 
                 var btnPdf1011 = $('#btnPdf1011')
                 btnPdf1011.click(function () {
@@ -204,6 +202,14 @@
                     var edate = $('#datepickerend').val();
 
                     pdfReportRender(rpt_id, sdate, edate);
+                });
+
+                var btnSyncData = $('#btnSyncData')
+                btnSyncData.click(function () {
+                                        
+                     $('#overlay').show();
+                    getSyncData();
+
                 });
                                             
             });
@@ -260,6 +266,47 @@
                     });
                 });
             });
+
+            function getSyncData() {
+                $.ajax({
+                    url: '../../xreporting/reporting_srv.asmx/GetSyncData',
+                    method: 'post',
+                    datatype: 'json',
+                    beforeSend: function () {
+                        $('#overlay').show();
+                    },
+                    success: function (data) {
+                        $('#overlay').hide();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Your work has been data sync..',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    },
+                    error: function (jqXHR, exception) {
+                        var msg = '';
+                        if (jqXHR.status === 0) {
+                            msg = 'Not connect.\n Verify Network.';
+                        } else if (jqXHR.status == 404) {
+                            msg = 'Requested page not found. [404]';
+                        } else if (jqXHR.status == 500) {
+                            msg = 'Internal Server Error [500].';
+                        } else if (exception === 'parsererror') {
+                            msg = 'Requested JSON parse failed.';
+                        } else if (exception === 'timeout') {
+                            msg = 'Time out error.';
+                        } else if (exception === 'abort') {
+                            msg = 'Ajax request aborted.';
+                        } else {
+                            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                        }
+
+                        alert('Error, ' + msg);
+                    }
+                });
+            }
             
             function getReprot1011(sdate, edate) {
                 $.ajax({
@@ -692,6 +739,7 @@
                 $("#modal-reportdetail-1011").modal({ backdrop: false });
                 $("#modal-reportdetail-1011").modal("show");
             }
+
             function getReportDetails1011_netCutComm(sdate, edate, zoneid, rptname, empcode, empname) {
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReportDetail1011_netCutComm',
@@ -725,6 +773,7 @@
                 $("#modal-reportdetail-1011").modal({ backdrop: false });
                 $("#modal-reportdetail-1011").modal("show");
             }
+
             function getReportDetails1011(sdate, edate, zoneid, rptname, empcode, empname) {
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReportDetail1011',
@@ -759,7 +808,6 @@
                 $("#modal-reportdetail-1011").modal("show");
             }
 
-
             function getReportDetails1012_Sumtotal(sdate, edate, zoneid, rptname, empcode, empname) {
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReportDetail1012_sumtotal',
@@ -793,6 +841,7 @@
                 $("#modal-reportdetail-1012").modal({ backdrop: false });
                 $("#modal-reportdetail-1012").modal("show");
             }
+
             function getReportDetails1012_netCutComm(sdate, edate, zoneid, rptname, empcode, empname) {
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReportDetail1012_netCutComm',
@@ -826,6 +875,7 @@
                 $("#modal-reportdetail-1012").modal({ backdrop: false });
                 $("#modal-reportdetail-1012").modal("show");
             }
+
             function getReportDetails1012(sdate, edate, zoneid, rptname, empcode, empname) {
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReportDetail1012',
@@ -859,8 +909,7 @@
                 $("#modal-reportdetail-1012").modal({ backdrop: false });
                 $("#modal-reportdetail-1012").modal("show");
             }
-
-
+            
             function getReportDetails1013_Sumtotal(sdate, edate, zoneid, rptname, empcode, empname) {
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReportDetail1013_sumtotal',
@@ -894,6 +943,7 @@
                 $("#modal-reportdetail-1013").modal({ backdrop: false });
                 $("#modal-reportdetail-1013").modal("show");
             }
+
             function getReportDetails1013_netCutComm(sdate, edate, zoneid, rptname, empcode, empname) {
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReportDetail1013_netCutComm',
@@ -927,6 +977,7 @@
                 $("#modal-reportdetail-1013").modal({ backdrop: false });
                 $("#modal-reportdetail-1013").modal("show");
             }
+
             function getReportDetails1013(sdate, edate, zoneid, rptname, empcode, empname) {
                 $.ajax({
                     url: '../../xreporting/reporting_srv.asmx/GetReportDetail1013',
@@ -1033,14 +1084,24 @@
                             </div>
                         </div>
 
-                        <div class="col-md-2">
-                            <div class="form-group">
+                        <div class="">
+                            <div class="form-group col-md-2">
                                 <label class="txtLabel">View Report</label>
-                                <div class="input-group date">
-                                    <input type="button" id="btnViewReport" name="btnViewReport" class="btn btn-info btn-flat btn-block btn-sm" value="Show Report Here" />
+                                <div class="">
+                                    <input type="button" id="btnViewReport" name="btnViewReport" class="btn btn-info btn-flat btn-block" value="Show Report Here" />
                                 </div>
                             </div>
                         </div>
+
+                        <div class="">
+                            <div class="form-group col-md-2">
+                                <label class="txtLabel">อัฟเดทข้อมูลรายงาน</label>
+                                <div class="">
+                                    <input type="button" id="btnSyncData" name="btnSyncData" class="btn btn-success btn-flat btn-block" value="อัฟเดทข้อมูล (Winspeed)" />
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -106,6 +106,9 @@
                     getReprot1031(sdate, edate);
                     getReprot1032(sdate, edate);
                     getReprot1033(sdate, edate);
+                    setTimeout(function () {
+                       // to do someting
+                    }, 2000);
                     getReprot1034(sdate, edate);
                     getReprot1035(sdate, edate);
                     getReprot1036(sdate, edate);
@@ -1299,7 +1302,7 @@
                             <div class="active tab-pane" id="overview">
                                 <!-- Post -->
                                 <div class="post clearfix">
-                                    <div class="row" style="margin-bottom: 5px">
+                                    <div class="row hidden" style="margin-bottom: 5px">
                                         <div class="col-md-4 txtLabel">ID</div>
                                         <div class="col-md-8">
                                             <input type="text" class="form-control input input-sm txtLabel" id="txtid" name="txtid" autocomplete="off" readonly placeholder="" value="" required>

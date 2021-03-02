@@ -1604,5 +1604,15 @@ namespace totalsale_report.xreporting
             Context.Response.ContentType = "application/json";
             conn.CloseConn();
         }
+
+        [WebMethod]
+        public void GetSyncData() {
+            SqlCommand comm = new SqlCommand("sp_autosynchronize", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 48000;
+
+            comm.ExecuteNonQuery();
+            conn.CloseConn();
+        }
     }
 }
