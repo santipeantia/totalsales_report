@@ -230,10 +230,9 @@
                 <div style="position: absolute; padding-top: 80px; color: coral;"><span class="text-white">โปรดรอสักครู่ระบบกำลังประมวลผล....</span></div>
             </div>
         </div>
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:ScriptManager ID="ScriptManager1" AsyncPostBackTimeOut= "360000" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-                
+            <ContentTemplate>                
 
                 <div class="row">
                     <div class="col-xs-12">
