@@ -424,7 +424,7 @@
                                                 <td class="font-weight-bold "><b>No.</b></td>
                                                 <td class="font-weight-bold"><b>BusGroup</b></td>
                                                 <td class="font-weight-bold"><b>SBUs</b></td>
-                                                <td class="font-weight-bold" style="text-align: center"><b>Target-<%=previouse_name_year %></b></td>
+                                                <td class="font-weight-bold" style="text-align: center"><b>Target-<%=current_name_year %></b></td>
                                                 <td class="font-weight-bold" style="text-align: center"><b>YTD Sales <%= current_name_year %></b></td>
                                                 <td class="font-weight-bold" style="text-align: center"><b>YTD Sales <%= previouse_name_year %></b></td>
                                                 <td class="font-weight-bold" style="text-align: center"><b>YrCompr(%)</b></td>

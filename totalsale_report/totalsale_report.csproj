@@ -13670,6 +13670,7 @@
     <Content Include="xreporting\dlite-detail-report.aspx" />
     <Content Include="xreporting\dlite-reprots.aspx" />
     <Content Include="xreporting\generatereport.aspx" />
+    <Content Include="xreporting\marketing-sales-report.aspx" />
     <Content Include="xreporting\other-report.aspx" />
     <Content Include="xreporting\projectsreport.aspx" />
     <Content Include="xreporting\report-render.aspx" />
@@ -14305,6 +14306,13 @@
     </Compile>
     <Compile Include="xreporting\generatereport.aspx.designer.cs">
       <DependentUpon>generatereport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xreporting\marketing-sales-report.aspx.cs">
+      <DependentUpon>marketing-sales-report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\marketing-sales-report.aspx.designer.cs">
+      <DependentUpon>marketing-sales-report.aspx</DependentUpon>
     </Compile>
     <Compile Include="xreporting\other-report.aspx.cs">
       <DependentUpon>other-report.aspx</DependentUpon>
