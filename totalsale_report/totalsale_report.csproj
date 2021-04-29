@@ -13671,6 +13671,7 @@
     <Content Include="xreporting\dlite-reprots.aspx" />
     <Content Include="xreporting\generatereport.aspx" />
     <Content Include="xreporting\marketing-sales-report.aspx" />
+    <Content Include="xreporting\marketing-top-range.aspx" />
     <Content Include="xreporting\other-report.aspx" />
     <Content Include="xreporting\projectsreport.aspx" />
     <Content Include="xreporting\report-render.aspx" />
@@ -13787,7 +13788,9 @@
     <Content Include="total_sale.master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cGetReport1044.cs" />
+    <Compile Include="Reports\cGetReport1044.cs" />
+    <Compile Include="Reports\cGetResultReportMKT.cs" />
+    <Compile Include="Reports\cGetResultReportMKTSum.cs" />
     <Compile Include="Reports\cGetReportDetail1012.cs" />
     <Compile Include="Reports\cGetReportDetail1011.cs" />
     <Compile Include="Reports\cGetReport1043.cs" />
@@ -14178,6 +14181,30 @@
       <DependentUpon>rptReportTotalSalesFinally.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rptResultReportMkt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResultReportMkt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptResultReportMktSumTop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResultReportMktSumTop.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptResultReportMktTotal.cs">
+      <DependentUpon>rptResultReportMktTotal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptResultReportMktSum.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResultReportMktSum.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptStrategic.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -14313,6 +14340,13 @@
     </Compile>
     <Compile Include="xreporting\marketing-sales-report.aspx.designer.cs">
       <DependentUpon>marketing-sales-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xreporting\marketing-top-range.aspx.cs">
+      <DependentUpon>marketing-top-range.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\marketing-top-range.aspx.designer.cs">
+      <DependentUpon>marketing-top-range.aspx</DependentUpon>
     </Compile>
     <Compile Include="xreporting\other-report.aspx.cs">
       <DependentUpon>other-report.aspx</DependentUpon>
@@ -15893,6 +15927,22 @@
     <EmbeddedResource Include="Reports\rptReportTotalSalesFinally.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptReportTotalSalesFinally.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptResultReportMkt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResultReportMkt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptResultReportMktSumTop.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResultReportMktSumTop.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptResultReportMktTotal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResultReportMktTotal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptResultReportMktSum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResultReportMktSum.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptStrategic.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

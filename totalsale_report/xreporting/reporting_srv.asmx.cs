@@ -1612,5 +1612,200 @@ namespace totalsale_report.xreporting
             comm.ExecuteNonQuery();
             conn.CloseConn();
         }
+
+        [WebMethod]
+        public void GetDataZoneListsMKT() {
+            List<cGetZoneLists> datas = new List<cGetZoneLists>();
+            SqlCommand comm = new SqlCommand("spGetZoneListsMKT", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            while (rdr.Read())
+            {
+                cGetZoneLists data = new cGetZoneLists();
+                data.zone_id = rdr["zone_id"].ToString();
+                data.zone_desc = rdr["zone_desc"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetDataSalenameWithZoneid(string zoneid) {
+            List<cGetZoneMemberLists> datas = new List<cGetZoneMemberLists>();
+            SqlCommand comm = new SqlCommand("spZoneMemberListsMKT", conn.OpenConn());
+            comm.Parameters.AddWithValue("@zone_id", zoneid);
+            comm.CommandType = CommandType.StoredProcedure;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cGetZoneMemberLists data = new cGetZoneMemberLists();
+                data.emp_id = rdr["emp_id"].ToString();
+                data.fullname = rdr["fullname"].ToString();
+                data.position = rdr["position"].ToString();
+                data.zone_desc = rdr["zone_desc"].ToString();
+                data.chk = rdr["chk"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetResultReportMKT(string zoneid, string zonename, string empcode, string empname, string docudate, string search) {
+            List<cGetResultReportMKT> datas = new List<cGetResultReportMKT>();
+            SqlCommand comm = new SqlCommand("ProCReportTotalSale", conn.OpenConn());
+            comm.Parameters.AddWithValue("@zoneid", zoneid);
+            comm.Parameters.AddWithValue("@zonename", zonename);
+            comm.Parameters.AddWithValue("@empcode", empcode);
+            comm.Parameters.AddWithValue("@empname", empname);
+            comm.Parameters.AddWithValue("@docudate", docudate);
+            comm.Parameters.AddWithValue("@search", search);
+            comm.CommandType = CommandType.StoredProcedure;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cGetResultReportMKT data = new cGetResultReportMKT();
+                
+                data.seqno = rdr["seqno"].ToString();
+                data.CustCode = rdr["CustCode"].ToString();
+                data.CustName = rdr["CustName"].ToString();
+                data.CustProvince = rdr["CustProvince"].ToString();
+                data.CusType = rdr["CusType"].ToString();
+                data.totaltreeyear = rdr["totaltreeyear"].ToString();
+                data.totaltwoyear = rdr["totaltwoyear"].ToString();
+                data.totalytdlast = rdr["totalytdlast"].ToString();
+                data.totalytdnow = rdr["totalytdnow"].ToString();
+                data.variance = rdr["variance"].ToString();
+                data.mjan = rdr["mjan"].ToString();
+                data.mfeb = rdr["mfeb"].ToString();
+                data.mmar = rdr["mmar"].ToString();
+                data.mapr = rdr["mapr"].ToString();
+                data.mmay = rdr["mmay"].ToString();
+                data.mjun = rdr["mjun"].ToString();
+                data.mjul = rdr["mjul"].ToString();
+                data.maug = rdr["maug"].ToString();
+                data.msep = rdr["msep"].ToString();
+                data.moct = rdr["moct"].ToString();
+                data.mnov = rdr["mnov"].ToString();
+                data.mdec = rdr["mdec"].ToString();
+                data.ZoneId = rdr["ZoneId"].ToString();
+                data.ZoneName = rdr["ZoneName"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetResultReportMktTopRange(string zoneid, string zonename, string empcodelist, string docudate, string toprange)
+        {
+            List<cGetResultReportMKT> datas = new List<cGetResultReportMKT>();
+            SqlCommand comm = new SqlCommand("ProCReportTotalSale_TopRange", conn.OpenConn());
+            comm.Parameters.AddWithValue("@zoneid", zoneid);
+            comm.Parameters.AddWithValue("@zonename", zonename);
+            comm.Parameters.AddWithValue("@empcodelist", empcodelist);
+            comm.Parameters.AddWithValue("@docudate", docudate);
+            comm.Parameters.AddWithValue("@toprange", toprange);
+            comm.CommandType = CommandType.StoredProcedure;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cGetResultReportMKT data = new cGetResultReportMKT();
+
+                data.seqno = rdr["seqno"].ToString();
+                data.CustCode = rdr["CustCode"].ToString();
+                data.CustName = rdr["CustName"].ToString();
+                data.CustProvince = rdr["CustProvince"].ToString();
+                data.CusType = rdr["CusType"].ToString();
+                data.totaltreeyear = rdr["totaltreeyear"].ToString();
+                data.totaltwoyear = rdr["totaltwoyear"].ToString();
+                data.totalytdlast = rdr["totalytdlast"].ToString();
+                data.totalytdnow = rdr["totalytdnow"].ToString();
+                data.variance = rdr["variance"].ToString();
+                data.mjan = rdr["mjan"].ToString();
+                data.mfeb = rdr["mfeb"].ToString();
+                data.mmar = rdr["mmar"].ToString();
+                data.mapr = rdr["mapr"].ToString();
+                data.mmay = rdr["mmay"].ToString();
+                data.mjun = rdr["mjun"].ToString();
+                data.mjul = rdr["mjul"].ToString();
+                data.maug = rdr["maug"].ToString();
+                data.msep = rdr["msep"].ToString();
+                data.moct = rdr["moct"].ToString();
+                data.mnov = rdr["mnov"].ToString();
+                data.mdec = rdr["mdec"].ToString();
+                data.ZoneId = rdr["ZoneId"].ToString();
+                data.ZoneName = rdr["ZoneName"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.DocuDate = rdr["DocuDate"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetResultReportMktTopRangeSum(string zoneid, string zonename, string empcodelist, string docudate, string toprange)
+        {
+            List<cGetResultReportMKTSum> datas = new List<cGetResultReportMKTSum>();
+            SqlCommand comm = new SqlCommand("ProCReportTotalSale_TopRangeSum", conn.OpenConn());
+            comm.Parameters.AddWithValue("@zoneid", zoneid);
+            comm.Parameters.AddWithValue("@zonename", zonename);
+            comm.Parameters.AddWithValue("@empcodelist", empcodelist);
+            comm.Parameters.AddWithValue("@docudate", docudate);
+            comm.Parameters.AddWithValue("@toprange", toprange);
+            comm.CommandType = CommandType.StoredProcedure;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cGetResultReportMKTSum data = new cGetResultReportMKTSum();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.totaltreeyear = rdr["totaltreeyear"].ToString();
+                data.totaltwoyear = rdr["totaltwoyear"].ToString();
+                data.totalytdlast = rdr["totalytdlast"].ToString();
+                data.totalytdnow = rdr["totalytdnow"].ToString();
+                data.variance = rdr["variance"].ToString();                
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
     }
 }

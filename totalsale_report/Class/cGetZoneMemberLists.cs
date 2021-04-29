@@ -19,5 +19,6 @@ namespace totalsale_report
         public string update_by { get; set; }
         public string update_date { get; set; }
         public string urltrash { get; set; }
+        public string chk { get; set; }
     }
 }
