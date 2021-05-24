@@ -1650,9 +1650,9 @@ namespace totalsale_report.xreporting
                 cGetZoneMemberLists data = new cGetZoneMemberLists();
                 data.emp_id = rdr["emp_id"].ToString();
                 data.fullname = rdr["fullname"].ToString();
-                data.position = rdr["position"].ToString();
-                data.zone_desc = rdr["zone_desc"].ToString();
-                data.chk = rdr["chk"].ToString();
+                //data.position = rdr["position"].ToString();
+                //data.zone_desc = rdr["zone_desc"].ToString();
+                //data.chk = rdr["chk"].ToString();
                 datas.Add(data);
             }
             JavaScriptSerializer js = new JavaScriptSerializer();
