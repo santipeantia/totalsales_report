@@ -329,7 +329,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].mAmplite, data[i].mRooflite, data[i].tAmpelite, data[i].tRooflite
-                                    , data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].chemBlok, data[i].sumTotal, data[i].sharedSale, data[i].cutModel
+                                    , data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].PolySky, data[i].chemBlok, data[i].sumTotal, data[i].sharedSale, data[i].cutModel
                                     , data[i].cutComm, data[i].cutCN, data[i].netSales, data[i].exChemblok, data[i].cutProjects, data[i].overSixtyDay, data[i].cutNetSale
                                     , data[i].cutOEM, data[i].grandTotal, data[i].traGet, data[i].tDiff, data[i].tPercent]);                               
                             });
@@ -463,7 +463,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].mAmpleite, data[i].mRooflite, data[i].tAmpelite
-                                    , data[i].tRooflite, data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].chemBlok, data[i].sumTotal, data[i].shareSale
+                                    , data[i].tRooflite, data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].PolySky, data[i].chemBlok, data[i].sumTotal, data[i].shareSale
                                     , data[i].cutModel, data[i].cutComm, data[i].cutCN, data[i].netSales, data[i].exChemblok, data[i].cutProjects
                                     , data[i].overSixtyDay, data[i].cutNetSale, data[i].cutOEM, data[i].grandTotal, data[i].traGet, data[i].tDiff, data[i].tPercent]);
                             });
@@ -595,7 +595,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].mAmpleite, data[i].mRooflite, data[i].tAmpelite
-                                    , data[i].tRooflite, data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].chemBlok, data[i].sumTotal, data[i].shareSale
+                                    , data[i].tRooflite, data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].PolySky, data[i].chemBlok, data[i].sumTotal, data[i].shareSale
                                     , data[i].cutModel, data[i].cutComm, data[i].cutCN, data[i].netSales, data[i].exChemblok, data[i].cutProjects
                                     , data[i].overSixtyDay, data[i].cutNetSale, data[i].cutOEM, data[i].grandTotal, data[i].traGet, data[i].tDiff, data[i].tPercent]);
                             });
@@ -1136,6 +1136,7 @@
                                         <th class="">T-SunnyNeo</th>
                                         <th class="">OEM</th>
                                         <th class="">D-Lite</th>
+                                        <th class="">PolySky</th>
                                         <th class="">ChemBlok</th>
                                         <th class="">SumTotal</th>
                                         <th class="">แบ่งยอดขาย</th>
@@ -1189,6 +1190,7 @@
                                         <th class="">T-SunnyNeo</th>
                                         <th class="">OEM</th>
                                         <th class="">D-Lite</th>
+                                        <th class="">PolySky</th>
                                         <th class="">ChemBlok</th>
                                         <th class="">SumTotal</th>
                                         <th class="">แบ่งยอดขาย</th>
@@ -1243,6 +1245,7 @@
                                         <th class="">T-SunnyNeo</th>
                                         <th class="">OEM</th>
                                         <th class="">D-Lite</th>
+                                        <th class="">PolySky</th>
                                         <th class="">ChemBlok</th>
                                         <th class="">SumTotal</th>
                                         <th class="">แบ่งยอดขาย</th>

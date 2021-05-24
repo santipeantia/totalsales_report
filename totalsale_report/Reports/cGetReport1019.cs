@@ -12,6 +12,7 @@ namespace totalsale_report
         public string EmpName { get; set; }
         public string kansadCenter { get; set; }
         public string dLite { get; set; }
+        public string PolySky { get; set; }
         public string FRP { get; set; }
         public string exAmperam { get; set; }
         public string exFlashing { get; set; }

@@ -339,6 +339,7 @@ namespace totalsale_report.xreporting
                 data.tSunnyNeo = rdr["tSunnyNeo"].ToString();
                 data.OEM = rdr["OEM"].ToString();
                 data.dLite = rdr["dLite"].ToString();
+                data.PolySky = rdr["PolySky"].ToString();
                 data.chemBlok = rdr["chemBlok"].ToString();
                 data.sumTotal = rdr["sumTotal"].ToString();
                 data.sharedSale = rdr["sharedSale"].ToString();
@@ -388,6 +389,7 @@ namespace totalsale_report.xreporting
                 data.tSunnyNeo = rdr["tSunnyNeo"].ToString();
                 data.OEM = rdr["OEM"].ToString();
                 data.dLite = rdr["dLite"].ToString();
+                data.PolySky = rdr["PolySky"].ToString();
                 data.chemBlok = rdr["chemBlok"].ToString();
                 data.sumTotal = rdr["sumTotal"].ToString();
                 data.shareSale = rdr["shareSale"].ToString();
@@ -437,6 +439,7 @@ namespace totalsale_report.xreporting
                 data.tSunnyNeo = rdr["tSunnyNeo"].ToString();
                 data.OEM = rdr["OEM"].ToString();
                 data.dLite = rdr["dLite"].ToString();
+                data.PolySky = rdr["PolySky"].ToString();
                 data.chemBlok = rdr["chemBlok"].ToString();
                 data.sumTotal = rdr["sumTotal"].ToString();
                 data.shareSale = rdr["shareSale"].ToString();
@@ -803,6 +806,7 @@ namespace totalsale_report.xreporting
                 data.EmpName = rdr["EmpName"].ToString();
                 data.kansadCenter = rdr["kansadCenter"].ToString();
                 data.dLite = rdr["dLite"].ToString();
+                data.PolySky = rdr["PolySky"].ToString();
                 data.FRP = rdr["FRP"].ToString();
                 data.exAmperam = rdr["exAmperam"].ToString();
                 data.exFlashing = rdr["exFlashing"].ToString();

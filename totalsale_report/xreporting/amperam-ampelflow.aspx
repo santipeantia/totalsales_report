@@ -208,7 +208,7 @@
 
                         if (data != '') {
                             $.each(data, function (i, item) {
-                                table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].kansadCenter, data[i].dLite, data[i].FRP, data[i].exAmperam
+                                table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].kansadCenter, data[i].dLite, data[i].PolySky, data[i].FRP, data[i].exAmperam
                                     , data[i].exFlashing, data[i].exService, data[i].saleTotal, data[i].cutCNc, data[i].cutAmperamBill, data[i].cutAmperamMan, data[i].cutAmperamComm
                                     , data[i].cutAmperamTrans, data[i].cutDliteBill, data[i].cutDliteMan, data[i].cutDliteComm, data[i].cutDliteTrans, data[i].netSales
                                     , data[i].cutNetSales, data[i].grandTotal]);
@@ -396,6 +396,7 @@
                                         <th class="">EmpName</th>
                                         <th class="">KansadCenter</th>
                                         <th class="">D-Lite</th>
+                                        <th class="">PolySky</th>
                                         <th class="">FRP</th>
                                         <th class="">Amperam</th>
                                         <th class="">Flashing</th>
