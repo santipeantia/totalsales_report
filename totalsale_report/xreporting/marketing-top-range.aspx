@@ -541,7 +541,7 @@
                                     </span>
                                 </div>--%>
                                 <div class="input-group">
-                                    <input type="text" id="txtRefDoc" name="txtRefDoc" readonly class="form-control  input ">
+                                    <input type="text" id="txtRefDoc" name="txtRefDoc"  class="form-control  input ">
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-info btn-flat" id="btnRefInv" name="btnRefInv">Go!</button>
                                     </span>

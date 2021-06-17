@@ -88,14 +88,14 @@
                     var edate = $('#datepickerend').val();
 
                     getReprot1017(sdate, edate);
-                    getReprot1040(sdate, edate);
+                    //getReprot1040(sdate, edate);
 
-                    setTimeout(function () {
-                       // to do someting
-                    }, 2000);
+                    //setTimeout(function () {
+                    //   // to do someting
+                    //}, 2000);
 
-                    //getReprot1041(sdate, edate);
-                    getReprot1018(sdate, edate);
+                    ////getReprot1041(sdate, edate);
+                    //getReprot1018(sdate, edate);
                 });
 
                 var btnExcel1017 = $('#btnExcel1017')
@@ -282,6 +282,12 @@
                         $('#tblReprot1017 td:nth-of-type(11)').addClass('myclass');
                         $('#tblReprot1017 td:nth-of-type(12)').addClass('myclass');
                         $("#loaderDiv1017").hide();
+
+                        setTimeout(function () {
+                       // to do someting
+                    }, 2000);
+
+                    getReprot1040(sdate, edate);               
                     }
                 });
             }
@@ -359,6 +365,8 @@
                         $('#tblReprot1041 td:nth-of-type(11)').addClass('myclass');
                         $('#tblReprot1041 td:nth-of-type(12)').addClass('myclass');
                         $("#loaderDiv1041").hide();
+
+                        getReprot1018(sdate, edate);
                     }
                 });
             }
