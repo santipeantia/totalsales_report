@@ -300,7 +300,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].dLiteWave, data[i].dLiteSmooth, data[i].ddPro
-                                    , data[i].dLite4R, data[i].kansad40, data[i].frp, data[i].PolySky, data[i].saleTotal, data[i].shareSales, data[i].netSales, data[i].cutNetSales
+                                    , data[i].dLite4R, data[i].kansad40, data[i].frp, data[i].PolySky, data[i].Amperam, data[i].saleTotal, data[i].shareSales, data[i].netSales, data[i].cutNetSales
                                     , data[i].grandTotal, data[i].extraGet, data[i].exDiff, data[i].Percent]);
                             });
                         }
@@ -316,7 +316,7 @@
                         $('#tblReprot1021 td:nth-of-type(9)').addClass('myclass');
                         $('#tblReprot1021 td:nth-of-type(10)').addClass('myclass');
                         $('#tblReprot1021 td:nth-of-type(11)').addClass('myclass');
-                        $('#tblReprot1021 td:nth-of-type(12)').addClass('myclass');
+                        $('#tblReprot1021 td:nth-of-type(12)').addClass('myclass'); //Amperam
                         $('#tblReprot1021 td:nth-of-type(13)').addClass('myclass');
                         $('#tblReprot1021 td:nth-of-type(14)').addClass('myclass');
                         $('#tblReprot1021 td:nth-of-type(15)').addClass('myclass');
@@ -653,6 +653,7 @@
                                         <th class="">Kansad 40%</th>
                                         <th class="">FRP</th>
                                         <th class="">PolySky</th>
+                                        <th class="">Amperam</th>
                                         <th class="">Sale Total</th>
                                         <th class="">แบ่งยอดขาย</th>
                                         <th class="">Net Sales</th>

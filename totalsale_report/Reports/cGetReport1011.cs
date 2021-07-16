@@ -18,6 +18,7 @@ namespace totalsale_report
         public string OEM { get; set; }
         public string dLite { get; set; }
         public string PolySky { get; set; }
+        public string Amperam { get; set; }
         public string chemBlok { get; set; }
         public string sumTotal { get; set; }
         public string sharedSale { get; set; }

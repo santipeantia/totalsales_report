@@ -329,7 +329,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].mAmplite, data[i].mRooflite, data[i].tAmpelite, data[i].tRooflite
-                                    , data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].PolySky, data[i].chemBlok, data[i].sumTotal, data[i].sharedSale, data[i].cutModel
+                                    , data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].PolySky, data[i].Amperam, data[i].chemBlok, data[i].sumTotal, data[i].sharedSale, data[i].cutModel
                                     , data[i].cutComm, data[i].cutCN, data[i].netSales, data[i].exChemblok, data[i].cutProjects, data[i].overSixtyDay, data[i].cutNetSale
                                     , data[i].cutOEM, data[i].grandTotal, data[i].traGet, data[i].tDiff, data[i].tPercent]);                               
                             });
@@ -343,18 +343,18 @@
                         $('#tblReprot1011 td:nth-of-type(9)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(10)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(11)').addClass('myclass');
-                        $('#tblReprot1011 td:nth-of-type(12)').addClass('myclassblue');
+                        $('#tblReprot1011 td:nth-of-type(12)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(13)').addClass('myclass');
-                        $('#tblReprot1011 td:nth-of-type(14)').addClass('myclass');
-                        $('#tblReprot1011 td:nth-of-type(15)').addClass('myclassblue');
+                        $('#tblReprot1011 td:nth-of-type(14)').addClass('myclassblue');
+                        $('#tblReprot1011 td:nth-of-type(15)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(16)').addClass('myclass');
-                        $('#tblReprot1011 td:nth-of-type(17)').addClass('myclass');
+                        $('#tblReprot1011 td:nth-of-type(17)').addClass('myclassblue');
                         $('#tblReprot1011 td:nth-of-type(18)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(19)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(20)').addClass('myclass');
-                        $('#tblReprot1011 td:nth-of-type(21)').addClass('myclassblue');
+                        $('#tblReprot1011 td:nth-of-type(21)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(22)').addClass('myclass');
-                        $('#tblReprot1011 td:nth-of-type(23)').addClass('myclass');
+                        $('#tblReprot1011 td:nth-of-type(23)').addClass('myclassblue');
                         $('#tblReprot1011 td:nth-of-type(24)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(25)').addClass('myclass');
                         $('#tblReprot1011 td:nth-of-type(26)').addClass('myclass');
@@ -364,7 +364,7 @@
                         $('#tblReprot1011 td').hover(function () {
                             rIndex = this.parentElement.rowIndex;
                             cIndex = this.cellIndex;
-                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                            if ((rIndex != 0 & cIndex == 13 || cIndex == 16 || cIndex == 22)) {
                                 $(this).css('cursor', 'pointer');
                                 $(this).css('color', 'red');
                                 $(this).css('font-weight', 'bold');
@@ -372,7 +372,7 @@
                         }, function () {
                             rIndex = this.parentElement.rowIndex;
                             cIndex = this.cellIndex;
-                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                            if ((rIndex != 0 & cIndex == 13 || cIndex == 16 || cIndex == 22)) {
                                 $(this).css("color", "blue");
                                 $(this).css('font-weight', 'normal');
                             }
@@ -384,7 +384,7 @@
 
                             //alert(rIndex);
 
-                            if (rIndex != 0 & cIndex == 11) {
+                            if (rIndex != 0 & cIndex == 14) {
                                 var strempcode = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
                                 var strempname = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
                                 var strVal1 = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
@@ -401,7 +401,7 @@
 
                                     getReportDetails1011_Sumtotal(sdate, edate, '1011', '[1011] Ampelite BKK', strempcode.text(), strempname.text());
                                 }
-                            } else if (rIndex != 0 & cIndex == 14) {
+                            } else if (rIndex != 0 & cIndex == 16) {
                                 var strempcode = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
                                 var strempname = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
                                 var strVal1 = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
@@ -418,7 +418,7 @@
 
                                     getReportDetails1011_netCutComm(sdate, edate, '1011', '[1011] Ampelite BKK', strempcode.text(), strempname.text());
                                 }
-                            } else if (rIndex != 0 & cIndex == 20) {
+                            } else if (rIndex != 0 & cIndex == 22) {
                                 var strempcode = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(1)');
                                 var strempname = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(2)');
                                 var strVal1 = $("#tblReprot1011").find('tr:eq(' + rIndex + ')').find('td:eq(20)');
@@ -463,7 +463,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].mAmpleite, data[i].mRooflite, data[i].tAmpelite
-                                    , data[i].tRooflite, data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].PolySky, data[i].chemBlok, data[i].sumTotal, data[i].shareSale
+                                    , data[i].tRooflite, data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].PolySky, data[i].Amperam, data[i].chemBlok, data[i].sumTotal, data[i].shareSale
                                     , data[i].cutModel, data[i].cutComm, data[i].cutCN, data[i].netSales, data[i].exChemblok, data[i].cutProjects
                                     , data[i].overSixtyDay, data[i].cutNetSale, data[i].cutOEM, data[i].grandTotal, data[i].traGet, data[i].tDiff, data[i].tPercent]);
                             });
@@ -477,18 +477,18 @@
                         $('#tblReprot1012 td:nth-of-type(9)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(10)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(11)').addClass('myclass');
-                        $('#tblReprot1012 td:nth-of-type(12)').addClass('myclassblue');
+                        $('#tblReprot1012 td:nth-of-type(12)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(13)').addClass('myclass');
-                        $('#tblReprot1012 td:nth-of-type(14)').addClass('myclass');
-                        $('#tblReprot1012 td:nth-of-type(15)').addClass('myclassblue');
+                        $('#tblReprot1012 td:nth-of-type(14)').addClass('myclassblue');
+                        $('#tblReprot1012 td:nth-of-type(15)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(16)').addClass('myclass');
-                        $('#tblReprot1012 td:nth-of-type(17)').addClass('myclass');
+                        $('#tblReprot1012 td:nth-of-type(17)').addClass('myclassblue');
                         $('#tblReprot1012 td:nth-of-type(18)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(19)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(20)').addClass('myclass');
-                        $('#tblReprot1012 td:nth-of-type(21)').addClass('myclassblue');
+                        $('#tblReprot1012 td:nth-of-type(21)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(22)').addClass('myclass');
-                        $('#tblReprot1012 td:nth-of-type(23)').addClass('myclass');
+                        $('#tblReprot1012 td:nth-of-type(23)').addClass('myclassblue');
                         $('#tblReprot1012 td:nth-of-type(24)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(25)').addClass('myclass');
                         $('#tblReprot1012 td:nth-of-type(26)').addClass('myclass');
@@ -497,7 +497,7 @@
                         $('#tblReprot1012 td').hover(function () {
                             rIndex = this.parentElement.rowIndex;
                             cIndex = this.cellIndex;
-                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                            if ((rIndex != 0 & cIndex == 13 || cIndex == 16 || cIndex == 22)) {
                                 $(this).css('cursor', 'pointer');
                                 $(this).css('color', 'red');
                                 $(this).css('font-weight', 'bold');
@@ -505,7 +505,7 @@
                         }, function () {
                             rIndex = this.parentElement.rowIndex;
                             cIndex = this.cellIndex;
-                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                            if ((rIndex != 0 & cIndex == 13 || cIndex == 16 || cIndex == 22)) {
                                 $(this).css("color", "blue");
                                 $(this).css('font-weight', 'normal');
                             }
@@ -595,7 +595,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].mAmpleite, data[i].mRooflite, data[i].tAmpelite
-                                    , data[i].tRooflite, data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].PolySky, data[i].chemBlok, data[i].sumTotal, data[i].shareSale
+                                    , data[i].tRooflite, data[i].tSunnyNeo, data[i].OEM, data[i].dLite, data[i].PolySky, data[i].Amperam, data[i].chemBlok, data[i].sumTotal, data[i].shareSale
                                     , data[i].cutModel, data[i].cutComm, data[i].cutCN, data[i].netSales, data[i].exChemblok, data[i].cutProjects
                                     , data[i].overSixtyDay, data[i].cutNetSale, data[i].cutOEM, data[i].grandTotal, data[i].traGet, data[i].tDiff, data[i].tPercent]);
                             });
@@ -609,18 +609,18 @@
                         $('#tblReprot1013 td:nth-of-type(9)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(10)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(11)').addClass('myclass');
-                        $('#tblReprot1013 td:nth-of-type(12)').addClass('myclassblue');
+                        $('#tblReprot1013 td:nth-of-type(12)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(13)').addClass('myclass');
-                        $('#tblReprot1013 td:nth-of-type(14)').addClass('myclass');
-                        $('#tblReprot1013 td:nth-of-type(15)').addClass('myclassblue');
-                        $('#tblReprot1013 td:nth-of-type(16)').addClass('myclass');
+                        $('#tblReprot1013 td:nth-of-type(14)').addClass('myclassblue');
+                        $('#tblReprot1013 td:nth-of-type(15)').addClass('myclass');
+                        $('#tblReprot1013 td:nth-of-type(16)').addClass('myclassblue');
                         $('#tblReprot1013 td:nth-of-type(17)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(18)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(19)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(20)').addClass('myclass');
-                        $('#tblReprot1013 td:nth-of-type(21)').addClass('myclassblue');
+                        $('#tblReprot1013 td:nth-of-type(21)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(22)').addClass('myclass');
-                        $('#tblReprot1013 td:nth-of-type(23)').addClass('myclass');
+                        $('#tblReprot1013 td:nth-of-type(23)').addClass('myclassblue');
                         $('#tblReprot1013 td:nth-of-type(24)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(25)').addClass('myclass');
                         $('#tblReprot1013 td:nth-of-type(26)').addClass('myclass');
@@ -629,7 +629,7 @@
                          $('#tblReprot1013 td').hover(function () {
                             rIndex = this.parentElement.rowIndex;
                             cIndex = this.cellIndex;
-                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                            if ((rIndex != 0 & cIndex == 13 || cIndex == 16 || cIndex == 22)) {
                                 $(this).css('cursor', 'pointer');
                                 $(this).css('color', 'red');
                                 $(this).css('font-weight', 'bold');
@@ -637,7 +637,7 @@
                         }, function () {
                             rIndex = this.parentElement.rowIndex;
                             cIndex = this.cellIndex;
-                            if ((rIndex != 0 & cIndex == 11 || cIndex == 14 || cIndex == 20)) {
+                            if ((rIndex != 0 & cIndex == 13 || cIndex == 16 || cIndex == 22)) {
                                 $(this).css("color", "blue");
                                 $(this).css('font-weight', 'normal');
                             }
@@ -1137,6 +1137,7 @@
                                         <th class="">OEM</th>
                                         <th class="">D-Lite</th>
                                         <th class="">PolySky</th>
+                                        <th class="">Amperam</th>
                                         <th class="">ChemBlok</th>
                                         <th class="">SumTotal</th>
                                         <th class="">แบ่งยอดขาย</th>
@@ -1191,6 +1192,7 @@
                                         <th class="">OEM</th>
                                         <th class="">D-Lite</th>
                                         <th class="">PolySky</th>
+                                        <th class="">Amperam</th>
                                         <th class="">ChemBlok</th>
                                         <th class="">SumTotal</th>
                                         <th class="">แบ่งยอดขาย</th>
@@ -1246,6 +1248,7 @@
                                         <th class="">OEM</th>
                                         <th class="">D-Lite</th>
                                         <th class="">PolySky</th>
+                                        <th class="">Amperam</th>
                                         <th class="">ChemBlok</th>
                                         <th class="">SumTotal</th>
                                         <th class="">แบ่งยอดขาย</th>
