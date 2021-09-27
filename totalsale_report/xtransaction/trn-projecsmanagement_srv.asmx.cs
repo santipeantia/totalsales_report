@@ -273,5 +273,108 @@ namespace totalsale_report.xtransaction
 
             }
         }
+
+        [WebMethod]
+        public void GetSpecialSalesSharing() {
+            try
+            {
+                List<cGetSpecialSalesSharing> datas = new List<cGetSpecialSalesSharing>();
+                SqlCommand comm = new SqlCommand("spGetSpecialSalesSharing", conn.OpenConn());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandTimeout = 1200;
+
+                SqlDataReader rdr = comm.ExecuteReader();
+                while (rdr.Read())
+                {
+                    cGetSpecialSalesSharing data = new cGetSpecialSalesSharing();
+                    data.id = rdr["id"].ToString();
+                    data.DocuNo = rdr["DocuNo"].ToString();
+                    data.DocuDate = rdr["DocuDate"].ToString();
+                    data.ProductCode = rdr["ProductCode"].ToString();
+                    data.EmpCode = rdr["EmpCode"].ToString();
+                    data.PercentShared = rdr["PercentShared"].ToString();
+                    data.DesEmpCode = rdr["DesEmpCode"].ToString();
+                    data.ReceiveShared = rdr["ReceiveShared"].ToString();
+                    data.TotalPrice = rdr["TotalPrice"].ToString();
+                    data.CreatedBy = rdr["CreatedBy"].ToString();
+                    data.CreatedDate = rdr["CreatedDate"].ToString();
+                    data.urlmember = rdr["urlmember"].ToString();
+                    data.urltrash = rdr["urltrash"].ToString();
+                    datas.Add(data);
+                }
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                js.MaxJsonLength = Int32.MaxValue;
+                Context.Response.Write(js.Serialize(datas));
+                Context.Response.ContentType = "application/json";
+                conn.CloseConn();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        [WebMethod]
+        public void GetRefDocumentNo(string docuno) {
+            try
+            {
+                List<cGetRefDocumentNo> datas = new List<cGetRefDocumentNo>();
+                SqlCommand comm = new SqlCommand("spGetRefDocumentNo", conn.OpenConn());
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.AddWithValue("@docuno", docuno);
+                comm.CommandTimeout = 1200;
+
+                SqlDataReader rdr = comm.ExecuteReader();
+                while (rdr.Read())
+                {
+                    cGetRefDocumentNo data = new cGetRefDocumentNo();
+                    data.ID = rdr["ID"].ToString();
+                    data.DocuDate = rdr["DocuDate"].ToString();
+                    data.DocuNo = rdr["DocuNo"].ToString();
+                    data.InvNo = rdr["InvNo"].ToString();
+                    data.ProductCode = rdr["ProductCode"].ToString();
+                    data.Product = rdr["Product"].ToString();
+                    data.GoodID = rdr["GoodID"].ToString();
+                    data.GoodCode = rdr["GoodCode"].ToString();
+                    data.Model = rdr["Model"].ToString();
+                    data.GoodUnitName = rdr["GoodUnitName"].ToString();
+                    data.GoodBrandCode = rdr["GoodBrandCode"].ToString();
+                    data.GoodGroupCode = rdr["GoodGroupCode"].ToString();
+                    data.GoodGroupName = rdr["GoodGroupName"].ToString();
+                    data.Amount = rdr["Amount"].ToString();
+                    data.RentAmount = rdr["RentAmount"].ToString();
+                    data.TotalPrice = rdr["TotalPrice"].ToString();
+                    data.EmpCode = rdr["EmpCode"].ToString();
+                    data.SaleName = rdr["SaleName"].ToString();
+                    data.CustCode = rdr["CustCode"].ToString();
+                    data.CustName = rdr["CustName"].ToString();
+                    data.GoodBrandName = rdr["GoodBrandName"].ToString();
+                    data.GoodPrice2 = rdr["GoodPrice2"].ToString();
+                    data.GoodPrice3 = rdr["GoodPrice3"].ToString();
+                    data.Remark = rdr["Remark"].ToString();
+                    data.GoodClassCode = rdr["GoodClassCode"].ToString();
+                    data.GoodClassName = rdr["GoodClassName"].ToString();
+                    data.SaleAreaCode = rdr["SaleAreaCode"].ToString();
+                    data.SaleAreaName = rdr["SaleAreaName"].ToString();
+                    data.GoodTypeCode = rdr["GoodTypeCode"].ToString();
+                    data.GoodTypeName = rdr["GoodTypeName"].ToString();
+                    data.BillDiscAmnt = rdr["BillDiscAmnt"].ToString();
+                    data.JobCode = rdr["JobCode"].ToString();
+                    data.JobName = rdr["JobName"].ToString();
+                    data.CustPONo = rdr["CustPONo"].ToString();
+                    data.GoodNameCust = rdr["GoodNameCust"].ToString();
+                    datas.Add(data);
+                }
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                js.MaxJsonLength = Int32.MaxValue;
+                Context.Response.Write(js.Serialize(datas));
+                Context.Response.ContentType = "application/json";
+                conn.CloseConn();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

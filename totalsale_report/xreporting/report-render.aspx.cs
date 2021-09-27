@@ -91,12 +91,23 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "1043" && sdate != null && edate != null) { rpt1043(sdate, edate); }
 
                 else if (rpt_id == "strategic" && sdate != null && edate != null) { rptStrategic(sdate, edate); }
+
                 
                 else if (rpt_id == "resultreportmkt") { rptResultReportMkt(rpt_id); }
+
+                else if (rpt_id == "resultreportmktr2") { rptResultReportMktR2(rpt_id); }
+
                 else if (rpt_id == "resultreportmktexcel") { rptResultReportMktExcel(rpt_id); }
 
+                else if (rpt_id == "resultreportmktexcelr2") { rptResultReportMktExcelR2(rpt_id); }
+
                 else if (rpt_id == "resultreportmkttop") { rptResultReportMktTop(rpt_id); }
+
+                else if (rpt_id == "resultreportmkttopr2") { rptResultReportMktTopR2(rpt_id); }
+
                 else if (rpt_id == "resultreportmkttopexcel") { rptResultReportMktTopExcel(rpt_id); }
+
+                else if (rpt_id == "resultreportmkttopexcelr2") { rptResultReportMktTopExcelR2(rpt_id); }
 
 
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
@@ -1072,6 +1083,37 @@ namespace totalsale_report.xreporting
             }
         }
 
+        protected void rptResultReportMktR2(string rptid)
+        {
+            try
+            {
+                string zoneid = Request.QueryString["zoneid"];
+                string zonename = Request.QueryString["zonename"];
+                string empcode = Request.QueryString["empcode"];
+                string empname = Request.QueryString["empname"];
+                string docudate = Request.QueryString["docudate"];
+                string search = Request.QueryString["search"];
+
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptResultReportMktR2.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@zoneid", zoneid);
+                rpt.SetParameterValue("@zonename", zonename);
+                rpt.SetParameterValue("@empcode", empcode);
+                rpt.SetParameterValue("@empname", empname);
+                rpt.SetParameterValue("@docudate", docudate);
+                rpt.SetParameterValue("@search", search);
+
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "ResultReport" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
         protected void rptResultReportMktExcel(string rptid)
         {
             try
@@ -1132,6 +1174,66 @@ namespace totalsale_report.xreporting
             }
         }
 
+        protected void rptResultReportMktExcelR2(string rptid)
+        {
+            try
+            {
+                string zoneid = Request.QueryString["zoneid"];
+                string zonename = Request.QueryString["zonename"];
+                string empcode = Request.QueryString["empcode"];
+                string empname = Request.QueryString["empname"];
+                string docudate = Request.QueryString["docudate"];
+                string search = Request.QueryString["search"];
+
+                Conn = new SqlConnection();
+                Conn = dbConn.OpenConn();
+
+                Comm = new SqlCommand("ProCReportTotalSale_excelR2", Conn);
+                Comm.CommandType = CommandType.StoredProcedure;
+                Comm.Parameters.AddWithValue("@zoneid", zoneid);
+                Comm.Parameters.AddWithValue("@zonename", zonename);
+                Comm.Parameters.AddWithValue("@empcode", empcode);
+                Comm.Parameters.AddWithValue("@empname", empname);
+                Comm.Parameters.AddWithValue("@docudate", docudate);
+                Comm.Parameters.AddWithValue("@search", search);
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = Comm;
+                dt = new DataTable();
+                adapter.Fill(dt);
+
+                GridView GridviewExport = new GridView();
+
+                if (dt.Rows.Count != 0)
+                {
+
+                    GridviewExport.DataSource = dt;
+                    GridviewExport.DataBind();
+
+                    Response.Clear();
+                    Response.AddHeader("content-disposition", "attachment;filename=รายงานยอดขายทีม " + zonename + "ของ" + empname + ".xls");
+                    Response.ContentType = "application/ms-excel";
+                    Response.ContentEncoding = System.Text.Encoding.Unicode;
+                    Response.BinaryWrite(System.Text.Encoding.Unicode.GetPreamble());
+
+                    System.IO.StringWriter sw = new System.IO.StringWriter();
+                    System.Web.UI.HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+                    GridviewExport.RenderControl(hw);
+                    string style = @"<style> td { mso-number-format:\@;} </style>";
+                    Response.Write(style);
+                    Response.Write(sw.ToString());
+                    Response.End();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
         protected void rptResultReportMktTop(string rptid)
         {
             try
@@ -1146,6 +1248,36 @@ namespace totalsale_report.xreporting
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptResultReportMktSumTop.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@zoneid", zoneid);
+                rpt.SetParameterValue("@zonename", zonename);
+                rpt.SetParameterValue("@empcodelist", empcodelist);
+                rpt.SetParameterValue("@docudate", docudate);
+                rpt.SetParameterValue("@toprange", toprange);
+
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "ResultReportTop" + toprange + "_" + strDate);
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rptResultReportMktTopR2(string rptid)
+        {
+            try
+            {
+
+                string zoneid = Request.QueryString["zoneid"];
+                string zonename = Request.QueryString["zonename"];
+                string empcodelist = Request.QueryString["empcodelist"];
+                string docudate = Request.QueryString["docudate"];
+                string toprange = Request.QueryString["toprange"];
+
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptResultReportMktSumTopR2.rpt"));
                 rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@zoneid", zoneid);
                 rpt.SetParameterValue("@zonename", zonename);
@@ -1198,6 +1330,64 @@ namespace totalsale_report.xreporting
 
                     Response.Clear();
                     Response.AddHeader("content-disposition", "attachment;filename=รายงานยอดขายทีม " + zonename + "ของ" + empcodelist.Replace(",","") + ".xls");
+                    Response.ContentType = "application/ms-excel";
+                    Response.ContentEncoding = System.Text.Encoding.Unicode;
+                    Response.BinaryWrite(System.Text.Encoding.Unicode.GetPreamble());
+
+                    System.IO.StringWriter sw = new System.IO.StringWriter();
+                    System.Web.UI.HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+                    GridviewExport.RenderControl(hw);
+                    string style = @"<style> td { mso-number-format:\@;} </style>";
+                    Response.Write(style);
+                    Response.Write(sw.ToString());
+                    Response.End();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rptResultReportMktTopExcelR2(string rptid)
+        {
+            try
+            {
+                string zoneid = Request.QueryString["zoneid"];
+                string zonename = Request.QueryString["zonename"];
+                string empcodelist = Request.QueryString["empcodelist"];
+                string docudate = Request.QueryString["docudate"];
+                string toprange = Request.QueryString["toprange"];
+
+                Conn = new SqlConnection();
+                Conn = dbConn.OpenConn();
+
+                Comm = new SqlCommand("ProCReportTotalSale_toprange_excelR2", Conn);
+                Comm.CommandType = CommandType.StoredProcedure;
+                Comm.Parameters.AddWithValue("@zoneid", zoneid);
+                Comm.Parameters.AddWithValue("@zonename", zonename);
+                Comm.Parameters.AddWithValue("@empcodelist", empcodelist);
+                Comm.Parameters.AddWithValue("@docudate", docudate);
+                Comm.Parameters.AddWithValue("@toprange", toprange);
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = Comm;
+                dt = new DataTable();
+                adapter.Fill(dt);
+
+                GridView GridviewExport = new GridView();
+
+                if (dt.Rows.Count != 0)
+                {
+
+                    GridviewExport.DataSource = dt;
+                    GridviewExport.DataBind();
+
+                    Response.Clear();
+                    Response.AddHeader("content-disposition", "attachment;filename=รายงานยอดขายทีม " + zonename + "ของ" + empcodelist.Replace(",", "") + ".xls");
                     Response.ContentType = "application/ms-excel";
                     Response.ContentEncoding = System.Text.Encoding.Unicode;
                     Response.BinaryWrite(System.Text.Encoding.Unicode.GetPreamble());

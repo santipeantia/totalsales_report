@@ -13671,7 +13671,9 @@
     <Content Include="xreporting\dlite-reprots.aspx" />
     <Content Include="xreporting\generatereport.aspx" />
     <Content Include="xreporting\marketing-sales-report.aspx" />
+    <Content Include="xreporting\marketing-sales-reportmkt.aspx" />
     <Content Include="xreporting\marketing-top-range.aspx" />
+    <Content Include="xreporting\marketing-top-rangemkt.aspx" />
     <Content Include="xreporting\other-report.aspx" />
     <Content Include="xreporting\projectsreport.aspx" />
     <Content Include="xreporting\report-render.aspx" />
@@ -13689,6 +13691,7 @@
     <Content Include="xtransaction\projectsmanagement.aspx" />
     <Content Include="xtransaction\projectspecial.aspx" />
     <Content Include="xtransaction\SalesConsignee.aspx" />
+    <Content Include="xtransaction\specialsalessharing.aspx" />
     <Content Include="xtransaction\trn-grouping.aspx" />
     <Content Include="xtransaction\trn-projecsmanagement_srv.asmx" />
     <Content Include="xtransaction\trn-sales-sharing.aspx" />
@@ -13788,6 +13791,8 @@
     <Content Include="total_sale.master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cGetRefDocumentNo.cs" />
+    <Compile Include="cGetSpecialSalesSharing.cs" />
     <Compile Include="Reports\cGetReport1044.cs" />
     <Compile Include="Reports\cGetResultReportMKT.cs" />
     <Compile Include="Reports\cGetResultReportMKTSum.cs" />
@@ -14181,17 +14186,47 @@
       <DependentUpon>rptReportTotalSalesFinally.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rptResultReportMktR2.cs">
+      <DependentUpon>rptResultReportMktR2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptResultReportMkt.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptResultReportMkt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rptResultReportMktSumR2.cs">
+      <DependentUpon>rptResultReportMktSumR2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptREsultReportMktSumR3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptREsultReportMktSumR3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptResultReportMktSumTopR2.cs">
+      <DependentUpon>rptResultReportMktSumTopR2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\rptResultReportMktSumTop.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptResultReportMktSumTop.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptResultReportMktTotalR2.cs">
+      <DependentUpon>rptResultReportMktTotalR2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reports\rptResultReportMktTotal.cs">
       <DependentUpon>rptResultReportMktTotal.rpt</DependentUpon>
@@ -14341,12 +14376,26 @@
     <Compile Include="xreporting\marketing-sales-report.aspx.designer.cs">
       <DependentUpon>marketing-sales-report.aspx</DependentUpon>
     </Compile>
+    <Compile Include="xreporting\marketing-sales-reportmkt.aspx.cs">
+      <DependentUpon>marketing-sales-reportmkt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\marketing-sales-reportmkt.aspx.designer.cs">
+      <DependentUpon>marketing-sales-reportmkt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="xreporting\marketing-top-range.aspx.cs">
       <DependentUpon>marketing-top-range.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="xreporting\marketing-top-range.aspx.designer.cs">
       <DependentUpon>marketing-top-range.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xreporting\marketing-top-rangemkt.aspx.cs">
+      <DependentUpon>marketing-top-rangemkt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\marketing-top-rangemkt.aspx.designer.cs">
+      <DependentUpon>marketing-top-rangemkt.aspx</DependentUpon>
     </Compile>
     <Compile Include="xreporting\other-report.aspx.cs">
       <DependentUpon>other-report.aspx</DependentUpon>
@@ -14457,6 +14506,13 @@
     </Compile>
     <Compile Include="xtransaction\SalesConsignee.aspx.designer.cs">
       <DependentUpon>SalesConsignee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xtransaction\specialsalessharing.aspx.cs">
+      <DependentUpon>specialsalessharing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xtransaction\specialsalessharing.aspx.designer.cs">
+      <DependentUpon>specialsalessharing.aspx</DependentUpon>
     </Compile>
     <Compile Include="xtransaction\trn-grouping.aspx.cs">
       <DependentUpon>trn-grouping.aspx</DependentUpon>
@@ -15928,13 +15984,33 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptReportTotalSalesFinally.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptResultReportMktR2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResultReportMktR2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptResultReportMkt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptResultReportMkt.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptResultReportMktSumR2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResultReportMktSumR2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptREsultReportMktSumR3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptREsultReportMktSumR3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptResultReportMktSumTopR2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResultReportMktSumTopR2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptResultReportMktSumTop.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptResultReportMktSumTop.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptResultReportMktTotalR2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResultReportMktTotalR2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptResultReportMktTotal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

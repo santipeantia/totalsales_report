@@ -11,6 +11,8 @@ namespace totalsale_report
         public string EmpName { get; set; }
         public string FRP { get; set; }
         public string Screw { get; set; }
+        public string SumTotal { get; set; }
+        public string SharedSale { get; set; }
         public string GrandTotal { get; set; }
         public string Traget { get; set; }
         public string Diff { get; set; }

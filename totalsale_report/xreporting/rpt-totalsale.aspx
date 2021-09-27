@@ -571,7 +571,7 @@
 
                         if (data != '') {
                             $.each(data, function (i, item) {
-                                table.row.add([data[i].EmpCode, data[i].EmpName, data[i].FRP, data[i].Screw, data[i].GrandTotal, data[i].Traget, data[i].Diff, data[i].Percent]);
+                                table.row.add([data[i].EmpCode, data[i].EmpName, data[i].FRP, data[i].Screw,  data[i].SumTotal,  data[i].SharedSale, data[i].GrandTotal, data[i].Traget, data[i].Diff, data[i].Percent]);
                             });
                         }
                         table.draw();
@@ -581,6 +581,8 @@
                         $('#tblReprot1033 td:nth-of-type(6)').addClass('myclass');
                         $('#tblReprot1033 td:nth-of-type(7)').addClass('myclass');
                         $('#tblReprot1033 td:nth-of-type(8)').addClass('myclass');
+                        $('#tblReprot1033 td:nth-of-type(9)').addClass('myclass');
+                        $('#tblReprot1033 td:nth-of-type(10)').addClass('myclass');
                         $("#loaderDiv1033").hide();
                     }
                 });
@@ -1058,6 +1060,8 @@
                                         <th class="">EmpName</th>
                                         <th class="">FRP</th>
                                         <th class="">Screw</th>
+                                        <th class="">Total</th>
+                                        <th class="">ShareSale</th>
                                         <th class="">GrandTotal</th>
                                         <th class="">Traget</th>
                                         <th class="">Diff</th>
