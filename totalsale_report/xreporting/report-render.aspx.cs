@@ -109,8 +109,12 @@ namespace totalsale_report.xreporting
 
                 else if (rpt_id == "resultreportmkttopexcelr2") { rptResultReportMktTopExcelR2(rpt_id); }
 
+                else if (rpt_id == "resultreportyeartodatepdf") { rptReportYeartodateProductPdf(rpt_id); }
+                else if (rpt_id == "resultreportyeartodateexcel") { rptReportYeartodateProductExcel(rpt_id); }                
 
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
+
+                
             }
             else
             {
@@ -1402,6 +1406,116 @@ namespace totalsale_report.xreporting
                     Response.End();
 
                 }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rptReportYeartodateProductPdf(string rptid)
+        {
+            try
+            {
+
+                string yearstart = Request.QueryString["yearstart"];
+                string yearend = Request.QueryString["yearend"];
+                string monthstart = Request.QueryString["monthstart"];
+                string monthend = Request.QueryString["monthend"];
+
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptTotalSalesYearTodateByProd.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@yearstart", yearstart);
+                rpt.SetParameterValue("@yearend", yearend);
+                rpt.SetParameterValue("@monthstart", monthstart);
+                rpt.SetParameterValue("@monthend", monthend);
+
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "รายงานยอดแยกประเภทสินค้า" + yearend + "-" + monthend );
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+
+        protected void rptReportYeartodateProductExcel(string rptid)
+        {
+            //try
+            //{
+            //    string yearstart = Request.QueryString["yearstart"];
+            //    string yearend = Request.QueryString["yearend"];
+            //    string monthstart = Request.QueryString["monthstart"];
+            //    string monthend = Request.QueryString["monthend"];
+
+            //    Conn = new SqlConnection();
+            //    Conn = dbConn.OpenConn();
+
+            //    Comm = new SqlCommand("spReportTotalSalesYearTodateByProd", Conn);
+            //    Comm.CommandType = CommandType.StoredProcedure;
+            //    Comm.Parameters.AddWithValue("@yearstart", yearstart);
+            //    Comm.Parameters.AddWithValue("@yearend", yearend);
+            //    Comm.Parameters.AddWithValue("@monthstart", monthstart);
+            //    Comm.Parameters.AddWithValue("@monthend", monthend);
+
+            //    SqlDataAdapter adapter = new SqlDataAdapter();
+            //    adapter.SelectCommand = Comm;
+            //    dt = new DataTable();
+            //    adapter.Fill(dt);
+
+            //    GridView GridviewExport = new GridView();
+
+            //    if (dt.Rows.Count != 0)
+            //    {
+
+            //        GridviewExport.DataSource = dt;
+            //        GridviewExport.DataBind();
+
+            //        Response.Clear();
+            //        Response.AddHeader("content-disposition", "attachment;filename=รายงานยอดแยกประเภทสินค้า " + yearend + "-" + monthend + ".xls");
+            //        Response.ContentType = "application/ms-excel";
+            //        Response.ContentEncoding = System.Text.Encoding.Unicode;
+            //        Response.BinaryWrite(System.Text.Encoding.Unicode.GetPreamble());
+
+            //        System.IO.StringWriter sw = new System.IO.StringWriter();
+            //        System.Web.UI.HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+            //        GridviewExport.RenderControl(hw);
+            //        string style = @"<style> td { mso-number-format:\@;} </style>";
+            //        Response.Write(style);
+            //        Response.Write(sw.ToString());
+            //        Response.End();
+
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+            //    return;
+            //}
+
+            try
+            {
+
+                string yearstart = Request.QueryString["yearstart"];
+                string yearend = Request.QueryString["yearend"];
+                string monthstart = Request.QueryString["monthstart"];
+                string monthend = Request.QueryString["monthend"];
+
+                string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptTotalSalesYearTodateByProd.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                rpt.SetParameterValue("@yearstart", yearstart);
+                rpt.SetParameterValue("@yearend", yearend);
+                rpt.SetParameterValue("@monthstart", monthstart);
+                rpt.SetParameterValue("@monthend", monthend);
+
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.Excel, Response, false, "รายงานยอดแยกประเภทสินค้า" + yearend + "-" + monthend + ".xls");
             }
             catch (Exception ex)
             {

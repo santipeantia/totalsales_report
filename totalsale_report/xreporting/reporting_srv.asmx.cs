@@ -1964,5 +1964,68 @@ namespace totalsale_report.xreporting
             Context.Response.ContentType = "application/json";
             conn.CloseConn();
         }
+
+        [WebMethod]
+        public void GetResultReportYeartodateByProduct(string yearstart, string yearend, string monthstart, string monthend) {
+            List<cGetResultReportYeartodateByProduct> datas = new List<cGetResultReportYeartodateByProduct>();
+            SqlCommand comm = new SqlCommand("spReportTotalSalesYearTodateByProd", conn.OpenConn());
+            comm.Parameters.AddWithValue("@yearstart", yearstart);
+            comm.Parameters.AddWithValue("@yearend", yearend);
+            comm.Parameters.AddWithValue("@monthstart", monthstart);
+            comm.Parameters.AddWithValue("@monthend", monthend);
+            comm.CommandType = CommandType.StoredProcedure;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cGetResultReportYeartodateByProduct data = new cGetResultReportYeartodateByProduct();
+                data.id = rdr["id"].ToString();
+                data.prodname = rdr["prodname"].ToString();
+                data.totalsales = rdr["totalsales"].ToString();
+                data.netsales = rdr["netsales"].ToString();
+                data.grandsales = rdr["grandsales"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetResultReportYeartodateBySales(string yearstart, string yearend, string monthstart, string monthend)
+        {
+            List<cGetResultReportYeartodateBySales> datas = new List<cGetResultReportYeartodateBySales>();
+            SqlCommand comm = new SqlCommand("spReportTotalSalesYearTodateBySales", conn.OpenConn());
+            comm.Parameters.AddWithValue("@yearstart", yearstart);
+            comm.Parameters.AddWithValue("@yearend", yearend);
+            comm.Parameters.AddWithValue("@monthstart", monthstart);
+            comm.Parameters.AddWithValue("@monthend", monthend);
+            comm.CommandType = CommandType.StoredProcedure;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cGetResultReportYeartodateBySales data = new cGetResultReportYeartodateBySales();
+                data.id = rdr["id"].ToString();
+                data.prodname = rdr["prodname"].ToString();
+                data.totalsales = rdr["totalsales"].ToString();
+                data.netsales = rdr["netsales"].ToString();
+                data.grandsales = rdr["grandsales"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
     }
 }

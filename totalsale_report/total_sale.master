@@ -1188,6 +1188,29 @@
                      }]                    
                 })
 
+                
+                $('#tblResultReportByProduct').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': true                                
+                })
+
+                $('#tblResultReportBySales').DataTable({
+                    //'iDisplayLength': 10,
+                    'paging': false,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': false,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': true                                
+                })
+
 			})
         </script>
 
