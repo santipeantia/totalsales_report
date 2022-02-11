@@ -477,7 +477,7 @@
                 })
 
                 $('#tbluser').DataTable({
-					'paging': true,
+					'paging': false,
 					'lengthChange': true,
 					'searching': true,
 					'ordering': true,
@@ -1211,6 +1211,40 @@
                     'autoWidth': true                                
                 })
 
+                
+                $('#tblSalesCoReport').DataTable({
+                    'iDisplayLength': 25,
+                    'paging': true,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': true,
+                    'ordering': true,
+                    'info': true,
+                    'autoWidth': true,
+                    'columnDefs': [
+                        {
+                            targets: [3,5,7,26,28],
+                            className: "hide_column"
+                        }
+                    ]
+                })
+
+                $('#tblSalesCoReportScr').DataTable({
+                    'iDisplayLength': 25,
+                    'paging': true,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': true,
+                    'ordering': true,
+                    'info': true,
+                    'autoWidth': true,
+                    'columnDefs': [
+                        {
+                            targets: [3,5,7,9,24,26,28,31,33,36,38],
+                            className: "hide_column"
+                        }
+                    ]
+                })
 			})
         </script>
 
@@ -1326,7 +1360,8 @@
 					changeMonth: true,
 					changeYear: true,
 					todayHighlight: true,
-					format: 'yyyy-mm-dd'
+                    format: 'yyyy-mm-dd',
+                    orientation: "bottom left"
 				});
 				$('#datepickerend').datepicker({
 					autoclose: true,

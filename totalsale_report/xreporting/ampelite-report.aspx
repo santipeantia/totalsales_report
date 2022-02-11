@@ -90,6 +90,17 @@
                 //todo something here
                 var btnViewReport = $('#btnViewReport')
                 btnViewReport.click(function () {
+
+                    var today = new Date();
+                    var dd = String(today.getDate()).padStart(2, '0');
+                    var ddd = String(today.getDate() - 1).padStart(2, '0');
+                    var mm = String(today.getMonth() + 1).padStart(2, '0');
+                    var yyyy = today.getFullYear();
+
+                    var fulldate = yyyy + '-' + mm + '-' + dd;
+
+
+
                     //get report_1031
                     var sdate = $('#datepickerstart').val();
                     var edate = $('#datepickerend').val();

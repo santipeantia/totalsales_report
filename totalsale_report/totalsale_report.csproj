@@ -48,6 +48,9 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="epplus">
+      <HintPath>..\..\..\..\epplus.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -13666,6 +13669,8 @@
     <Content Include="xenterprise\epm-zone.aspx" />
     <Content Include="xenterprise\WebService1.asmx" />
     <Content Include="xreporting\ampelite-report.aspx" />
+    <Content Include="xreporting\ampelite-reports-sales-co.aspx" />
+    <Content Include="xreporting\ampelite-reports-sales-co-scr.aspx" />
     <Content Include="xreporting\amperam-ampelflow.aspx" />
     <Content Include="xreporting\dlite-detail-report.aspx" />
     <Content Include="xreporting\dlite-reprots.aspx" />
@@ -13796,6 +13801,8 @@
     <Compile Include="Class\cGetResultReportYeartodateByProduct.cs" />
     <Compile Include="Class\cGetResultReportYeartodateBySales.cs" />
     <Compile Include="Class\cGetSpecialSalesSharing.cs" />
+    <Compile Include="Class\cReportSaleCoReport.cs" />
+    <Compile Include="Class\cReportSaleCoReportScr.cs" />
     <Compile Include="Reports\cGetReport1044.cs" />
     <Compile Include="Reports\cGetResultReportMKT.cs" />
     <Compile Include="Reports\cGetResultReportMKTSum.cs" />
@@ -14349,6 +14356,20 @@
     </Compile>
     <Compile Include="xreporting\ampelite-report.aspx.designer.cs">
       <DependentUpon>ampelite-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xreporting\ampelite-reports-sales-co.aspx.cs">
+      <DependentUpon>ampelite-reports-sales-co.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\ampelite-reports-sales-co.aspx.designer.cs">
+      <DependentUpon>ampelite-reports-sales-co.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xreporting\ampelite-reports-sales-co-scr.aspx.cs">
+      <DependentUpon>ampelite-reports-sales-co-scr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\ampelite-reports-sales-co-scr.aspx.designer.cs">
+      <DependentUpon>ampelite-reports-sales-co-scr.aspx</DependentUpon>
     </Compile>
     <Compile Include="xreporting\amperam-ampelflow.aspx.cs">
       <DependentUpon>amperam-ampelflow.aspx</DependentUpon>

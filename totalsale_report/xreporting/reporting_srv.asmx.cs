@@ -2006,6 +2006,7 @@ namespace totalsale_report.xreporting
             comm.Parameters.AddWithValue("@monthstart", monthstart);
             comm.Parameters.AddWithValue("@monthend", monthend);
             comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 1200;
 
             SqlDataReader rdr = comm.ExecuteReader();
             //DataTable dt = new DataTable();
@@ -2019,6 +2020,146 @@ namespace totalsale_report.xreporting
                 data.totalsales = rdr["totalsales"].ToString();
                 data.netsales = rdr["netsales"].ToString();
                 data.grandsales = rdr["grandsales"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetReportSalesCoReport(string sdate, string edate, string soption, string stype, string ssearch) {
+            List<cReportSaleCoReport> datas = new List<cReportSaleCoReport>();
+            SqlCommand comm = new SqlCommand("sp_DataGolden_SaleCo_Report", conn.OpenConn());
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@soption", soption);
+            comm.Parameters.AddWithValue("@stype", stype);
+            comm.Parameters.AddWithValue("@search", ssearch);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 1200;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cReportSaleCoReport data = new cReportSaleCoReport();
+                
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.CustPONo = rdr["CustPONo"].ToString();
+                data.CustCode = rdr["CustCode"].ToString();
+                data.CustName = rdr["CustName"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.Product = rdr["Product"].ToString();
+                data.GoodGroupCode = rdr["GoodGroupCode"].ToString();
+                data.GoodGroupName = rdr["GoodGroupName"].ToString();
+                data.GoodCode = rdr["GoodCode"].ToString();
+                data.Model = rdr["Model"].ToString();
+                data.GoodName = rdr["GoodName"].ToString();
+                data.pLength = rdr["pLength"].ToString();
+                data.pQuantity = rdr["pQuantity"].ToString();
+                data.Amount = rdr["Amount"].ToString();
+                data.RF = rdr["RF"].ToString();
+                data.RentAmount = rdr["RentAmount"].ToString();
+                data.TotalPrice = rdr["TotalPrice"].ToString();
+                data.RentCom = rdr["RentCom"].ToString();
+                data.NetCom = rdr["NetCom"].ToString();
+                data.RentOther = rdr["RentOther"].ToString();
+                data.NetPrice = rdr["NetPrice"].ToString();
+                data.NetRF_B = rdr["NetRF_B"].ToString();
+                data.NetRF_P = rdr["NetRF_P"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.NetItem = rdr["NetItem"].ToString();
+                data.GoodPattnCode = rdr["GoodPattnCode"].ToString();
+                data.GoodPattnName = rdr["GoodPattnName"].ToString();
+                data.GoodColorCode = rdr["GoodColorCode"].ToString();
+                data.GoodColorName = rdr["GoodColorName"].ToString();
+                data.CustTypeCode = rdr["CustTypeCode"].ToString();
+                data.CustTypeName = rdr["CustTypeName"].ToString();
+                data.sRemark = rdr["sRemark"].ToString();
+                data.GoodClassCode = rdr["GoodClassCode"].ToString();
+                data.GoodClassName = rdr["GoodClassName"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                data.Trs_P = rdr["Trs_P"].ToString();
+                data.JobsCode = rdr["JobsCode"].ToString();
+                data.JobsName = rdr["JobsName"].ToString();
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void GetReportSalesCoReportScr(string sdate, string edate, string soption, string stype, string ssearch)
+        {
+            List<cReportSaleCoReportScr> datas = new List<cReportSaleCoReportScr>();
+            SqlCommand comm = new SqlCommand("sp_DataGolden_SaleCo_Report_Scr", conn.OpenConn());
+            comm.Parameters.AddWithValue("@sdate", sdate);
+            comm.Parameters.AddWithValue("@edate", edate);
+            comm.Parameters.AddWithValue("@soption", soption);
+            comm.Parameters.AddWithValue("@stype", stype);
+            comm.Parameters.AddWithValue("@search", ssearch);
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 1200;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cReportSaleCoReportScr data = new cReportSaleCoReportScr();
+
+                data.DocuDate = rdr["DocuDate"].ToString();
+                data.InvNo = rdr["InvNo"].ToString();
+                data.CustPONo = rdr["CustPONo"].ToString();
+                data.CustCode = rdr["CustCode"].ToString();
+                data.CustName = rdr["CustName"].ToString();
+                data.ProductCode = rdr["ProductCode"].ToString();
+                data.Product = rdr["Product"].ToString();
+                data.GoodGroupCode = rdr["GoodGroupCode"].ToString();
+                data.GoodGroupName = rdr["GoodGroupName"].ToString();
+                data.GoodCode = rdr["GoodCode"].ToString();
+                data.Model = rdr["Model"].ToString();
+                data.GoodName = rdr["GoodName"].ToString();
+                data.Amount = rdr["Amount"].ToString();
+                data.RF = rdr["RF"].ToString();
+                data.RentAmount = rdr["RentAmount"].ToString();
+                data.TotalPrice = rdr["TotalPrice"].ToString();
+                data.RentCom = rdr["RentCom"].ToString();
+                data.NetCom = rdr["NetCom"].ToString();
+                data.RentOther = rdr["RentOther"].ToString();
+                data.NetPrice = rdr["NetPrice"].ToString();
+                data.NetRF_B = rdr["NetRF_B"].ToString();
+                data.NetRF_P = rdr["NetRF_P"].ToString();
+                data.NetCutSale = rdr["NetCutSale"].ToString();
+                data.NetItems = rdr["NetItems"].ToString();
+                data.GoodPattnCode = rdr["GoodPattnCode"].ToString();
+                data.GoodPattnName = rdr["GoodPattnName"].ToString();
+                data.GoodColorCode = rdr["GoodColorCode"].ToString();
+                data.GoodColorName = rdr["GoodColorName"].ToString();
+                data.CustTypeCode = rdr["CustTypeCode"].ToString();
+                data.CustTypeName = rdr["CustTypeName"].ToString();
+                data.sRemark = rdr["sRemark"].ToString();
+                data.GoodClassCode = rdr["GoodClassCode"].ToString();
+                data.GoodClassName = rdr["GoodClassName"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.SaleName = rdr["SaleName"].ToString();
+                data.Trs_P = rdr["Trs_P"].ToString();
+                data.JobsCode = rdr["JobsCode"].ToString();
+                data.JobsName = rdr["JobsName"].ToString();
+                data.ID = rdr["ID"].ToString();
+                data.Remark = rdr["Remark"].ToString();
+
                 datas.Add(data);
             }
             JavaScriptSerializer js = new JavaScriptSerializer();
