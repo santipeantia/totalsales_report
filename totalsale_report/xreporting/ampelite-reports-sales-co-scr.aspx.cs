@@ -83,9 +83,19 @@ namespace totalsale_report.xreporting
                         }
 
                         // save the file
-                        File.WriteAllText(@"D:\AmpelScrew" + gdate + ".csv", sb.ToString(), Encoding.Unicode);
+                        // File.WriteAllText(@"D:\AmpelScrew" + gdate + ".csv", sb.ToString(), Encoding.Unicode);
 
-                        msgOKonly("please check your data on D:\\\\AmpelScrew" + gdate + ".csv");
+                        //Encoding encoding = Encoding.UTF8;
+
+                        string attachment = "attachment; filename=AmpelReport" + gdate + ".csv";
+                        Response.ClearContent();
+                        Response.AddHeader("content-disposition", attachment);
+                        Response.Charset = "windows-874";
+                        Response.ContentType = "application/csv";
+                        Response.ContentEncoding = System.Text.Encoding.GetEncoding(874);
+                        Response.Write(sb.ToString());
+                        Response.End();
+
                     }
                     else
                     {
@@ -220,7 +230,7 @@ namespace totalsale_report.xreporting
             }
             catch (Exception ex)
             {
-
+                msgOKonly(ex.Message);
             }
 
         }
