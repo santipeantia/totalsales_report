@@ -1245,6 +1245,126 @@
                         }
                     ]
                 })
+
+                
+                $('#tblFrpBkkThreeYear01').DataTable({
+                    'iDisplayLength': 25,
+                    'paging': true,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': true,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': true
+                    //'columnDefs': [
+                    //    {
+                    //        targets: [1,2],
+                    //        className: "hide_column"
+                    //    }
+                    //]
+                })
+
+                $('#tblFrpBkkThreeYear02').DataTable({
+                    'iDisplayLength': 25,
+                    'paging': true,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': true,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': true
+                    //'columnDefs': [
+                    //    {
+                    //        targets: [1,2],
+                    //        className: "hide_column"
+                    //    }
+                    //]
+                })
+
+                $('#tblFrpBkkThreeYear03').DataTable({
+                    'iDisplayLength': 25,
+                    'paging': true,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': true,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': true
+                    //'columnDefs': [
+                    //    {
+                    //        targets: [1,2],
+                    //        className: "hide_column"
+                    //    }
+                    //]
+                })
+
+                $('#tblFrpBkkThreeYear04').DataTable({
+                    'iDisplayLength': 25,
+                    'paging': true,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': true,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': true
+                    //'columnDefs': [
+                    //    {
+                    //        targets: [1,2],
+                    //        className: "hide_column"
+                    //    }
+                    //]
+                })
+
+                $('#tblFrpBkkThreeYear05').DataTable({
+                    'iDisplayLength': 25,
+                    'paging': true,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': true,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': true
+                    //'columnDefs': [
+                    //    {
+                    //        targets: [1,2],
+                    //        className: "hide_column"
+                    //    }
+                    //]
+                })
+
+                $('#tblFrpBkkThreeYear06').DataTable({
+                    'iDisplayLength': 25,
+                    'paging': true,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': true,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': true
+                    //'columnDefs': [
+                    //    {
+                    //        targets: [1,2],
+                    //        className: "hide_column"
+                    //    }
+                    //]
+                })
+
+                $('#tblFrpBkkThreeYear07').DataTable({
+                    'iDisplayLength': 25,
+                    'paging': true,
+                    'scrollX': true,
+                    'lengthChange': true,
+                    'searching': true,
+                    'ordering': false,
+                    'info': true,
+                    'autoWidth': true
+                    //'columnDefs': [
+                    //    {
+                    //        targets: [1,2],
+                    //        className: "hide_column"
+                    //    }
+                    //]
+                })
 			})
         </script>
 

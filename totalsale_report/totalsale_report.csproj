@@ -13681,6 +13681,7 @@
     <Content Include="xreporting\marketing-top-rangemkt.aspx" />
     <Content Include="xreporting\other-report.aspx" />
     <Content Include="xreporting\projectsreport.aspx" />
+    <Content Include="xreporting\report-frp-bkk-lastthreeyear.aspx" />
     <Content Include="xreporting\report-render.aspx" />
     <Content Include="xreporting\reporting_srv.asmx" />
     <Content Include="xreporting\rpt-Individual-sales.aspx" />
@@ -13803,6 +13804,7 @@
     <Compile Include="Class\cGetSpecialSalesSharing.cs" />
     <Compile Include="Class\cReportSaleCoReport.cs" />
     <Compile Include="Class\cReportSaleCoReportScr.cs" />
+    <Compile Include="cTotalReportBySaleFRPBKK02.cs" />
     <Compile Include="Reports\cGetReport1044.cs" />
     <Compile Include="Reports\cGetResultReportMKT.cs" />
     <Compile Include="Reports\cGetResultReportMKTSum.cs" />
@@ -14256,6 +14258,168 @@
       <DependentUpon>rptStrategic.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPBKK04.cs">
+      <DependentUpon>rptTotalReportBySaleFRPBKK04.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPBKK03.cs">
+      <DependentUpon>rptTotalReportBySaleFRPBKK03.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleDLITEUPC06.cs">
+      <DependentUpon>rptTotalReportBySaleDLITEUPC06.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPUPC05.cs">
+      <DependentUpon>rptTotalReportBySaleFRPUPC05.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPUPC02.cs">
+      <DependentUpon>rptTotalReportBySaleFRPUPC02.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPUPCTOTAL.cs">
+      <DependentUpon>rptTotalReportBySaleFRPUPCTOTAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPUPC07.cs">
+      <DependentUpon>rptTotalReportBySaleFRPUPC07.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPUPC06.cs">
+      <DependentUpon>rptTotalReportBySaleFRPUPC06.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleScrewFRPUPCTOTAL.cs">
+      <DependentUpon>rptTotalReportBySaleScrewFRPUPCTOTAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleScrewFRPUPC05.cs">
+      <DependentUpon>rptTotalReportBySaleScrewFRPUPC05.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleScrewFRPUPC02.cs">
+      <DependentUpon>rptTotalReportBySaleScrewFRPUPC02.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleScrewFRPUPC07.cs">
+      <DependentUpon>rptTotalReportBySaleScrewFRPUPC07.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleScrewFRPUPC06.cs">
+      <DependentUpon>rptTotalReportBySaleScrewFRPUPC06.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleSCRBKKTOTAL.cs">
+      <DependentUpon>rptTotalReportBySaleSCRBKKTOTAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleSCRBKK03.cs">
+      <DependentUpon>rptTotalReportBySaleSCRBKK03.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleSCRBKK06.cs">
+      <DependentUpon>rptTotalReportBySaleSCRBKK06.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleSCRBKK04.cs">
+      <DependentUpon>rptTotalReportBySaleSCRBKK04.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleSCRBKK05.cs">
+      <DependentUpon>rptTotalReportBySaleSCRBKK05.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPBKKTOTAL.cs">
+      <DependentUpon>rptTotalReportBySaleFRPBKKTOTAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPBKK113054.cs">
+      <DependentUpon>rptTotalReportBySaleFRPBKK113054.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPBKK06.cs">
+      <DependentUpon>rptTotalReportBySaleFRPBKK06.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPBKK05.cs">
+      <DependentUpon>rptTotalReportBySaleFRPBKK05.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPBKK02.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTotalReportBySaleFRPBKK02.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptTotalSales3YearFrpUPC.cs">
+      <DependentUpon>rptTotalSales3YearFrpUPC.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalSales3YearScrewFRPUPCTOTAL.cs">
+      <DependentUpon>rptTotalSales3YearScrewFRPUPCTOTAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalSales3YearKittisakScrewBkk.cs">
+      <DependentUpon>rptTotalSales3YearKittisakScrewBkk.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalSales3YearFrpBkk.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTotalSales3YearFrpBkk.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptTotalSalesYearTodateByProd.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -14440,6 +14604,13 @@
     </Compile>
     <Compile Include="xreporting\projectsreport.aspx.designer.cs">
       <DependentUpon>projectsreport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xreporting\report-frp-bkk-lastthreeyear.aspx.cs">
+      <DependentUpon>report-frp-bkk-lastthreeyear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xreporting\report-frp-bkk-lastthreeyear.aspx.designer.cs">
+      <DependentUpon>report-frp-bkk-lastthreeyear.aspx</DependentUpon>
     </Compile>
     <Compile Include="xreporting\report-render.aspx.cs">
       <DependentUpon>report-render.aspx</DependentUpon>
@@ -16060,6 +16231,114 @@
     <EmbeddedResource Include="Reports\rptStrategic.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptStrategic.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPBKK04.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPBKK04.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPBKK03.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPBKK03.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleDLITEUPC06.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleDLITEUPC06.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPUPC05.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPUPC05.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPUPC02.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPUPC02.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPUPCTOTAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPUPCTOTAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPUPC07.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPUPC07.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPUPC06.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPUPC06.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleScrewFRPUPCTOTAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleScrewFRPUPCTOTAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleScrewFRPUPC05.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleScrewFRPUPC05.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleScrewFRPUPC02.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleScrewFRPUPC02.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleScrewFRPUPC07.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleScrewFRPUPC07.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleScrewFRPUPC06.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleScrewFRPUPC06.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleSCRBKKTOTAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleSCRBKKTOTAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleSCRBKK03.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleSCRBKK03.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleSCRBKK06.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleSCRBKK06.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleSCRBKK04.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleSCRBKK04.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleSCRBKK05.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleSCRBKK05.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPBKKTOTAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPBKKTOTAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPBKK113054.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPBKK113054.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPBKK06.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPBKK06.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPBKK05.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPBKK05.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPBKK02.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPBKK02.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalSales3YearFrpUPC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalSales3YearFrpUPC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalSales3YearScrewFRPUPCTOTAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalSales3YearScrewFRPUPCTOTAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalSales3YearKittisakScrewBkk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalSales3YearKittisakScrewBkk.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalSales3YearFrpBkk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalSales3YearFrpBkk.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTotalSalesYearTodateByProd.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

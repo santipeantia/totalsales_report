@@ -2168,5 +2168,305 @@ namespace totalsale_report.xreporting
             Context.Response.ContentType = "application/json";
             conn.CloseConn();
         }
+
+        [WebMethod]
+        public void getTotalReportBySaleFRPBKK02() {
+            List<cTotalReportBySaleFRPBKK02> datas = new List<cTotalReportBySaleFRPBKK02>();
+            SqlCommand comm = new SqlCommand("spTotalReportBySaleFRPBKK02", conn.OpenConn());           
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 1200;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cTotalReportBySaleFRPBKK02 data = new cTotalReportBySaleFRPBKK02();
+
+                data.xYear = rdr["xYear"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.Jan = rdr["Jan"].ToString();
+                data.Feb = rdr["Feb"].ToString();
+                data.Mar = rdr["Mar"].ToString();
+                data.Apr = rdr["Apr"].ToString();
+                data.May = rdr["May"].ToString();
+                data.Jun = rdr["Jun"].ToString();
+                data.Jul = rdr["Jul"].ToString();
+                data.Aug = rdr["Aug"].ToString();
+                data.Sep = rdr["Sep"].ToString();
+                data.Oct = rdr["Oct"].ToString();
+                data.Nov = rdr["Nov"].ToString();
+                data.Dec = rdr["Dec"].ToString();
+                data.TotalYearTodate = rdr["TotalYearTodate"].ToString();
+                data.TotalAllYear = rdr["TotalAllYear"].ToString();
+
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void getTotalReportBySaleFRPBKK03()
+        {
+            List<cTotalReportBySaleFRPBKK02> datas = new List<cTotalReportBySaleFRPBKK02>();
+            SqlCommand comm = new SqlCommand("spTotalReportBySaleFRPBKK03", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 1200;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cTotalReportBySaleFRPBKK02 data = new cTotalReportBySaleFRPBKK02();
+
+                data.xYear = rdr["xYear"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.Jan = rdr["Jan"].ToString();
+                data.Feb = rdr["Feb"].ToString();
+                data.Mar = rdr["Mar"].ToString();
+                data.Apr = rdr["Apr"].ToString();
+                data.May = rdr["May"].ToString();
+                data.Jun = rdr["Jun"].ToString();
+                data.Jul = rdr["Jul"].ToString();
+                data.Aug = rdr["Aug"].ToString();
+                data.Sep = rdr["Sep"].ToString();
+                data.Oct = rdr["Oct"].ToString();
+                data.Nov = rdr["Nov"].ToString();
+                data.Dec = rdr["Dec"].ToString();
+                data.TotalYearTodate = rdr["TotalYearTodate"].ToString();
+                data.TotalAllYear = rdr["TotalAllYear"].ToString();
+
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void getTotalReportBySaleFRPBKK04()
+        {
+            List<cTotalReportBySaleFRPBKK02> datas = new List<cTotalReportBySaleFRPBKK02>();
+            SqlCommand comm = new SqlCommand("spTotalReportBySaleFRPBKK04", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 1200;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cTotalReportBySaleFRPBKK02 data = new cTotalReportBySaleFRPBKK02();
+
+                data.xYear = rdr["xYear"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.Jan = rdr["Jan"].ToString();
+                data.Feb = rdr["Feb"].ToString();
+                data.Mar = rdr["Mar"].ToString();
+                data.Apr = rdr["Apr"].ToString();
+                data.May = rdr["May"].ToString();
+                data.Jun = rdr["Jun"].ToString();
+                data.Jul = rdr["Jul"].ToString();
+                data.Aug = rdr["Aug"].ToString();
+                data.Sep = rdr["Sep"].ToString();
+                data.Oct = rdr["Oct"].ToString();
+                data.Nov = rdr["Nov"].ToString();
+                data.Dec = rdr["Dec"].ToString();
+                data.TotalYearTodate = rdr["TotalYearTodate"].ToString();
+                data.TotalAllYear = rdr["TotalAllYear"].ToString();
+
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void getTotalReportBySaleFRPBKK05()
+        {
+            List<cTotalReportBySaleFRPBKK02> datas = new List<cTotalReportBySaleFRPBKK02>();
+            SqlCommand comm = new SqlCommand("spTotalReportBySaleFRPBKK05", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 1200;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cTotalReportBySaleFRPBKK02 data = new cTotalReportBySaleFRPBKK02();
+
+                data.xYear = rdr["xYear"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.Jan = rdr["Jan"].ToString();
+                data.Feb = rdr["Feb"].ToString();
+                data.Mar = rdr["Mar"].ToString();
+                data.Apr = rdr["Apr"].ToString();
+                data.May = rdr["May"].ToString();
+                data.Jun = rdr["Jun"].ToString();
+                data.Jul = rdr["Jul"].ToString();
+                data.Aug = rdr["Aug"].ToString();
+                data.Sep = rdr["Sep"].ToString();
+                data.Oct = rdr["Oct"].ToString();
+                data.Nov = rdr["Nov"].ToString();
+                data.Dec = rdr["Dec"].ToString();
+                data.TotalYearTodate = rdr["TotalYearTodate"].ToString();
+                data.TotalAllYear = rdr["TotalAllYear"].ToString();
+
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+
+        [WebMethod]
+        public void getTotalReportBySaleFRPBKK06()
+        {
+            List<cTotalReportBySaleFRPBKK02> datas = new List<cTotalReportBySaleFRPBKK02>();
+            SqlCommand comm = new SqlCommand("spTotalReportBySaleFRPBKK06", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 1200;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cTotalReportBySaleFRPBKK02 data = new cTotalReportBySaleFRPBKK02();
+
+                data.xYear = rdr["xYear"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.Jan = rdr["Jan"].ToString();
+                data.Feb = rdr["Feb"].ToString();
+                data.Mar = rdr["Mar"].ToString();
+                data.Apr = rdr["Apr"].ToString();
+                data.May = rdr["May"].ToString();
+                data.Jun = rdr["Jun"].ToString();
+                data.Jul = rdr["Jul"].ToString();
+                data.Aug = rdr["Aug"].ToString();
+                data.Sep = rdr["Sep"].ToString();
+                data.Oct = rdr["Oct"].ToString();
+                data.Nov = rdr["Nov"].ToString();
+                data.Dec = rdr["Dec"].ToString();
+                data.TotalYearTodate = rdr["TotalYearTodate"].ToString();
+                data.TotalAllYear = rdr["TotalAllYear"].ToString();
+
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+                
+        [WebMethod]
+        public void getTotalReportBySaleFRP113054()
+        {
+            List<cTotalReportBySaleFRPBKK02> datas = new List<cTotalReportBySaleFRPBKK02>();
+            SqlCommand comm = new SqlCommand("spTotalReportBySale113054", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 1200;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cTotalReportBySaleFRPBKK02 data = new cTotalReportBySaleFRPBKK02();
+
+                data.xYear = rdr["xYear"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.Jan = rdr["Jan"].ToString();
+                data.Feb = rdr["Feb"].ToString();
+                data.Mar = rdr["Mar"].ToString();
+                data.Apr = rdr["Apr"].ToString();
+                data.May = rdr["May"].ToString();
+                data.Jun = rdr["Jun"].ToString();
+                data.Jul = rdr["Jul"].ToString();
+                data.Aug = rdr["Aug"].ToString();
+                data.Sep = rdr["Sep"].ToString();
+                data.Oct = rdr["Oct"].ToString();
+                data.Nov = rdr["Nov"].ToString();
+                data.Dec = rdr["Dec"].ToString();
+                data.TotalYearTodate = rdr["TotalYearTodate"].ToString();
+                data.TotalAllYear = rdr["TotalAllYear"].ToString();
+
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
+                
+        [WebMethod]
+        public void getTotalReportBySaleTotalFRPBKK()
+        {
+            List<cTotalReportBySaleFRPBKK02> datas = new List<cTotalReportBySaleFRPBKK02>();
+            SqlCommand comm = new SqlCommand("spTotalReportBySaleTotalFRPBKK", conn.OpenConn());
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandTimeout = 1200;
+
+            SqlDataReader rdr = comm.ExecuteReader();
+            //DataTable dt = new DataTable();
+            //dt.Load(rdr);
+
+            while (rdr.Read())
+            {
+                cTotalReportBySaleFRPBKK02 data = new cTotalReportBySaleFRPBKK02();
+
+                data.xYear = rdr["xYear"].ToString();
+                data.EmpCode = rdr["EmpCode"].ToString();
+                data.EmpName = rdr["EmpName"].ToString();
+                data.Jan = rdr["Jan"].ToString();
+                data.Feb = rdr["Feb"].ToString();
+                data.Mar = rdr["Mar"].ToString();
+                data.Apr = rdr["Apr"].ToString();
+                data.May = rdr["May"].ToString();
+                data.Jun = rdr["Jun"].ToString();
+                data.Jul = rdr["Jul"].ToString();
+                data.Aug = rdr["Aug"].ToString();
+                data.Sep = rdr["Sep"].ToString();
+                data.Oct = rdr["Oct"].ToString();
+                data.Nov = rdr["Nov"].ToString();
+                data.Dec = rdr["Dec"].ToString();
+                data.TotalYearTodate = rdr["TotalYearTodate"].ToString();
+                data.TotalAllYear = rdr["TotalAllYear"].ToString();
+
+                datas.Add(data);
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            js.MaxJsonLength = Int32.MaxValue;
+            Context.Response.Write(js.Serialize(datas));
+            Context.Response.ContentType = "application/json";
+            conn.CloseConn();
+        }
     }
 }

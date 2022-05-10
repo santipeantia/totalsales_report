@@ -110,7 +110,9 @@ namespace totalsale_report.xreporting
                 else if (rpt_id == "resultreportmkttopexcelr2") { rptResultReportMktTopExcelR2(rpt_id); }
 
                 else if (rpt_id == "resultreportyeartodatepdf") { rptReportYeartodateProductPdf(rpt_id); }
-                else if (rpt_id == "resultreportyeartodateexcel") { rptReportYeartodateProductExcel(rpt_id); }                
+                else if (rpt_id == "resultreportyeartodateexcel") { rptReportYeartodateProductExcel(rpt_id); }
+
+                else if (rpt_id == "frpreport") { rptReportLasteThreeYearFrpBkk(); }
 
                 else { Response.Write("<script>alert('Error..!, Report find not found.');</script>"); }
 
@@ -1516,6 +1518,36 @@ namespace totalsale_report.xreporting
                 rpt.SetParameterValue("@monthend", monthend);
 
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.Excel, Response, false, "รายงานยอดแยกประเภทสินค้า" + yearend + "-" + monthend + ".xls");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+
+        //totalsale report last 3 year
+        protected void rptReportLasteThreeYearFrpBkk()
+        {
+            try
+            {
+
+                //string yearstart = Request.QueryString["yearstart"];
+                //string yearend = Request.QueryString["yearend"];
+                //string monthstart = Request.QueryString["monthstart"];
+                //string monthend = Request.QueryString["monthend"];
+                //string strDate = DateTime.Now.ToString("yyyy-MM-dd");
+
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearFrpBkk.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+                //rpt.SetParameterValue("@yearstart", yearstart);
+                //rpt.SetParameterValue("@yearend", yearend);
+                //rpt.SetParameterValue("@monthstart", monthstart);
+                //rpt.SetParameterValue("@monthend", monthend);
+
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, false, "รายงานยอด FRP (กรุงเทพ) ย้อนหลัง 3 ปี");
             }
             catch (Exception ex)
             {
