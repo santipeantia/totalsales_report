@@ -40,6 +40,15 @@ namespace totalsale_report.xreporting {
         protected global::System.Web.UI.HtmlControls.HtmlInputButton btnsirusScrewNorthIsanMidwestSouth;
         
         /// <summary>
+        /// btnsirusDliteNorthIsanMidwestSouth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnsirusDliteNorthIsanMidwestSouth;
+        
+        /// <summary>
         /// btnkittisakfrpbkk control.
         /// </summary>
         /// <remarks>

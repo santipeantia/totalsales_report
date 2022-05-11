@@ -71,6 +71,8 @@ namespace totalsale_report.xreporting
             }
         }
 
+        
+
         protected void rptReportLasteThreeYearSirusScrewNorthIsanMidwestSouth(object sender, EventArgs e)
         {
             try
@@ -87,7 +89,7 @@ namespace totalsale_report.xreporting
                 return;
             }
         }
-
+               
         protected void rptReportLasteThreeYearSirusFrpNorthIsanMidwestSouth(object sender, EventArgs e)
         {
             try
@@ -105,6 +107,21 @@ namespace totalsale_report.xreporting
             }
         }
 
+        protected void rptReportLasteThreeYearDLiteUPC(object sender, EventArgs e)
+        {
+            try
+            {
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearDLiteUPC.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
 
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณศิรัส ยอดขาย D-Lite (เหนือ อีสาน กลาง ตก ใต้) ย้อนหลัง 3 ปี");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
     }
 }

@@ -1071,7 +1071,7 @@ namespace totalsale_report.xreporting
 
                 string strDate = DateTime.Now.ToString("yyyy-MM-dd");
                 rpt = new ReportDocument();
-                rpt.Load(Server.MapPath("../Reports/rptResultReportMkt.rpt"));
+                rpt.Load(Server.MapPath("../Reports/rptResultReportMkt_2.rpt"));
                 rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 rpt.SetParameterValue("@zoneid", zoneid);
                 rpt.SetParameterValue("@zonename", zonename);

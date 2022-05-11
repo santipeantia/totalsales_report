@@ -212,6 +212,13 @@
                     document.getElementById('<%= btnsirusScrewNorthIsanMidwestSouth.ClientID %>').click();
                 })  
 
+                
+                var sirusDliteNorthIsanMidwestSouth = $('#sirusDliteNorthIsanMidwestSouth');
+                sirusDliteNorthIsanMidwestSouth.click(function () {
+                    //alert('ทีมคุณศิรัส\nยอดขาย D-Lite (เหนือ,อีสาน,กลางตก,ใต้)');
+                    document.getElementById('<%= btnsirusDliteNorthIsanMidwestSouth.ClientID %>').click();
+                })  
+
 
                 
 
@@ -610,7 +617,8 @@
                                     <br />
                                     <span class="txtLabel">ยอดขาย FRP (เหนือ,อีสาน,กลางตก,ใต้)</span>
                                 </a>                                
-                                <input class="hidden" type="button" id="btnsirusfrpNorthIsanMidwestSouth" name="btnsirusfrpNorthIsanMidwestSouth" value="btnsirusfrpNorthIsanMidwestSouth" runat="server" onserverclick="rptReportLasteThreeYearSirusFrpNorthIsanMidwestSouth" />
+                                <input class="hidden" type="button" id="btnsirusfrpNorthIsanMidwestSouth" name="btnsirusfrpNorthIsanMidwestSouth" 
+                                    value="btnsirusfrpNorthIsanMidwestSouth" runat="server" onserverclick="rptReportLasteThreeYearSirusFrpNorthIsanMidwestSouth" />
                             </div>                            
                             <div class="col-md-2">
                                 <a class="btn btn-app" id="sirusScrewNorthIsanMidwestSouth"  style="width: 100%; height: 90px">
@@ -619,15 +627,18 @@
                                     <br />
                                     <span class="txtLabel">ยอดขาย Screw (เหนือ,อีสาน,กลางตก,ใต้)</span>
                                 </a>
-                                <input class="hidden" type="button" id="btnsirusScrewNorthIsanMidwestSouth" name="btnsirusScrewNorthIsanMidwestSouth" value="btnsirusScrewNorthIsanMidwestSouth" runat="server" onserverclick="rptReportLasteThreeYearSirusScrewNorthIsanMidwestSouth" />
+                                <input class="hidden" type="button" id="btnsirusScrewNorthIsanMidwestSouth" name="btnsirusScrewNorthIsanMidwestSouth" 
+                                    value="btnsirusScrewNorthIsanMidwestSouth" runat="server" onserverclick="rptReportLasteThreeYearSirusScrewNorthIsanMidwestSouth" />
                             </div>
                             <div class="col-md-2">
-                                <a class="btn btn-app" style="width: 100%; height: 90px">
+                                <a class="btn btn-app" id="sirusDliteNorthIsanMidwestSouth" style="width: 100%; height: 90px">
                                     <i class="fa fa-file-pdf-o text-red"></i>
                                     <span class="txtLabel">ทีมคุณศิรัส</span>
                                     <br />
                                     <span class="txtLabel">ยอดขาย D-LITE (เหนือ,อีสาน,กลางตก,ใต้)</span>
                                 </a>
+                                <input class="hidden" type="button" id="btnsirusDliteNorthIsanMidwestSouth" name="btnsirusDliteNorthIsanMidwestSouth" 
+                                    value="btnsirusDliteNorthIsanMidwestSouth" runat="server" onserverclick="rptReportLasteThreeYearDLiteUPC" />
                             </div>
                         </div>
 
