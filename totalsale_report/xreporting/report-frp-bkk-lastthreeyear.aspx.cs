@@ -123,5 +123,63 @@ namespace totalsale_report.xreporting
                 return;
             }
         }
+
+
+        protected void rptReportLasteThreeYearKittisakScrewFRP(object sender, EventArgs e)
+        {
+            try
+            {
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearKittisakScrewFRP.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณกิตติศักดิ์ ยอดขาย Screw + FRP (ต่างจังหวัด) ย้อนหลัง 3 ปี");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        
+        protected void rptReportLasteThreeYearPakpoomDliteBkk(object sender, EventArgs e)
+        {
+            try
+            {
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearPakpoomDliteBkk.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณภาคภูมิ ยอดขาย D-Lite (กรุงเทพ ตะวันออก กลาง ตก) ย้อนหลัง 3 ปี");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+        protected void rptReportLasteThreeYearChannarongFrpBkk(object sender, EventArgs e)
+        {
+            try
+            {
+                rpt = new ReportDocument();
+                rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearChannarongFrpBkk.rpt"));
+                rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
+
+                rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณชาญณรงค์ ยอดขาย FRP (กรุงเทพ) ย้อนหลัง 3 ปี");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error..!, '" + ex.Message + "');</script>");
+                return;
+            }
+        }
+
+
+
+       
+
     }
 }

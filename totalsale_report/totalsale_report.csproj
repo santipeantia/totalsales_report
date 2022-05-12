@@ -14282,6 +14282,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPBKK030406.cs">
+      <DependentUpon>rptTotalReportBySaleFRPBKK030406.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\rptTotalReportBySaleFRPBKK04.cs">
       <DependentUpon>rptTotalReportBySaleFRPBKK04.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -14302,6 +14308,36 @@
     </Compile>
     <Compile Include="Reports\rptTotalReportBySaleDLITEUPCTOTAL.cs">
       <DependentUpon>rptTotalReportBySaleDLITEUPCTOTAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleFRPUPC03.cs">
+      <DependentUpon>rptTotalReportBySaleFRPUPC03.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySalePakpoomDLITEBKK01.cs">
+      <DependentUpon>rptTotalReportBySalePakpoomDLITEBKK01.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySalePakpoomDLITEBKKTOTAL.cs">
+      <DependentUpon>rptTotalReportBySalePakpoomDLITEBKKTOTAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySalePakpoomDLITEBKK03.cs">
+      <DependentUpon>rptTotalReportBySalePakpoomDLITEBKK03.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySalePakpoomDLITEBKK02.cs">
+      <DependentUpon>rptTotalReportBySalePakpoomDLITEBKK02.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -14335,6 +14371,30 @@
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleScrewFrpSCRBKK01.cs">
+      <DependentUpon>rptTotalReportBySaleScrewFrpSCRBKK01.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleScrewFrpSCRBKK02.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTotalReportBySaleScrewFrpSCRBKK02.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleScrewFRPTOTAL.cs">
+      <DependentUpon>rptTotalReportBySaleScrewFRPTOTAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalReportBySaleScrewFrpSCRUPC03.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTotalReportBySaleScrewFrpSCRUPC03.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rptTotalReportBySaleScrewFRPUPCTOTAL.cs">
       <DependentUpon>rptTotalReportBySaleScrewFRPUPCTOTAL.rpt</DependentUpon>
@@ -14425,6 +14485,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rptTotalReportBySaleFRPBKK02.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptTotalSales3YearChannarongFrpBkk.cs">
+      <DependentUpon>rptTotalSales3YearChannarongFrpBkk.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalSales3YearKittisakScrewFRP.cs">
+      <DependentUpon>rptTotalSales3YearKittisakScrewFRP.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rptTotalSales3YearPakpoomDliteBkk.cs">
+      <DependentUpon>rptTotalSales3YearPakpoomDliteBkk.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reports\rptTotalSales3YearDLiteUPC.cs">
       <DependentUpon>rptTotalSales3YearDLiteUPC.rpt</DependentUpon>
@@ -16284,6 +16362,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTotalReportBySaleDLITEUPC07.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPBKK030406.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPBKK030406.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPBKK04.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTotalReportBySaleFRPBKK04.cs</LastGenOutput>
@@ -16299,6 +16381,26 @@
     <EmbeddedResource Include="Reports\rptTotalReportBySaleDLITEUPCTOTAL.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTotalReportBySaleDLITEUPCTOTAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPUPC03.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleFRPUPC03.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySalePakpoomDLITEBKK01.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySalePakpoomDLITEBKK01.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySalePakpoomDLITEBKKTOTAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySalePakpoomDLITEBKKTOTAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySalePakpoomDLITEBKK03.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySalePakpoomDLITEBKK03.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySalePakpoomDLITEBKK02.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySalePakpoomDLITEBKK02.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPUPC05.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -16319,6 +16421,22 @@
     <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPUPC06.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTotalReportBySaleFRPUPC06.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleScrewFRPTOTAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleScrewFRPTOTAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleScrewFrpSCRUPC03.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleScrewFrpSCRUPC03.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleScrewFrpSCRBKK02.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleScrewFrpSCRBKK02.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalReportBySaleScrewFrpSCRBKK01.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalReportBySaleScrewFrpSCRBKK01.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTotalReportBySaleScrewFRPUPCTOTAL.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -16379,6 +16497,18 @@
     <EmbeddedResource Include="Reports\rptTotalReportBySaleFRPBKK02.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTotalReportBySaleFRPBKK02.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalSales3YearChannarongFrpBkk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalSales3YearChannarongFrpBkk.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalSales3YearKittisakScrewFRP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalSales3YearKittisakScrewFRP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTotalSales3YearPakpoomDliteBkk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalSales3YearPakpoomDliteBkk.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptTotalSales3YearDLiteUPC.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -219,9 +219,34 @@
                     document.getElementById('<%= btnsirusDliteNorthIsanMidwestSouth.ClientID %>').click();
                 })  
 
+                
+                var kittisakscrewplusfrp = $('#kittisakscrewplusfrp');
+                kittisakscrewplusfrp.click(function () {
+                    //alert('กำลังดำเนินการ... \nทีมคุณกิตติศักดิ์\nยอดขาย SCREW + FRP (ต่างจังหวัด)');
+                    document.getElementById('<%= btnkittisakscrewplusfrp.ClientID %>').click();
+                }) 
 
                 
+                var pakpoomdlitebkk = $('#pakpoomdlitebkk');
+                pakpoomdlitebkk.click(function () {
+                    //alert('ทีมคุณภาคภูมิ\nยอดขาย D-LITE (กรุงเทพ/ตะวันออก/กลาง ตก)');
+                    document.getElementById('<%= btnpakpoomdlitebkk.ClientID %>').click();
+                }) 
 
+                var pakpoomscrewbkk = $('#pakpoomscrewbkk');
+                pakpoomscrewbkk.click(function () {
+                    alert('กำลังดำเนินการ... \nทีมคุณภาคภูมิ\nยอดขาย SCREW (กรุงเทพ/ตะวันออก)');
+                    //document.getElementById('<%= btnpakpoomscrewbkk.ClientID %>').click();
+                })
+
+                var channarongfrpbkk = $('#channarongfrpbkk');
+                channarongfrpbkk.click(function () {
+                    //alert('กำลังดำเนินการ... \nทีมคุณภาคภูมิ\nยอดขาย SCREW (กรุงเทพ/ตะวันออก)');
+                    document.getElementById('<%= btnchannarongfrpbkk.ClientID %>').click();
+                })
+
+                
+                
                 
 
             });
@@ -665,44 +690,53 @@
                                 
                             </div>
                             <div class="col-md-2">
-                                <a class="btn btn-app" style="width: 100%; height: 90px">
+                                <a class="btn btn-app" id="kittisakscrewplusfrp" style="width: 100%; height: 90px;">
 
                                     <i class="fa fa-file-pdf-o text-red"></i>
                                     <span class="txtLabel">ทีมคุณกิตติศักดิ์</span>
                                     <br />
                                     <span class="txtLabel">ยอดขาย Screw + FRP (ต่างจังหวัด)</span>
                                 </a>
+                                <input class="hidden" type="button" id="btnkittisakscrewplusfrp" name="btnkittisakscrewplusfrp" 
+                                    value="btnkittisakscrewplusfrp" runat="server" onserverclick="rptReportLasteThreeYearKittisakScrewFRP" />
                             </div>
                         </div>                      
 
                         <div class="row" style="margin-top: 20px;">
                             <div class="col-md-2">
-                                <a class="btn btn-app" style="width: 100%; height: 90px">
+                                <a class="btn btn-app" id="pakpoomdlitebkk"  style="width: 100%; height: 90px;">
                                     <i class="fa fa-file-pdf-o text-red"></i>
                                     <span class="txtLabel">ทีมคุณภาคภูมิ</span>
                                     <br />
                                     <span class="txtLabel">ยอดขาย D-LITE (กรุงเทพ)</span>
                                 </a>
+                                <input class="hidden" type="button" id="btnpakpoomdlitebkk" name="btnpakpoomdlitebkk" value="btnpakpoomdlitebkk" 
+                                        runat="server" onserverclick="rptReportLasteThreeYearPakpoomDliteBkk" />
+                                
                             </div>
 
-                            <div class="col-md-2">
-                                <a class="btn btn-app" style="width: 100%; height: 90px">
+                            <div class="col-md-2" >
+                                <a class="btn btn-app" id="pakpoomscrewbkk"  style="width: 100%; height: 90px; border: 1px solid red;">
                                     <i class="fa fa-file-pdf-o text-red"></i>
                                     <span class="txtLabel">ทีมคุณภาคภูมิ</span>
                                     <br />
                                     <span class="txtLabel">ยอดขาย Screw (กรุงเทพ/ตะวันออก)</span>
                                 </a>
+                                <input class="hidden" type="button" id="btnpakpoomscrewbkk" name="btnpakpoomscrewbkk" value="btnpakpoomscrewbkk" 
+                                        runat="server" onserverclick="rptReportLasteThreeYearPakpoomDliteBkk" />
                             </div>
                         </div>
 
                         <div class="row" style="margin-top: 20px;">
                             <div class="col-md-2">
-                                <a class="btn btn-app" style="width: 100%; height: 90px">
+                                <a class="btn btn-app" id="channarongfrpbkk" style="width: 100%; height: 90px">
                                     <i class="fa fa-file-pdf-o text-red"></i>
                                     <span class="txtLabel">ทีมคุณชาญณรงค์</span>
                                     <br />
                                     <span class="txtLabel">ยอดขาย FRP (กรุงเทพ)</span>
                                 </a>
+                                <input class="hidden" type="button" id="btnchannarongfrpbkk" name="btnchannarongfrpbkk" value="btnchannarongfrpbkk" 
+                                        runat="server" onserverclick="rptReportLasteThreeYearChannarongFrpBkk" />
                             </div>
                         </div>
                 </div>

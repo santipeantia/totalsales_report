@@ -65,5 +65,41 @@ namespace totalsale_report.xreporting {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputButton btnkittisakscrewbkk;
+        
+        /// <summary>
+        /// btnkittisakscrewplusfrp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnkittisakscrewplusfrp;
+        
+        /// <summary>
+        /// btnpakpoomdlitebkk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnpakpoomdlitebkk;
+        
+        /// <summary>
+        /// btnpakpoomscrewbkk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnpakpoomscrewbkk;
+        
+        /// <summary>
+        /// btnchannarongfrpbkk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnchannarongfrpbkk;
     }
 }
