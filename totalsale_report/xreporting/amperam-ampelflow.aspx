@@ -209,7 +209,7 @@
                         if (data != '') {
                             $.each(data, function (i, item) {
                                 table.row.add([data[i].No, data[i].EmpCode, data[i].EmpName, data[i].kansadCenter, data[i].dLite, data[i].PolySky, data[i].FRP, data[i].exAmperam
-                                    , data[i].exFlashing, data[i].exService, data[i].saleTotal, data[i].cutCNc, data[i].cutAmperamBill, data[i].cutAmperamMan, data[i].cutAmperamComm
+                                    , data[i].exFlashing, data[i].exService, data[i].saleTotal, data[i].ShareSale, data[i].cutCNc, data[i].cutAmperamBill, data[i].cutAmperamMan, data[i].cutAmperamComm
                                     , data[i].cutAmperamTrans, data[i].cutDliteBill, data[i].cutDliteMan, data[i].cutDliteComm, data[i].cutDliteTrans, data[i].netSales
                                     , data[i].cutNetSales, data[i].grandTotal]);
                             });
@@ -402,6 +402,7 @@
                                         <th class="">Flashing</th>
                                         <th class="">ค่าแรงติดตั้ง</th>
                                         <th class="">Sale Total</th>
+                                        <th class="">ShareSale</th>
                                         <th class="">รับคืนCN</th>
                                         <th class="">ส่วนลดค่าของ(A)</th>
                                         <th class="">ส่วนลดค่าแรง(A)</th>

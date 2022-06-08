@@ -817,6 +817,7 @@ namespace totalsale_report.xreporting
                 data.exFlashing = rdr["exFlashing"].ToString();
                 data.exService = rdr["exService"].ToString();
                 data.saleTotal = rdr["saleTotal"].ToString();
+                data.ShareSale = rdr["ShareSale"].ToString();
                 data.cutCNc = rdr["cutCNc"].ToString();
                 data.cutAmperamBill = rdr["cutAmperamBill"].ToString();
                 data.cutAmperamMan = rdr["cutAmperamMan"].ToString();
