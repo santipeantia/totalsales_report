@@ -40,9 +40,13 @@ namespace totalsale_report.xreporting
         protected void rptReportLasteThreeYearFrpBkk(object sender, EventArgs e)
         {
             try
-            {                
+            {
+                string sdate = Request.Form["datepickerstart"];
+
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearFrpBkk.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
+
                 rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
                 
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณกิตติศักดิ์ ยอดขาย FRP (กรุงเทพ) ย้อนหลัง 3 ปี");
@@ -58,8 +62,11 @@ namespace totalsale_report.xreporting
         {
             try
             {
+                string sdate = Request.Form["datepickerstart"];
+
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearKittisakScrewBkk.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
                 rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
 
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณกิตติศักดิ์ ยอดขาย Screw (กรุงเทพ) ย้อนหลัง 3 ปี");
@@ -77,8 +84,11 @@ namespace totalsale_report.xreporting
         {
             try
             {
+                string sdate = Request.Form["datepickerstart"];
+
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearScrewFRPUPCTOTAL.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
                 rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
 
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณศิรัส ยอดขาย Screw (เหนืออีสาน กลาง ตก ใต้) ย้อนหลัง 3 ปี");
@@ -94,8 +104,11 @@ namespace totalsale_report.xreporting
         {
             try
             {
+                string sdate = Request.Form["datepickerstart"];
+
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearFrpUPC.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
                 rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
 
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณศิรัส ยอดขาย FRP (เหนืออีสาน กลาง ตก ใต้) ย้อนหลัง 3 ปี");
@@ -111,8 +124,11 @@ namespace totalsale_report.xreporting
         {
             try
             {
+                string sdate = Request.Form["datepickerstart"];
+
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearDLiteUPC.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
                 rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
 
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณศิรัส ยอดขาย D-Lite (เหนือ อีสาน กลาง ตก ใต้) ย้อนหลัง 3 ปี");
@@ -129,8 +145,11 @@ namespace totalsale_report.xreporting
         {
             try
             {
+                string sdate = Request.Form["datepickerstart"];
+
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearKittisakScrewFRP.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
                 rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
 
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณกิตติศักดิ์ ยอดขาย Screw + FRP (ต่างจังหวัด) ย้อนหลัง 3 ปี");
@@ -147,8 +166,11 @@ namespace totalsale_report.xreporting
         {
             try
             {
+                string sdate = Request.Form["datepickerstart"];
+
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearPakpoomDliteBkk.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
                 rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
 
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณภาคภูมิ ยอดขาย D-Lite (กรุงเทพ ตะวันออก กลาง ตก) ย้อนหลัง 3 ปี");
@@ -164,8 +186,11 @@ namespace totalsale_report.xreporting
         {
             try
             {
+                string sdate = Request.Form["datepickerstart"];
+
                 rpt = new ReportDocument();
                 rpt.Load(Server.MapPath("../Reports/rptTotalSales3YearChannarongFrpBkk.rpt"));
+                rpt.SetParameterValue("sdate", sdate);
                 rpt.SetDatabaseLogon(strUser, strPassword, strServer, strSource);
 
                 rpt.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "ทีมคุณชาญณรงค์ ยอดขาย FRP (กรุงเทพ) ย้อนหลัง 3 ปี");

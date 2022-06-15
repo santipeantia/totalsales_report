@@ -86,6 +86,11 @@
                 var firstdate = yyyy + '-' + mm + '-' + '01';
                 var nowdate = yyyy + '-' + mm + '-' + ddd;
 
+                var fulldate = yyyy + '-' + mm + '-' + dd;
+
+               
+                $('#datepickerstart').val(fulldate);
+
                 var ssdate = firstdate;
                 var eedate = nowdate;
 
@@ -138,8 +143,8 @@
                 $('#lblmonth06').text(cmonth);
                 $('#lblmonth07').text(cmonth);
                                              
-                $('#datepickerstart').val(ssdate);
-                $('#datepickerend').val(eedate);
+                //$('#datepickerstart').val(ssdate);
+                //$('#datepickerend').val(eedate);
 
                 //todo something here
                 var btnViewReport = $('#btnViewReport')
@@ -633,6 +638,19 @@
 
                     <%-- <%--step 2 design user interface ui below--%>
                     <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-2" style="margin-left: 10px;">
+                                    <div class="form-group">
+                                        <label class="txtLabel">วันที่รายงาน :</label>
+                                        <div class="input-group date">
+                                            <input type="text" class="form-control pull-right" id="datepickerstart" name="datepickerstart" autocomplete="off" >
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                         </div>
 
                         <div class="row">
                             <div class="col-md-2">
