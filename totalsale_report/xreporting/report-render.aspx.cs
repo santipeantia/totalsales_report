@@ -1335,7 +1335,7 @@ namespace totalsale_report.xreporting
                     GridviewExport.DataBind();
 
                     Response.Clear();
-                    Response.AddHeader("content-disposition", "attachment;filename=รายงานยอดขายทีม " + zonename + "ของ" + empcodelist.Replace(",","") + ".xls");
+                    Response.AddHeader("content-disposition", "attachment;filename=รายงานยอดขายทีม " + zonename + "ของ" + (empcodelist.Replace(",", "")).Substring(0, 10) + ".xls");
                     Response.ContentType = "application/ms-excel";
                     Response.ContentEncoding = System.Text.Encoding.Unicode;
                     Response.BinaryWrite(System.Text.Encoding.Unicode.GetPreamble());
@@ -1393,7 +1393,7 @@ namespace totalsale_report.xreporting
                     GridviewExport.DataBind();
 
                     Response.Clear();
-                    Response.AddHeader("content-disposition", "attachment;filename=รายงานยอดขายทีม " + zonename + "ของ" + empcodelist.Replace(",", "") + ".xls");
+                    Response.AddHeader("content-disposition", "attachment;filename=รายงานยอดขายทีม " + zonename + "ของ" + (empcodelist.Replace(",", "")).Substring(0, 10) + ".xls");
                     Response.ContentType = "application/ms-excel";
                     Response.ContentEncoding = System.Text.Encoding.Unicode;
                     Response.BinaryWrite(System.Text.Encoding.Unicode.GetPreamble());
